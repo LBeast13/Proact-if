@@ -1,6 +1,7 @@
 package action;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -8,5 +9,5 @@ import javax.servlet.http.HttpServletRequest;
  */
 public abstract class Action {
     
-    public abstract boolean executer(HttpServletRequest request);
+    public abstract boolean executer(HttpServletRequest request, HttpSession session);
 }

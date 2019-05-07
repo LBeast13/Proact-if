@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import action.Action;
+import action.employe.RecupererInfoEmployeAction;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -20,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import metier.modele.Employe;
 import metier.service.Service;
 import serialisation.Serialisation;
+import serialisation.employe.RecupererInfoEmployeSerialisation;
 
 /**
  *
@@ -44,9 +40,6 @@ public class ActionServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8"); // Encodage des paramètres de la requête
         String todo = request.getParameter("todo"); // Paramètre de choix de l'action
         
-        Action action = null;
-        Serialisation serialisation = null;
-        
         // Cas de connexion d'employe
         if("connecterEmploye".equals(todo)){
             String login = request.getParameter("login");
@@ -57,7 +50,9 @@ public class ActionServlet extends HttpServlet {
             Employe c = Service.connecterEmploye(login, password); 
         
             if(c != null){ // Cas Login et password corrects
-                session.setAttribute("utilisateur",login);  // Enregistrement de la session
+                // Enregistrement de la session
+                session.setAttribute("utilisateur",login);  
+                session.setAttribute("mdp",password);
                 
                 jsonContainer.addProperty("connexion", Boolean.TRUE);
                 System.out.println("Employé connecté");
@@ -73,10 +68,44 @@ public class ActionServlet extends HttpServlet {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(jsonContainer,out);
             
-        } else{
+        } 
+        // Autres actions
+        else{
             String user = (String) session.getAttribute("utilisateur");
+            
+            // Cas utilisateur non connecté (accès refusé)
             if(user==null){
                 response.sendError(403,"Forbidden (No User)");
+            }
+            
+            // Cas utilisateur connecté
+            else{
+                Action action = null;
+                Serialisation serialisation = null;
+                
+                // Ensemble des actions
+                switch(todo){
+                    case "remplir_informations_perso":
+                        action = new RecupererInfoEmployeAction();
+                        serialisation = new RecupererInfoEmployeSerialisation();
+                        break;
+                }
+                
+                // Cas action introuvable
+                if(action == null){
+                    response.sendError(400, "Bad Request (Wrong TODO parameter)");
+                    System.out.println("KO TODO");
+                }
+                
+                // Execution de l'action et de la sérialisation
+                else{
+                    System.out.println("OK TODO");
+                    boolean actionStatus = action.executer(request,session);
+                    if(serialisation != null){
+                        serialisation.serialiser(request,response);
+                        
+                    }
+                }
             }
         }
     }
