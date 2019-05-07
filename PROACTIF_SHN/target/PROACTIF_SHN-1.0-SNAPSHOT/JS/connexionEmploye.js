@@ -13,16 +13,25 @@ function connexion() {
             password: champPassword
         },
         dataType: 'json'
-    }).done(function (data) {
-        // ici votre code...
-        // 
-        // si connexion ok, aller sur la page suivante :
-        window.location.href = "./info-perso-employe.html";
-        // si connexion pas ok afficher un texte dans la div message :
-        console.log('Erreur de connexion');
-        // $('#message').html('Echec de la connexion');
-    }).fail(function(response){// Appel KO
-        console.log('Erreur');
+    }).done(function (response) { // Appel OK
+        
+        if(response.connexion){     // Connexion ok, aller sur la page d'accueil
+            
+            setTimeout(function(){  // Redirection avec délai de 3s
+                window.location = "info-perso-employe.html";
+            },2000);
+        }
+        else{   // Connexion pas ok POP UP d'erreur
+            $('#myModal').modal('show');    // Affiche la Pop-Up d'erreur
+            
+            setTimeout(function(){  // Fermeture au bout de 5s
+                $('#myModal').modal('hide');
+            },5000);    
+        }
+    }).fail( function (error) { // Appel KO => erreur a gérer
+                   
+        // Popup avec message d'erreur :
+        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
     });
 }
 

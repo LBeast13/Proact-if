@@ -3,7 +3,7 @@
     <head>
         <title>Page d'accueil Employé</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -18,94 +18,114 @@
     </head>
     <body>
         <div class="container">
-            
+
             <!-- Bandeau en-tête -->
             <div class="row">
                 <!-- Logo vélo et maison -->
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            
+
                         </div>
-                        
+
                         <div class="col">
-                            
+
                         </div>
                     </div>
-                </div>
-                
+                </div> <!-- Fin logo vélo maison -->
+
                 <!-- Titre proactif -->
                 <div class="col">
                     <h1>PROACT'IF</h1>
                 </div>
-                
+
                 <!-- Logos Communication -->
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            
+
                         </div>
-                        
+
                         <div class="col">
-                            
+
                         </div>
-                        
+
                         <div class="col">
-                            
+
                         </div>
-                        
+
                         <div class="col">
-                            
+
                         </div>
                     </div>
-                </div>
-            </div>
-            
+                </div> <!-- Fin logos communication -->
+            </div> <!-- Fin bandeau d'en-tête -->
+
             <!-- Corps de login -->
             <div class="row">
                 <div class="col">
-                    
+
                     <div class="row">
-                        
+
                         <!-- Textes -->
                         <div class="col">
-                            
+
                             <!-- Username -->
                             <div class="row">
                                 <p>Username</p>
                             </div>
-                            
+
                             <!-- Password -->
                             <div class="row">
                                 <p>Password</p>
                             </div>
                         </div>
-                        
+
                         <!-- Champs textes et boutton -->
                         <div class="col">
-                            <form>
-                            
-                                <!-- Username -->
-                                <div class="row">
-                                    <input id="champ-login" type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp" placeholder="Enter email">
-                                </div>
 
-                                <!-- Password -->
-                                <div class="row">
-                                    <input id="champ-password" type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                </div>
 
-                                <!-- Bouton connexion -->
-                                <div class="row">
-                                    <button id="bouton-connexion" type="submit" class="btn btn-primary">Connexion</button>
-                                </div>
-                            </form>
-                        </div>
+                            <!-- Username -->
+                            <div class="row">
+                                <input id="champ-login" type="email" class="form-control" placeholder="Enter email">
+                            </div>
+
+                            <!-- Password -->
+                            <div class="row">
+                                <input id="champ-password" type="password" class="form-control" placeholder="Password">
+                            </div>
+
+                            <!-- Bouton connexion -->
+                            <div class="row">
+                                <button id="bouton-connexion" type="submit" class="btn btn-primary">Connexion</button>
+                            </div>
+
+                            <!-- Pop-Up d'échec de connexion -->
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content bg-danger text-white">
+
+                                        <!-- Pop-Up Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Accès refusé</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Pop-Up body -->
+                                        <div class="modal-body">
+                                            Le nom d'utilisateur ou le mot de passe est incorrect.
+                                            </br>Veuillez réessayer.
+                                        </div>
+
+                                    </div> <!-- Fin modal-content -->
+                                </div> <!-- Fin modal-dialog -->
+                            </div> <!-- Fin modal -->
+                        </div> <!-- Fin champs de texte et bouton -->
                     </div>
                 </div>
-            </div>
-        </div>
-        
+            </div> <!-- Fin corps de Login -->
+        </div> <!-- Fin container -->
+
         <script type="text/javascript" src="JS/connexionEmploye.js"></script>
     </body>
 </html>

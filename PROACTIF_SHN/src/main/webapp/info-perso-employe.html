@@ -1,16 +1,100 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>Informations Personnelles - Employe</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page d'informations personnelles</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div>Connecté</div>
+        <div class="container">
+             <!-- Titre Informations personnelles  -->
+                <div class="col">
+                    <h1>Informations personnelles</h1>
+               
+                             <!-- Textes -->
+                        <div class="row">
+                            <!-- Nom -->
+                             <p>Nom</p>
+                             <div class="col-sm-3">
+                                  </div>
+                              <!-- Prenom -->
+                             <p>Prenom</p>
+                            </div>
+                            
+                            <!-- Nom -->
+                            <input type="text" id="name" name="nom">
+                             <div class="col-sm-3">
+                             </div>
+                           <!-- Prenom -->
+                            <input type="text" id="name" name="prenom">
+                           </div>
+                           <div class="row">
+                           <p>Date de naissance</p>
+                         <input type="date" id="start" name="trip-start" min="1900-01-01" max="2019-12-31">
+                        </div> 
+                             <!-- Champs textes et boutton -->
+                        <div class="col">
+                            <form>
+                            
+                                <!-- Nom -->
+                                <div class="row">
+                                    <input id="champ-login" type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+
+                                <!-- Prenom -->
+                                <div class="row">
+                                    <input id="champ-password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                </div>
+          
+                      
+                 
+                        <!-- Champs textes et boutton -->
+                        <div class="col">
+                            <form>
+                            
+                                <!-- informations personnelles -->
+                                <div class="row">
+                                  <button id="bouton-infoPerso" type="submit" class="btn btn-primary">Informations personnelles</button>
+                                </div>
+
+                                <!-- Intervention en cours -->
+                                <div class="row">
+                                  <button id="bouton-intervention" type="submit" class="btn btn-primary">Intervention en cours</button>
+                                </div>
+                                
+                                 <!-- Historique-->
+                                <div class="row">
+                                    <button id="bouton-historique" type="submit" class="btn btn-primary">Historique</button>
+                                </div>
+                                 
+                                <!-- Tableau de bord -->
+                                <div class="row">
+                                  <button id="bouton-tableauDeBord" type="submit" class="btn btn-primary">Tableau de bord</button>
+                                </div>
+
+                               
+               
+                            
+                        </div>
+                        
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="JS/connexionEmploye.js"></script>
     </body>
 </html>
