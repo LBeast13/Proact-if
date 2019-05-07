@@ -3,7 +3,7 @@
     <head>
         <title>Page d'informations personnelles</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -15,86 +15,51 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="Style/menuLateralEmploye.css">
     </head>
     <body>
-        <div class="container">
-             <!-- Titre Informations personnelles  -->
-                <div class="col">
-                    <h1>Informations personnelles</h1>
-               
-                             <!-- Textes -->
-                        <div class="row">
-                            <!-- Nom -->
-                             <p>Nom</p>
-                             <div class="col-sm-3">
-                                  </div>
-                              <!-- Prenom -->
-                             <p>Prenom</p>
-                            </div>
-                            
-                            <!-- Nom -->
-                            <input type="text" id="name" name="nom">
-                             <div class="col-sm-3">
-                             </div>
-                           <!-- Prenom -->
-                            <input type="text" id="name" name="prenom">
-                           </div>
-                           <div class="row">
-                           <p>Date de naissance</p>
-                         <input type="date" id="start" name="trip-start" min="1900-01-01" max="2019-12-31">
-                        </div> 
-                             <!-- Champs textes et boutton -->
+        <!-- Conteneur global -->
+        <div class="d-flex" id="wrapper">
+            
+            <!-- Menu latéral -->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading">
+                    Prénom et Nom (Dynamiquement)
+                    <div> Photo </div>
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+            
+
+            <!-- Contenu de page -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
                         <div class="col">
-                            <form>
-                            
-                                <!-- Nom -->
-                                <div class="row">
-                                    <input id="champ-login" type="email" class="form-control" id="inputUsername" aria-describedby="emailHelp" placeholder="Enter email">
-                                </div>
-
-                                <!-- Prenom -->
-                                <div class="row">
-                                    <input id="champ-password" type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                </div>
-          
-                      
-                 
-                        <!-- Champs textes et boutton -->
-                        <div class="col">
-                            <form>
-                            
-                                <!-- informations personnelles -->
-                                <div class="row">
-                                  <button id="bouton-infoPerso" type="submit" class="btn btn-primary">Informations personnelles</button>
-                                </div>
-
-                                <!-- Intervention en cours -->
-                                <div class="row">
-                                  <button id="bouton-intervention" type="submit" class="btn btn-primary">Intervention en cours</button>
-                                </div>
-                                
-                                 <!-- Historique-->
-                                <div class="row">
-                                    <button id="bouton-historique" type="submit" class="btn btn-primary">Historique</button>
-                                </div>
-                                 
-                                <!-- Tableau de bord -->
-                                <div class="row">
-                                  <button id="bouton-tableauDeBord" type="submit" class="btn btn-primary">Tableau de bord</button>
-                                </div>
-
-                               
-               
-                            
+                            <h1>Informations personnelles</h1>
                         </div>
                         
-                            </form>
-                        </div>
                     </div>
+                    
+                    
                 </div>
-            </div>
-        </div>
-        
+            </div> <!-- Fin du contenu de page -->
+        </div> <!-- Fin du conteneur global -->
+
         <script type="text/javascript" src="JS/connexionEmploye.js"></script>
     </body>
 </html>
