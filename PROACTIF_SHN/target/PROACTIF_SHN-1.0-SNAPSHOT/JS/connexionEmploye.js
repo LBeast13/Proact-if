@@ -8,7 +8,7 @@ function connexion() {
         url: './ActionServlet',
         method: 'POST',
         data: {
-            action: 'connecterEmploye',
+            todo: 'connecterEmploye',
             login: champLogin,
             password: champPassword
         },
@@ -17,11 +17,12 @@ function connexion() {
         // ici votre code...
         // 
         // si connexion ok, aller sur la page suivante :
-        // window.location = "maPageSuivante.html";
+        window.location.href = "./info-perso-employe.html";
         // si connexion pas ok afficher un texte dans la div message :
+        console.log('Erreur de connexion');
         // $('#message').html('Echec de la connexion');
     }).fail(function(response){// Appel KO
-        
+        console.log('Erreur');
     });
 }
 

@@ -37,9 +37,9 @@ public class ActionServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String action = request.getParameter("action");
+        String todo = request.getParameter("todo");
         
-        switch(action){
+        switch(todo){
             case "connecterEmploye":
                 connecterEmploye(request,response);
                 break;
