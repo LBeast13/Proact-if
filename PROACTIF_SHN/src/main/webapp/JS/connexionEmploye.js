@@ -20,6 +20,8 @@ function connexion() {
         // window.location = "maPageSuivante.html";
         // si connexion pas ok afficher un texte dans la div message :
         // $('#message').html('Echec de la connexion');
+    }).fail(function(response){// Appel KO
+        
     });
 }
 
