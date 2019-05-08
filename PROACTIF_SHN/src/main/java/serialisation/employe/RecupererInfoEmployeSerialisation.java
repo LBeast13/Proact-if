@@ -30,7 +30,7 @@ public class RecupererInfoEmployeSerialisation extends Serialisation{
         jsonContainer.addProperty("codePostal", (String) request.getAttribute("codePostal"));
         jsonContainer.addProperty("ville", (String) request.getAttribute("ville"));
 
-        System.out.println(jsonContainer.toString());
+        //System.out.println(jsonContainer.toString());
         // Formattage et écriture sur la sortie
         PrintWriter out = this.getWriterWithJsonHeader(response);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

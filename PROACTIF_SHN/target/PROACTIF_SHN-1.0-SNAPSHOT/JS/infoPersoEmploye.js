@@ -1,3 +1,8 @@
+/**
+ * Fonction Ajax qui met à jours le DOM avec les données personnelles de 
+ * l'employé connecté.
+ * @returns {undefined}
+ */
 function remplirDonneesPerso() {
     var champLogin = $('#champ-login').val();
     var champPassword = $('#champ-password').val();
@@ -10,7 +15,8 @@ function remplirDonneesPerso() {
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
-        
+        console.log("TODO : Régler le raffraichissement de la page lors de l'appel\n\
+        AJAX de remplir d'info perso (on ne veut pas de raffraichissement pour pas avoir 2 appels)");
         civilite = response.civilite;
         updateCivilite(civilite);
         $('#nomEmploye').html(response.nom);
@@ -23,12 +29,17 @@ function remplirDonneesPerso() {
         $('#villeAdresseEmploye').html(response.ville);
        
     }).fail( function (error) { // Appel KO => erreur a gérer
-         console.log("Fail remplir_informations_perso");          
+        console.log("Fail remplir_informations_perso");          
         // Popup avec message d'erreur :
         alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
     });
 }
 
+/**
+ * Met à jour la Tab du DOM pour la civilité
+ * @param {String} civilite de l'employé connecté
+ * @returns {undefined}
+ */
 function updateCivilite(civilite){
     console.log(civilite);
     if(civilite === 'M'){
@@ -47,6 +58,7 @@ function updateCivilite(civilite){
         $('#ongletMlle').attr("class","nav-item nav-link active");
     }
 }
+
 
 $(document).ready(function () {
     remplirDonneesPerso();
