@@ -1,14 +1,11 @@
 function ajouter(intervention){
-    var row = "<tr>\n\
-              <th scope=\"row\">" + intervention.numero + "</th>\n\
-              <td>"+ intervention.type + "</td>\n\
-              <td>"+ intervention.date + "</td>\n\
-              <td>"+ intervention.client + "</td>\n\
-              <td>"+ intervention.statut + "</td>\n\
-              </tr>";       
-    console.log(row);
+    var row = "<tr><th scope=\"row\">" + intervention.numero 
+            + "</th><td>"+ intervention.type + "</td><td>"
+            + intervention.date + "</td><td>"
+            + intervention.client + "</td><td>"
+            + intervention.statut + "</td></tr>";       
     
-    $("#liste-personnes").append(row);
+    $("#tableBody").append(row);
 }
 
 /**
@@ -41,6 +38,8 @@ function remplirTableauHistorique() {
 }
 
 $(document).ready(function () {
+    Console.log("TODO : Résoudre le double chargement de la page")
+    
     remplirTableauHistorique();
 });
 
