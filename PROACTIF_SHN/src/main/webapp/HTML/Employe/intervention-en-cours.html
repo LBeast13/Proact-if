@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Intervention en cours - Employé</title>
@@ -24,6 +19,7 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
         <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
         <link rel="stylesheet" type="text/css" href="../../Style/interventionEnCoursEmploye.css">
     </head>
@@ -44,9 +40,9 @@ and open the template in the editor.
 
                 <!-- Items de navigation -->
                 <div class="list-group list-group-flush">
-                    <a href="info-perso-employe.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
-                    <a href="intervention-en-cours-employe.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
-                    <a href="historique-interventions-employe.html" class="list-group-item list-group-item-action bg-light">Historique</a>
+                    <a href="info-perso.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
+                    <a href="intervention-en-cours.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
+                    <a href="historique-interventions.html" class="list-group-item list-group-item-action bg-light">Historique</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
                 </div>
@@ -72,7 +68,6 @@ and open the template in the editor.
                                     
                                     <!-- 1ère ligne (Type intervention)-->
                                     <div class="row">
-                                        <!-- Logo silhouette -->
                                         <div class="col">
                                             Type
                                         </div>
@@ -116,7 +111,7 @@ and open the template in the editor.
                                                     </div>
 
                                                     <!-- Détail du type d'intervention -->
-                                                    <div class="row">
+                                                    <div class="row champ-dyna">
                                                         <div class="col" id="detailTypeIntervention">
                                                             Détail Type dynamique
                                                         </div>
@@ -136,7 +131,7 @@ and open the template in the editor.
 
                                                     <!-- Code Client dynamique -->
                                                     <div class="row">
-                                                        <div class="col" id="codeClientIntervention">
+                                                        <div class="col champ-dyna" id="codeClientIntervention">
                                                             Code Client dynamique
                                                         </div>
                                                     </div>
@@ -160,7 +155,7 @@ and open the template in the editor.
 
                                                     <!-- Date de demande dynamique -->
                                                     <div class="row">
-                                                        <div class="col" id="dateDemandeIntervention">
+                                                        <div class="col champ-dyna" id="dateDemandeIntervention">
                                                             Date de demande
                                                         </div>
                                                         <div class="col">
@@ -182,7 +177,7 @@ and open the template in the editor.
 
                                                     <!-- Trajet dynamique -->
                                                     <div class="row">
-                                                        <div class="col" id="trajetIntervention">
+                                                        <div class="col champ-dyna" id="trajetIntervention">
                                                             Trajet dynamique
                                                         </div>
                                                         <div class="col">
@@ -207,7 +202,7 @@ and open the template in the editor.
                                             </div>
                                             
                                             <!-- Champ Adresse -->
-                                            <div class="row">
+                                            <div class="row champ-dyna">
                                                 <div class="col" id="adresseIntervention">
                                                     Adresse dynamique
                                                 </div>
@@ -227,8 +222,8 @@ and open the template in the editor.
                                             </div>
                                             
                                             <!-- Champ de Description (Scrollable)-->
-                                            <div class="row">
-                                                <div class="col scroll-div" id="descriptionIntervention">
+                                            <div class="row champ-dyna">
+                                                <div class="col scroll-div " id="descriptionIntervention">
                                                     Description dynamique
                                                 </div>
                                             </div>
@@ -249,6 +244,6 @@ and open the template in the editor.
             </div> <!-- Fin du contenu de page -->
         </div> <!-- Fin du conteneur global -->
         
-        <script type="text/javascript" src="../../JS/interventionEnCours.js"></script>
+       <script type="text/javascript" src="../../JS/interventionEnCours.js"></script>
     </body>
 </html>

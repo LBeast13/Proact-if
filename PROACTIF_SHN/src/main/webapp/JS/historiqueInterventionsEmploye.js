@@ -1,11 +1,25 @@
+/**
+ * Met en forme la ligne représentant l'intervention et l'ajoute au tableau du DOM
+ * @param {type} intervention qu'on doit ajouter dans le tableau
+ * @returns {undefined}
+ */
 function ajouter(intervention){
-    var row = "<tr><th scope=\"row\">" + intervention.numero 
+    var row = "<tr><th scope=\"row\" onclick='voirDetail("+intervention.numero+")'>" + intervention.numero 
             + "</th><td>"+ intervention.type + "</td><td>"
             + intervention.date + "</td><td>"
             + intervention.client + "</td><td>"
             + intervention.statut + "</td></tr>";       
     
     $("#tableBody").append(row);
+}
+
+/**
+ * Fonction de click sur le numéro d'intervention.
+ * @param {type} numeroIntervention le paramètre ajouté dans l'URL
+ * @returns {undefined}
+ */
+function voirDetail(numeroIntervention){
+    window.location = "detail-intervention.html?numInterv=" + numeroIntervention;
 }
 
 /**
@@ -38,7 +52,7 @@ function remplirTableauHistorique() {
 }
 
 $(document).ready(function () {
-    Console.log("TODO : Résoudre le double chargement de la page")
+    console.log("TODO : Résoudre le double chargement de la page")
     
     remplirTableauHistorique();
 });
