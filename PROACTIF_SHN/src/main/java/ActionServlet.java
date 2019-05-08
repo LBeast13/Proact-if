@@ -39,6 +39,7 @@ public class ActionServlet extends HttpServlet {
         HttpSession session = request.getSession(true); // Contexte de la Session
         request.setCharacterEncoding("UTF-8"); // Encodage des paramètres de la requête
         String todo = request.getParameter("todo"); // Paramètre de choix de l'action
+        System.out.println(todo);
         
         // Cas de connexion d'employe
         if("connecterEmploye".equals(todo)){
@@ -55,11 +56,11 @@ public class ActionServlet extends HttpServlet {
                 session.setAttribute("mdp",password);
                 
                 jsonContainer.addProperty("connexion", Boolean.TRUE);
-                System.out.println("Employé connecté");
+                System.out.println("Test connexion : Employé connecté");
             }
             else{  // Echec Connexion
                 jsonContainer.addProperty("connexion", Boolean.FALSE);
-                System.out.println("Erreur de connexion employé");
+                System.out.println("Test connexion : Erreur de connexion employé");
             }
             
             // Formattage et écriture de la sortie
@@ -72,7 +73,7 @@ public class ActionServlet extends HttpServlet {
         // Autres actions
         else{
             String user = (String) session.getAttribute("utilisateur");
-            
+            System.out.println("Test utilisateur dans la session " + user);
             // Cas utilisateur non connecté (accès refusé)
             if(user==null){
                 response.sendError(403,"Forbidden (No User)");
@@ -88,22 +89,23 @@ public class ActionServlet extends HttpServlet {
                     case "remplir_informations_perso":
                         action = new RecupererInfoEmployeAction();
                         serialisation = new RecupererInfoEmployeSerialisation();
+                        System.out.println("Test appel de la fonction " + todo +" OK");
                         break;
                 }
                 
                 // Cas action introuvable
                 if(action == null){
                     response.sendError(400, "Bad Request (Wrong TODO parameter)");
-                    System.out.println("KO TODO");
+                    System.out.println("TODO inconnu");
                 }
                 
                 // Execution de l'action et de la sérialisation
                 else{
-                    System.out.println("OK TODO");
+                    System.out.println("TODO : " + todo);
                     boolean actionStatus = action.executer(request,session);
                     if(serialisation != null){
-                        serialisation.serialiser(request,response);
-                        
+                        serialisation.serialiser(request,response);   
+                        System.out.println("Test Sérialisation OK");
                     }
                 }
             }

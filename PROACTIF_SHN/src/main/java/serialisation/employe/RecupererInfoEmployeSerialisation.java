@@ -20,6 +20,7 @@ public class RecupererInfoEmployeSerialisation extends Serialisation{
         
         JsonObject jsonContainer = new JsonObject();
         
+        jsonContainer.addProperty("civilite", (String) request.getAttribute("civilite"));
         jsonContainer.addProperty("nom", (String) request.getAttribute("nom"));
         jsonContainer.addProperty("prenom", (String) request.getAttribute("prenom"));
         jsonContainer.addProperty("dateNaissance", (String) request.getAttribute("dateNaissance"));
@@ -29,6 +30,7 @@ public class RecupererInfoEmployeSerialisation extends Serialisation{
         jsonContainer.addProperty("codePostal", (String) request.getAttribute("codePostal"));
         jsonContainer.addProperty("ville", (String) request.getAttribute("ville"));
 
+        System.out.println(jsonContainer.toString());
         // Formattage et écriture sur la sortie
         PrintWriter out = this.getWriterWithJsonHeader(response);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

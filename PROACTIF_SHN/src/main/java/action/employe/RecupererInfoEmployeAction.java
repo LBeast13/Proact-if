@@ -23,6 +23,7 @@ public class RecupererInfoEmployeAction extends Action {
         // Informations de l'employé
         String nom = emp.getNom();
         String prenom = emp.getPrenom();
+        String civilite = emp.getCivilite();
         Date dateNaissance = emp.getDate();
         String email = emp.getMail();
         String tel = emp.getNumTelephone();
@@ -30,14 +31,17 @@ public class RecupererInfoEmployeAction extends Action {
         Integer codePostal = emp.getCodePostal();
         String ville = emp.getVille();
         
+        System.out.println("Test : " + civilite);
+        
         // Ajout des informations dans la requête
         request.setAttribute("nom", nom);
         request.setAttribute("prenom", prenom);
-        request.setAttribute("dateNaissance", dateNaissance);
+        request.setAttribute("civilite", civilite);
+        request.setAttribute("dateNaissance", dateNaissance.toString());
         request.setAttribute("email", email);
         request.setAttribute("tel", tel);
         request.setAttribute("adresse", adresse);
-        request.setAttribute("codePostal", codePostal);
+        request.setAttribute("codePostal", codePostal.toString());
         request.setAttribute("ville", ville);
         
         return true;
