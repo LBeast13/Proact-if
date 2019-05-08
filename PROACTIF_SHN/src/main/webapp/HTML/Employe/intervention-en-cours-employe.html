@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>Intervention en cours - Employé</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -24,7 +24,8 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="Style/menuLateralEmploye.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/interventionEnCoursEmploye.css">
     </head>
     <body>
         <!-- Conteneur global -->
@@ -45,7 +46,7 @@ and open the template in the editor.
                 <div class="list-group list-group-flush">
                     <a href="info-perso-employe.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
                     <a href="intervention-en-cours-employe.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Historique</a>
+                    <a href="historique-interventions-employe.html" class="list-group-item list-group-item-action bg-light">Historique</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
                 </div>
@@ -225,9 +226,9 @@ and open the template in the editor.
                                                 </div>
                                             </div>
                                             
-                                            <!-- Champ de Description (Scrollable) ajouter le style dans css externe -->
+                                            <!-- Champ de Description (Scrollable)-->
                                             <div class="row">
-                                                <div class="col" id="codePostalEmploye" style="height:150px;overflow-y: scroll;">
+                                                <div class="col scroll-div" id="descriptionIntervention">
                                                     Description dynamique
                                                 </div>
                                             </div>
@@ -236,15 +237,18 @@ and open the template in the editor.
                                 </div>
                             </div> <!-- Fin fenêtre centrale -->
                             
-                            
-                        </div>
-                        
-                        <div class="row">
+                            <div class="row">
+                                <div class="col">
+                                    <button>Cloturer</button>
+                                </div>
+                            </div>
                             
                         </div>
                     </div>
                 </div> <!-- Fin du conteneur -->
             </div> <!-- Fin du contenu de page -->
         </div> <!-- Fin du conteneur global -->
+        
+        <script type="text/javascript" src="../../JS/interventionEnCours.js"></script>
     </body>
 </html>

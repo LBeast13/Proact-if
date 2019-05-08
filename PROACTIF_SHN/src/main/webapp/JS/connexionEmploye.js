@@ -18,7 +18,7 @@ function connexion() {
         if(response.connexion){     // Connexion ok, aller sur la page d'accueil
             
             setTimeout(function(){  // Redirection avec délai de 3s
-                window.location = "info-perso-employe.html";
+                window.location = "HTML/Employe/info-perso-employe.html";
             },2000);
         }
         else{   // Connexion pas ok POP UP d'erreur

@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <title>Clôture d'intervention - Employé</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="Style/menuLateralEmploye.css">
+    </head>
+    <body>
+        <!-- Conteneur global -->
+        <div class="d-flex" id="wrapper">
+            
+            <!-- Menu latéral -->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading">
+                    Prénom et Nom (Dynamiquement)
+                    <div> Photo </div>
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                    <a href="info-perso-employe.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
+                    <a href="intervention-en-cours-employe.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+            
+
+            <!-- Contenu de page -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col">
+                                    <h1>Intervention en cours</h1>
+                                </div>
+                            </div>
+                            
+                            <!-- Fenêtre centrale -->
+                            <div class="row">
+                                <div class="col">
+                                    
+                                    <!-- 1ère ligne (Type intervention)-->
+                                    <div class="row">
+                                        <!-- Logo silhouette -->
+                                        <div class="col">
+                                            Type
+                                        </div>
+
+                                        <!-- Radio Buttons Type -->
+                                        <div class="col">
+                                            <!-- Animal -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioAnimal" value="option1" disabled checked>
+                                                <label class="form-check-label" for="radioAnimal">Animal</label>
+                                            </div>
+                                            
+                                            <!-- Incident -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioIncident" value="option2" disabled>
+                                                <label class="form-check-label" for="radioIncident">Incident</label>
+                                            </div>
+                                            
+                                            <!-- Livraison -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioLivraison" value="option3" disabled>
+                                                <label class="form-check-label" for="radioLivraison">Livraison</label>
+                                            </div>
+                                        </div> <!-- Fin Radio Buttons type -->
+                                    </div> <!-- Fin 1ère ligne (Type d'intervention) -->
+                                    
+                                    <!-- 2ème et 3ème ligne (Type dynamique, date de demande, client, trajet)-->
+                                    <div class="row">
+                                        
+                                        <!-- Type dynamique et Client -->
+                                        <div class="col">
+                                            
+                                            <!-- Type -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!-- Label type dynamique -->
+                                                    <div class="row">
+                                                        <div class="col" id='typeIntervention'>
+                                                            Type dynamique
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Détail du type d'intervention -->
+                                                    <div class="row">
+                                                        <div class="col" id="detailTypeIntervention">
+                                                            Détail Type dynamique
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Client -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!-- Label Client -->
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            Client
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Code Client dynamique -->
+                                                    <div class="row">
+                                                        <div class="col" id="codeClientIntervention">
+                                                            Code Client dynamique
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div> <!-- Fin Type et Client -->
+
+                                        <!-- Date demande et Trajet -->
+                                        <div class="col">
+                                            
+                                            <!-- Date de demande -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!-- Label Date de demande -->
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            Date de demande
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Date de demande dynamique -->
+                                                    <div class="row">
+                                                        <div class="col" id="dateDemandeIntervention">
+                                                            Date de demande
+                                                        </div>
+                                                        <div class="col">
+                                                            Logo calendrier
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- Fin date de demande -->
+                                            
+                                            <!-- Trajet -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!-- Label Trajet -->
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            Trajet
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Trajet dynamique -->
+                                                    <div class="row">
+                                                        <div class="col" id="trajetIntervention">
+                                                            Trajet dynamique
+                                                        </div>
+                                                        <div class="col">
+                                                            km
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- Fin Trajet -->
+
+                                        </div> <!-- Fin Date demande et trajet -->
+                                    </div> <!-- Fin 2ème et 3ème ligne (Type, Client, Date, trajet) -->
+
+                                    <!-- 4ème ligne (adresse) -->
+                                    <div class="row">
+                                        <div class="col">
+                                            
+                                            <!-- Label Adresse -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    Adresse
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ Adresse -->
+                                            <div class="row">
+                                                <div class="col" id="adresseIntervention">
+                                                    Adresse dynamique
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                     <!-- 5ème ligne (Description)-->
+                                    <div class="row">
+                                        <div class="col">
+                                            
+                                            <!-- Label Description -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    Description
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ de Description (Scrollable)-->
+                                            <div class="row">
+                                                <div class="col scroll-div" id="descriptionIntervention">
+                                                    Description dynamique
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div> <!-- Fin 5ème ligne (Description) -->
+                                </div>
+                            </div> <!-- Fin fenêtre centrale -->
+                            
+                            <div class="row">
+                                <div class="col">
+                                    <button>Cloturer</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div> <!-- Fin du conteneur -->
+            </div> <!-- Fin du contenu de page -->
+        </div> <!-- Fin du conteneur global -->
+    </body>
+</html>

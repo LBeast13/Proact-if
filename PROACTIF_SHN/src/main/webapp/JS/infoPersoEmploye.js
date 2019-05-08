@@ -4,11 +4,8 @@
  * @returns {undefined}
  */
 function remplirDonneesPerso() {
-    var champLogin = $('#champ-login').val();
-    var champPassword = $('#champ-password').val();
-
     $.ajax({
-        url: './ActionServlet',
+        url: '../../ActionServlet',
         method: 'POST',
         data: {
             todo: 'remplir_informations_perso',
@@ -43,19 +40,19 @@ function remplirDonneesPerso() {
 function updateCivilite(civilite){
     console.log(civilite);
     if(civilite === 'M'){
-        $('#ongletMr').attr("class","nav-item nav-link active");
-        $('#ongletMme').attr("class","nav-item nav-link disabled");
-        $('#ongletMlle').attr("class","nav-item nav-link disabled");
+        $('#ongletMr').prop("disabled", false);
+        $('#ongletMme').prop("disabled", true);
+        $('#ongletMlle').prop("disabled", true);
     }
     else if(civilite === 'Mme'){
-        $('#ongletMr').attr("class","nav-item nav-link disabled");
-        $('#ongletMme').attr("class","nav-item nav-link active");
-        $('#ongletMlle').attr("class","nav-item nav-link disabled");
+        $('#ongletMr').prop("disabled", true);
+        $('#ongletMme').prop("disabled", false);
+        $('#ongletMlle').prop("disabled", true);
     }
     else if(civilite === 'Mlle'){
-        $('#ongletMr').attr("class","nav-item nav-link disabled");
-        $('#ongletMme').attr("class","nav-item nav-link disabled");
-        $('#ongletMlle').attr("class","nav-item nav-link active");
+        $('#ongletMr').prop("disabled", true);
+        $('#ongletMme').prop("disabled", true);
+        $('#ongletMlle').prop("disabled", false);
     }
 }
 

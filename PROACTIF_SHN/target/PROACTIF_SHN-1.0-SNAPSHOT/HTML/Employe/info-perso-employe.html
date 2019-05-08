@@ -17,7 +17,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="Style/menuLateralEmploye.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
     </head>
     <body>
         <!-- Conteneur global -->
@@ -38,7 +38,7 @@
                 <div class="list-group list-group-flush">
                     <a href="info-perso-employe.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
                     <a href="intervention-en-cours-employe.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Historique</a>
+                    <a href="historique-interventions-employe.html" class="list-group-item list-group-item-action bg-light">Historique</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
                 </div>
@@ -68,14 +68,15 @@
                                         <div class="col">
                                             Logo silhouette (remplacer)
                                         </div>
-                                        
+
                                         <!-- Genre Tab -->
                                         <div class="col">
-                                            <nav class="nav nav-pills nav-justified">
-                                                <a class="nav-item nav-link active" id="ongletMr" href="#">Mr</a>
-                                                <a class="nav-item nav-link disabled" id="ongletMme" href="#">Mme</a>
-                                                <a class="nav-item nav-link disabled" id="ongletMlle" href="#">Mmle</a>
-                                            </nav>
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+                                                <button type="button" class="btn btn-primary active" id="ongletMr" disabled="disabled">Mr</button>
+                                                <button type="button" class="btn btn-primary" id="ongletMme" disabled="disabled">Mme</button>
+                                                <button type="button" class="btn btn-primary" id="ongletMlle" disabled="disabled">Mlle</button>
+                                                
+                                            </div>
                                         </div>
                                         
                                         <div class="col">
@@ -240,18 +241,13 @@
                                     </div> <!-- Fin 6ème ligne -->
                                 </div>
                             </div> <!-- Fin fenêtre centrale -->
-                            
-                            
-                        </div>
-                        
-                        <div class="row">
-                            
+
                         </div>
                     </div>
                 </div> <!-- Fin du conteneur -->
             </div> <!-- Fin du contenu de page -->
         </div> <!-- Fin du conteneur global -->
 
-        <script type="text/javascript" src="JS/infoPersoEmploye.js"></script>
+        <script type="text/javascript" src="../../JS/infoPersoEmploye.js"></script>
     </body>
 </html>

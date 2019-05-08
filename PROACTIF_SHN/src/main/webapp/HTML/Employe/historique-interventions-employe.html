@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+    </head>
+    <body>
+        <!-- Conteneur global -->
+        <div class="d-flex" id="wrapper">
+            
+            <!-- Menu latéral -->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading">
+                    Prénom et Nom (Dynamiquement)
+                    <div> Photo </div>
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                    <a href="info-perso-employe.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
+                    <a href="intervention-en-cours-employe.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
+                    <a href="historique-interventions-employe.html" class="list-group-item list-group-item-action bg-light">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+            
+
+            <!-- Contenu de page -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col">
+                                    <h1>Historique d'interventions</h1>
+                                </div>
+                            </div>
+                            
+                            <!-- Filtres -->
+                            <div class='row'>
+                                <!-- Logo filtre -->
+                                <div class='col'>
+                                    Logo filtre
+                                </div>
+                                
+                                <!-- Filtre Type -->
+                                <div class="col">
+                                    <select class="custom-select" required>
+                                        <option selected>Type</option>
+                                        <option value="1">Animal</option>
+                                        <option value="2">Incident</option>
+                                        <option value="3">Livraison</option>
+                                    </select>
+                                </div>
+
+                                <!-- CheckBox en Cours -->
+                                <div class="col">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="enCoursCheck">
+                                        <label class="custom-control-label" for="enCoursCheck">En cours</label>
+                                    </div>
+                                </div>
+                            </div> <!-- Fin Filtres -->
+
+                            <!-- Tableau des interventions -->
+                            <div class="row">
+                                <div class="col">
+                                    <table class="table table-bordered table-striped">
+                                        <!-- En-tête tableau -->
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Numéro</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Client</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <!-- Corps du tableau -->
+                                        <tbody id="tableBody">
+                                            <!-- Template
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>    -->                                   
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>  <!-- Fin Tableau des interventions -->
+
+                        </div>
+                    </div>
+                </div> <!-- Fin du conteneur -->
+            </div> <!-- Fin du contenu de page -->
+        </div> <!-- Fin du conteneur global -->
+        
+        <script type="text/javascript" src="../../JS/historiqueInterventionsEmploye.js"></script>
+    </body>
+</html>

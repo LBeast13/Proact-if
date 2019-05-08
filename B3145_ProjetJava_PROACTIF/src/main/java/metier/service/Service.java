@@ -204,6 +204,7 @@ public class Service {
         JpaUtil.fermerEntityManager();
         return histInterventions;
     }
+    
     public static List<Intervention> recupererHistoriqueEmploye(Employe unEmploye) {
         List < Intervention > histInterventions = null;
         JpaUtil.creerEntityManager();

@@ -1,4 +1,5 @@
 import action.Action;
+import action.employe.RecupererHistoriqueEmployeAction;
 import action.employe.RecupererInfoEmployeAction;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import metier.modele.Employe;
 import metier.service.Service;
 import serialisation.Serialisation;
+import serialisation.employe.RecupererHistoriqueEmployeSerialisation;
 import serialisation.employe.RecupererInfoEmployeSerialisation;
 
 /**
@@ -89,6 +91,12 @@ public class ActionServlet extends HttpServlet {
                     case "remplir_informations_perso":
                         action = new RecupererInfoEmployeAction();
                         serialisation = new RecupererInfoEmployeSerialisation();
+                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        break;
+                        
+                    case "remplir_historique_interventions_employe":
+                        action = new RecupererHistoriqueEmployeAction();
+                        serialisation = new RecupererHistoriqueEmployeSerialisation();
                         System.out.println("Test appel de la fonction " + todo +" OK");
                         break;
                 }
