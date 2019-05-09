@@ -4,7 +4,19 @@
 */
 
 .champ-dyna{
-    background-color: lightblue;
+    /* Couleur du champ */
+    background-color: white;
+    
+    /* Bordures */
+    border-radius: 5px;
+    border-color: grey;
+    border-style: solid;
+    border-width: thin;
+
+    /* Ombrage interne des champ */
+    box-shadow:1.5px 1px 4px lightgray inset;
+    -moz-box-shadow:1.5px 1px 4px lightgray inset;
+    -webkit-box-shadow:1.5px 1px 4px lightgray inset;
 }
 
 .white-font{
@@ -13,4 +25,10 @@
 
 .debug-red{
     background-color: red;
+}
+
+.fenetre-centrale{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-width: medium;
+    padding: 2rem;
 }

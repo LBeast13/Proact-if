@@ -25,43 +25,43 @@
         <div class="d-flex" id="wrapper">
             
             <!-- Menu latéral -->
-            <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="border-right" id="sidebar-wrapper">
                 <!-- Bouton de montrer/cacher Menu -->
                 <div class="btn">Menu</div>
 
                 <!-- Prénom, Nom et photo -->
-                <div class="sidebar-heading">
+                <div class="sidebar-heading text-center">
                     Prénom et Nom (Dynamiquement)
-                    <div> Photo </div>
+                    <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
                 </div>
 
                 <!-- Items de navigation -->
                 <div class="list-group list-group-flush">
-                    <a href="info-perso.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
-                    <a href="intervention-en-cours.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
-                    <a href="historique-interventions.html" class="list-group-item list-group-item-action bg-light">Historique</a>
-                    <a href="tableau-de-bord.html" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
+                    <a href="info-perso.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="intervention-en-cours-employe.html" class="text-center list-group-item list-group-item-action">Interventions en cours</a>
+                    <a href="historique-interventions.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="tableau-de-bord.html" class="text-center list-group-item list-group-item-action">Tableau de bord</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
                 </div>
             </div>  <!-- fin du menu latéral -->
             
 
             <!-- Contenu de page -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
+                <div class="container-fluid h-100 ">
+                    <div class="row h-100">
+                        <div class="col-8 offset-2 my-auto">
                             
                             <!-- Title -->
                             <div class="row">
-                                <div class="col">
+                                <div class="col text-center">
                                     <h1>Informations personnelles</h1>
                                 </div>
                             </div>
                             
                             <!-- Fenêtre centrale -->
-                            <div class="row">
-                                <div class="col">
+                            <div class="row fenetre-centrale border border-secondary">
+                                <div class="col my-auto">
                                     
                                     <!-- 1ère ligne -->
                                     <div class="row">
@@ -73,9 +73,9 @@
                                         <!-- Genre Tab -->
                                         <div class="col">
                                             <div class="btn-group btn-group-toggle" data-toggle="buttons" >
-                                                <button type="button" class="btn btn-primary active" id="ongletMr" disabled="disabled">Mr</button>
-                                                <button type="button" class="btn btn-primary" id="ongletMme" disabled="disabled">Mme</button>
-                                                <button type="button" class="btn btn-primary" id="ongletMlle" disabled="disabled">Mlle</button>
+                                                <button type="button" class="border border-secondary btn btn-light active" id="ongletMr" disabled="disabled">Mr</button>
+                                                <button type="button" class="border border-secondary btn btn-light" id="ongletMme" disabled="disabled">Mme</button>
+                                                <button type="button" class="border border-secondary btn btn-light" id="ongletMlle" disabled="disabled">Mlle</button>
                                                 
                                             </div>
                                         </div>

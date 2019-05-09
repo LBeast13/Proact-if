@@ -9,10 +9,22 @@ body {
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
+ 
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
+  
+   background-color: #4682B4;
+}
+
+#photo-profil{
+    width:15rem;
+    margin:0;
+}
+
+.list-group-item{
+    margin-bottom: 5px;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -21,11 +33,14 @@ body {
 }
 
 #sidebar-wrapper .list-group {
-  width: 15rem;
+  width: 20rem;
 }
 
 #page-content-wrapper {
   min-width: 100vw;
+  
+  background: url("../assets/img/emp-bg.jpg") no-repeat center center fixed;
+
 }
 
 #wrapper.toggled #sidebar-wrapper {
