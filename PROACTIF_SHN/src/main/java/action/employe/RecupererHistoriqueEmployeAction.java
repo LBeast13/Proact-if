@@ -27,7 +27,7 @@ public class RecupererHistoriqueEmployeAction extends Action{
         String mdp = (String) session.getAttribute("mdp");
         
         Employe emp = Service.connecterEmploye(login, mdp);
-
+        
         List<Intervention> interventions = Service.recupererHistoriqueEmploye(emp);
         
         request.setAttribute("interventions", interventions);

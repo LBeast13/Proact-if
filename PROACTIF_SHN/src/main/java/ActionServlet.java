@@ -2,6 +2,7 @@ import action.Action;
 import action.employe.RecupererDetailInterventionEmployeAction;
 import action.employe.RecupererHistoriqueEmployeAction;
 import action.employe.RecupererInfoEmployeAction;
+import action.employe.RecupererInterventionEnCoursEmployeAction;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -20,6 +21,7 @@ import serialisation.Serialisation;
 import serialisation.employe.RecupererDetailInterventionEmployeSerialisation;
 import serialisation.employe.RecupererHistoriqueEmployeSerialisation;
 import serialisation.employe.RecupererInfoEmployeSerialisation;
+import serialisation.employe.RecupererInterventionEnCoursEmployeSerialisation;
 
 /**
  *
@@ -105,6 +107,12 @@ public class ActionServlet extends HttpServlet {
                     case "remplir_detail_intervention_employe":
                         action = new RecupererDetailInterventionEmployeAction();
                         serialisation = new RecupererDetailInterventionEmployeSerialisation();
+                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        break;
+                        
+                    case "remplir_intervention_en_cours":
+                        action = new RecupererInterventionEnCoursEmployeAction();
+                        serialisation = new RecupererInterventionEnCoursEmployeSerialisation();
                         System.out.println("Test appel de la fonction " + todo +" OK");
                         break;
                 }
