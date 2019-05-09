@@ -1,3 +1,5 @@
+numIntervention = null;
+
 /**
  * Fonction Ajax qui met à jours la fiche de l'intervention en cours
  * @returns {undefined}
@@ -12,6 +14,8 @@ function remplirInterventionEnCours() {
         dataType: 'json'
     }).done(function (response) { // Appel OK
         
+        numIntervention = response.num_interv;
+        
         $('#typeIntervention').html(response.type_interv);
         $('#detailTypeIntervention').html(response.detail_type_interv);
         $('#codeClientIntervention').html(response.numero_client);
@@ -25,6 +29,14 @@ function remplirInterventionEnCours() {
         // Popup avec message d'erreur :
         alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
     });
+}
+
+/**
+ * Fonction de click sur le bouton cloturer
+ * @returns {undefined}
+ */
+function cloturerIntervention(){
+    window.location = "cloture-intervention.html?numInterv=" + numIntervention;
 }
 
 $(document).ready(function () {

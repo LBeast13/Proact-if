@@ -34,6 +34,8 @@ public class RecupererInterventionEnCoursEmployeAction extends Action{
         }
         
         // Récupération des informations de l'intervention en cours
+        String numInterv = intervEnCours.getNumIntervention().toString();
+        String numEmploye = intervEnCours.getEmploye_associe().getIdPersonne().toString();
         String type = intervEnCours.getType();
         String detail = "A gérer";
         String codeClient = intervEnCours.getClient_associe().getIdPersonne().toString();
@@ -43,6 +45,8 @@ public class RecupererInterventionEnCoursEmployeAction extends Action{
         String description = intervEnCours.getDescription();
         
         //Ajout des données dans la requête
+        request.setAttribute("num_interv", numInterv);
+        request.setAttribute("num_employe", numEmploye);
         request.setAttribute("type_interv", type);
         request.setAttribute("detail_type_interv", detail);
         request.setAttribute("numero_client", codeClient);

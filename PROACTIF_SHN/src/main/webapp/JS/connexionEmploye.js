@@ -26,7 +26,7 @@ function connexion() {
             
             setTimeout(function(){  // Fermeture au bout de 5s
                 $('#myModal').modal('hide');
-            },5000);    
+            },8000);    
         }
     }).fail( function (error) { // Appel KO => erreur a gérer
                    

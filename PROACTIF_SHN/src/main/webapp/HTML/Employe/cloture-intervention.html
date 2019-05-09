@@ -4,7 +4,7 @@
         <title>Clôture d'intervention - Employé</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -19,11 +19,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
         <link rel="stylesheet" type="text/css" href="Style/menuLateralEmploye.css">
     </head>
     <body>
         <!-- Conteneur global -->
-        <div class="d-flex" id="wrapper">
+        <div class="d-flex" id="wrapper" >
             
             <!-- Menu latéral -->
             <div class="bg-light border-right" id="sidebar-wrapper">
@@ -56,191 +57,161 @@
                             <!-- Title -->
                             <div class="row">
                                 <div class="col">
-                                    <h1>Intervention en cours</h1>
+                                    <h1>Clôture intervention</h1>
                                 </div>
                             </div>
                             
                             <!-- Fenêtre centrale -->
-                            <div class="row">
+                            <div class="row" >
                                 <div class="col">
                                     
-                                    <!-- 1ère ligne (Type intervention)-->
-                                    <div class="row">
-                                        <!-- Logo silhouette -->
-                                        <div class="col">
-                                            Type
-                                        </div>
-
-                                        <!-- Radio Buttons Type -->
-                                        <div class="col">
-                                            <!-- Animal -->
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioAnimal" value="option1" disabled checked>
-                                                <label class="form-check-label" for="radioAnimal">Animal</label>
+                                    <!-- 1ère ligne (Numéro, client, employé) -->
+                                    <div class='row'>
+                                        <!-- Numéro de l'intervention -->
+                                        <div class='col'> 
+                                            <div class="row">
+                                                <!-- Label Numéro -->
+                                                <div class="col">
+                                                    Numéro
+                                                </div>
+                                                
+                                                <!-- Champ Numéro (dynamique) -->
+                                                <div class="col champ-dyna" id="numInterv">
+                                                    Numéro dynamique
+                                                </div>
                                             </div>
-                                            
-                                            <!-- Incident -->
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioIncident" value="option2" disabled>
-                                                <label class="form-check-label" for="radioIncident">Incident</label>
-                                            </div>
-                                            
-                                            <!-- Livraison -->
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioLivraison" value="option3" disabled>
-                                                <label class="form-check-label" for="radioLivraison">Livraison</label>
-                                            </div>
-                                        </div> <!-- Fin Radio Buttons type -->
-                                    </div> <!-- Fin 1ère ligne (Type d'intervention) -->
-                                    
-                                    <!-- 2ème et 3ème ligne (Type dynamique, date de demande, client, trajet)-->
-                                    <div class="row">
+                                        </div> <!-- Fin Numéro de l'intervention -->
                                         
-                                        <!-- Type dynamique et Client -->
+                                        <!-- Numéro du client -->
                                         <div class="col">
-                                            
-                                            <!-- Type -->
+                                            <div class="row">
+                                                
+                                                <!-- Label Numéro client -->
+                                                <div class="col">
+                                                    Client
+                                                </div>
+                                                
+                                                <!-- Champ Numéro client (dynamique) -->
+                                                <div class="col champ-dyna" id="numClient">
+                                                    Client dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Numéro du client -->
+                                        
+                                        <!-- Numéro de l'employé -->
+                                        <div class="col">
+                                            <div class="row">
+                                                
+                                                <!-- Label Numéro employé -->
+                                                <div class="col">
+                                                    Employé
+                                                </div>
+                                                
+                                                <!-- Champ Numéro employé (dynamique) -->
+                                                <div class="col champ-dyna" id="numEmploye">
+                                                    Employé dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Numéro de l'employé -->
+                                    </div> <!-- Fin 1ère ligne (Numéro, client, employé) -->
+                                    
+                                    <!-- Statut -->
+                                    <div class="form-group row">
+                                        <label for="inputStatut" class="col col-form-label">Statut</label>
+                                        <div class="col">
+                                            <input type="text" class="form-control" id="inputStatut" placeholder="Entrez le Statut final...">
+                                        </div>
+                                    </div> <!-- Fin Statut -->
+                                    
+                                    <!-- Date demande,cloture -->
+                                    <div class='row'>
+                                        <!-- Demande -->
+                                        <div class="col">
+                                            <!-- Label Demande -->
                                             <div class="row">
                                                 <div class="col">
-                                                    <!-- Label type dynamique -->
-                                                    <div class="row">
-                                                        <div class="col" id='typeIntervention'>
-                                                            Type dynamique
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Détail du type d'intervention -->
-                                                    <div class="row">
-                                                        <div class="col" id="detailTypeIntervention">
-                                                            Détail Type dynamique
-                                                        </div>
-                                                    </div>
+                                                    Date de demande
                                                 </div>
                                             </div>
                                             
-                                            <!-- Client -->
+                                            <!-- Champ Demande (dynamique) -->
+                                            <div class="row">
+                                                <div class="col champ-dyna" id="dateDemande">
+                                                    Date de demande (dynamique)
+                                                </div>
+                                                <div class="col">
+                                                    Logo calendrier
+                                                </div>
+                                            </div>    
+                                        </div> <!-- Fin Demande -->
+                                        
+                                        <!-- Cloture -->
+                                        <div class="col">
+                                            <!-- Label Cloture -->
                                             <div class="row">
                                                 <div class="col">
-                                                    <!-- Label Client -->
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            Client
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Code Client dynamique -->
-                                                    <div class="row">
-                                                        <div class="col" id="codeClientIntervention">
-                                                            Code Client dynamique
-                                                        </div>
-                                                    </div>
+                                                    Date de clôture
                                                 </div>
                                             </div>
 
-                                        </div> <!-- Fin Type et Client -->
-
-                                        <!-- Date demande et Trajet -->
-                                        <div class="col">
-                                            
-                                            <!-- Date de demande -->
+                                            <!-- Champ de texte Cloture -->
                                             <div class="row">
-                                                <div class="col">
-                                                    <!-- Label Date de demande -->
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            Date de demande
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Date de demande dynamique -->
-                                                    <div class="row">
-                                                        <div class="col" id="dateDemandeIntervention">
-                                                            Date de demande
-                                                        </div>
-                                                        <div class="col">
-                                                            Logo calendrier
-                                                        </div>
-                                                    </div>
+                                                <div class="col" id="dateCloture">
+                                                    <input type="text" class="form-control" id="inputDateCloture" placeholder="JJ/MM/AAAA">
                                                 </div>
-                                            </div> <!-- Fin date de demande -->
-                                            
-                                            <!-- Trajet -->
-                                            <div class="row">
                                                 <div class="col">
-                                                    <!-- Label Trajet -->
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            Trajet
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Trajet dynamique -->
-                                                    <div class="row">
-                                                        <div class="col" id="trajetIntervention">
-                                                            Trajet dynamique
-                                                        </div>
-                                                        <div class="col">
-                                                            km
-                                                        </div>
-                                                    </div>
+                                                    Logo calendrier
                                                 </div>
-                                            </div> <!-- Fin Trajet -->
+                                            </div>  
+                                        </div> <!-- Fin Cloture -->
+                                    </div> <!-- Fin Date demande, cloture -->
 
-                                        </div> <!-- Fin Date demande et trajet -->
-                                    </div> <!-- Fin 2ème et 3ème ligne (Type, Client, Date, trajet) -->
-
-                                    <!-- 4ème ligne (adresse) -->
+                                    <!-- Commentaire intervention -->
                                     <div class="row">
                                         <div class="col">
-                                            
-                                            <!-- Label Adresse -->
-                                            <div class="row">
-                                                <div class="col">
-                                                    Adresse
-                                                </div>
-                                            </div>
-                                            
-                                            <!-- Champ Adresse -->
-                                            <div class="row">
-                                                <div class="col" id="adresseIntervention">
-                                                    Adresse dynamique
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="inputCommentaire">Commentaire</label>
+                                                <textarea class="form-control" id="inputCommentaire" rows="3"></textarea>
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                     <!-- 5ème ligne (Description)-->
+                                    </div> <!-- Fin Commentaire Intervention -->
+
+                                    <!-- Boutons Valider et Annuler -->
                                     <div class="row">
-                                        <div class="col">
-                                            
-                                            <!-- Label Description -->
-                                            <div class="row">
-                                                <div class="col">
-                                                    Description
+                                        <button type="button" id="bouton-valider" class="col btn btn-success">Valider</button>
+                                        <button type="button" id="bouton-annuler" class="col btn btn-danger">Annuler</button>
+                                    </div> <!-- Fin Boutons -->
+
+                                    <!-- Pop-Up d'échec de clôture -->
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content bg-danger text-white">
+
+                                                <!-- Pop-Up Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">La clôture de l'intervention a échoué...</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 </div>
-                                            </div>
-                                            
-                                            <!-- Champ de Description (Scrollable)-->
-                                            <div class="row">
-                                                <div class="col scroll-div" id="descriptionIntervention">
-                                                    Description dynamique
+
+                                                <!-- Pop-Up body -->
+                                                <div class="modal-body">
+                                                    Les champs ne présentent pas des données valides.
+                                                    </br>Veuillez vérifier et réessayer.
                                                 </div>
-                                            </div>
-                                        </div> 
-                                    </div> <!-- Fin 5ème ligne (Description) -->
+
+                                            </div> <!-- Fin modal-content -->
+                                        </div> <!-- Fin modal-dialog -->
+                                    </div> <!-- Fin modal -->
+
                                 </div>
                             </div> <!-- Fin fenêtre centrale -->
-                            
-                            <div class="row">
-                                <div class="col">
-                                    <button>Cloturer</button>
-                                </div>
-                            </div>
                             
                         </div>
                     </div>
                 </div> <!-- Fin du conteneur -->
             </div> <!-- Fin du contenu de page -->
         </div> <!-- Fin du conteneur global -->
+        
+        <script type="text/javascript" src="../../JS/clotureInterventionEmploye.js"></script>
     </body>
 </html>

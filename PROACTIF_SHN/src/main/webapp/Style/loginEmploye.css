@@ -1,0 +1,23 @@
+/* 
+    Created on : 9 mai 2019, 20:55:53
+    Author     : Liam
+*/
+body, html {
+  height: 100%;
+  background: url("../assets/img/login-emp-bg.jpg") no-repeat center center fixed;
+}
+
+#en-tete{
+    background-color: black;
+}
+
+#conteneur-principal{
+    height: 100vh;
+}
+
+.margin-bottom{
+    margin-bottom: 5px;
+}
+
+
+

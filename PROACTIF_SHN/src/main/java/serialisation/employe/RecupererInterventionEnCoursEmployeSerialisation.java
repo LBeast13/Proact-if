@@ -20,6 +20,8 @@ public class RecupererInterventionEnCoursEmployeSerialisation extends Serialisat
         
         JsonObject jsonContainer = new JsonObject();
         
+        jsonContainer.addProperty("num_interv", (String) request.getAttribute("num_interv"));
+        jsonContainer.addProperty("num_employe", (String) request.getAttribute("num_employe"));
         jsonContainer.addProperty("type_interv", (String) request.getAttribute("type_interv"));
         jsonContainer.addProperty("detail_type_interv", (String) request.getAttribute("detail_type_interv"));
         jsonContainer.addProperty("numero_client", (String) request.getAttribute("numero_client"));
