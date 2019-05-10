@@ -5,10 +5,10 @@
  */
 function ajouter(intervention){
     var row = "<tr><th scope=\"row\" onclick='voirDetail("+intervention.numero+")'>" + intervention.numero 
-            + "</th><td>"+ intervention.type + "</td><td>"
-            + intervention.date + "</td><td>"
-            + intervention.client + "</td><td>"
-            + intervention.statut + "</td></tr>";       
+            + "</th><td><b>"+ intervention.type + "</b></td><td><b>"
+            + intervention.date + "</b></td><td><b>"
+            + intervention.client + "</b></td><td><b>"
+            + intervention.statut + "</b></td></tr>";       
     
     $("#tableBody").append(row);
 }

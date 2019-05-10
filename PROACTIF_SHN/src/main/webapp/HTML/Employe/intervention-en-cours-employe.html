@@ -28,48 +28,48 @@
         <div class="d-flex" id="wrapper">
             
             <!-- Menu latéral -->
-            <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="border-right" id="sidebar-wrapper">
                 <!-- Bouton de montrer/cacher Menu -->
                 <div class="btn">Menu</div>
 
                 <!-- Prénom, Nom et photo -->
-                <div class="sidebar-heading">
+                <div class="sidebar-heading text-center">
                     Prénom et Nom (Dynamiquement)
-                    <div> Photo </div>
+                    <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
                 </div>
 
                 <!-- Items de navigation -->
                 <div class="list-group list-group-flush">
-                    <a href="info-perso.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
-                    <a href="intervention-en-cours-employe.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
-                    <a href="historique-interventions.html" class="list-group-item list-group-item-action bg-light">Historique</a>
-                    <a href="tableau-de-bord.html" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
+                    <a href="info-perso.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="intervention-en-cours-employe.html" class="text-center list-group-item list-group-item-action">Interventions en cours</a>
+                    <a href="historique-interventions.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="tableau-de-bord.html" class="text-center list-group-item list-group-item-action">Tableau de bord</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
                 </div>
             </div>  <!-- fin du menu latéral -->
             
 
             <!-- Contenu de page -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col-8 offset-2 my-auto">
                             
                             <!-- Title -->
                             <div class="row">
                                 <div class="col">
-                                    <h1>Intervention en cours</h1>
+                                    <h1 class="text-center"><b>Intervention en cours</b></h1>
                                 </div>
                             </div>
                             
                             <!-- Fenêtre centrale -->
-                            <div class="row">
+                            <div class="row fenetre-centrale">
                                 <div class="col">
                                     
                                     <!-- 1ère ligne (Type intervention)-->
-                                    <div class="row">
+                                    <div class="row marg-bot">
                                         <div class="col">
-                                            Type
+                                            <b>Type</b>
                                         </div>
 
                                         <!-- Radio Buttons Type -->
@@ -95,18 +95,18 @@
                                     </div> <!-- Fin 1ère ligne (Type d'intervention) -->
                                     
                                     <!-- 2ème et 3ème ligne (Type dynamique, date de demande, client, trajet)-->
-                                    <div class="row">
+                                    <div class="row ">
                                         
                                         <!-- Type dynamique et Client -->
-                                        <div class="col">
+                                        <div class="col marg-bot">
                                             
                                             <!-- Type -->
-                                            <div class="row">
+                                            <div class="row ">
                                                 <div class="col">
                                                     <!-- Label type dynamique -->
-                                                    <div class="row champ-dyna">
+                                                    <div class="row">
                                                         <div class="col" id='typeIntervention'>
-                                                            Type dynamique
+                                                            <b>Type dynamique</b>
                                                         </div>
                                                     </div>
 
@@ -125,7 +125,7 @@
                                                     <!-- Label Client -->
                                                     <div class="row">
                                                         <div class="col">
-                                                            Client
+                                                            <b>Client</b>
                                                         </div>
                                                     </div>
 
@@ -141,7 +141,7 @@
                                         </div> <!-- Fin Type et Client -->
 
                                         <!-- Date demande et Trajet -->
-                                        <div class="col">
+                                        <div class="col marg-bot">
                                             
                                             <!-- Date de demande -->
                                             <div class="row">
@@ -149,7 +149,7 @@
                                                     <!-- Label Date de demande -->
                                                     <div class="row">
                                                         <div class="col">
-                                                            Date de demande
+                                                            <b>Date de demande</b>
                                                         </div>
                                                     </div>
 
@@ -171,7 +171,7 @@
                                                     <!-- Label Trajet -->
                                                     <div class="row">
                                                         <div class="col">
-                                                            Trajet
+                                                            <b>Trajet</b>
                                                         </div>
                                                     </div>
 
@@ -181,7 +181,7 @@
                                                             Trajet dynamique
                                                         </div>
                                                         <div class="col">
-                                                            km
+                                                            <b>km</b>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -192,12 +192,12 @@
 
                                     <!-- 4ème ligne (adresse) -->
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col marg-bot">
                                             
                                             <!-- Label Adresse -->
                                             <div class="row">
                                                 <div class="col">
-                                                    Adresse
+                                                    <b>Adresse</b>
                                                 </div>
                                             </div>
                                             
@@ -212,12 +212,12 @@
                                     
                                      <!-- 5ème ligne (Description)-->
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col marg-bot">
                                             
                                             <!-- Label Description -->
                                             <div class="row">
                                                 <div class="col">
-                                                    Description
+                                                    <b>Description</b>
                                                 </div>
                                             </div>
                                             
@@ -229,14 +229,16 @@
                                             </div>
                                         </div> 
                                     </div> <!-- Fin 5ème ligne (Description) -->
+                                    
+                                    <div class="row">
+                                        <div class="col-1 offset-5">
+                                            <button class="btn btn-primary" onclick="cloturerIntervention()">Cloturer</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div> <!-- Fin fenêtre centrale -->
                             
-                            <div class="row">
-                                <div class="col">
-                                    <button class="btn btn-primary" onclick="cloturerIntervention()">Cloturer</button>
-                                </div>
-                            </div>
+                            
                             
                         </div>
                     </div>

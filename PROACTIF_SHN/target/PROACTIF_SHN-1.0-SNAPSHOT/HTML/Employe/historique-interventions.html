@@ -19,6 +19,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
         <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
     </head>
     <body>
@@ -26,70 +27,74 @@
         <div class="d-flex" id="wrapper">
             
             <!-- Menu latéral -->
-            <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="border-right" id="sidebar-wrapper">
                 <!-- Bouton de montrer/cacher Menu -->
                 <div class="btn">Menu</div>
 
                 <!-- Prénom, Nom et photo -->
-                <div class="sidebar-heading">
+                <div class="sidebar-heading text-center">
                     Prénom et Nom (Dynamiquement)
-                    <div> Photo </div>
+                    <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
                 </div>
 
                 <!-- Items de navigation -->
                 <div class="list-group list-group-flush">
-                    <a href="info-perso.html" class="list-group-item list-group-item-action bg-light">Informations personnelles</a>
-                    <a href="intervention-en-cours-employe.html" class="list-group-item list-group-item-action bg-light">Interventions en cours</a>
-                    <a href="historique-interventions.html" class="list-group-item list-group-item-action bg-light">Historique</a>
-                    <a href="tableau-de-bord.html" class="list-group-item list-group-item-action bg-light">Tableau de bord</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Déconnexion</a>
+                    <a href="info-perso.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="intervention-en-cours-employe.html" class="text-center list-group-item list-group-item-action">Interventions en cours</a>
+                    <a href="historique-interventions.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="tableau-de-bord.html" class="text-center list-group-item list-group-item-action">Tableau de bord</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
                 </div>
             </div>  <!-- fin du menu latéral -->
-            
+
 
             <!-- Contenu de page -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
-                            
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col my-auto">
+
                             <!-- Title -->
                             <div class="row">
-                                <div class="col">
-                                    <h1>Historique d'interventions</h1>
+                                <div class="col text-center">
+                                    <h1><b>Historique d'interventions</b></h1>
                                 </div>
                             </div>
-                            
+
                             <!-- Filtres -->
                             <div class='row'>
-                                <!-- Logo filtre -->
-                                <div class='col'>
-                                    Logo filtre
-                                </div>
-                                
-                                <!-- Filtre Type -->
-                                <div class="col">
-                                    <select class="custom-select" required>
-                                        <option selected>Type</option>
-                                        <option value="1">Animal</option>
-                                        <option value="2">Incident</option>
-                                        <option value="3">Livraison</option>
-                                    </select>
-                                </div>
+                                <div class="col-6 offset-3 marg-bot" id="filtres">
+                                    <div class="row">
+                                        <!-- Logo filtre -->
+                                        <div class='col my-auto'>
+                                            Logo filtre
+                                        </div>
 
-                                <!-- CheckBox en Cours -->
-                                <div class="col">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="enCoursCheck">
-                                        <label class="custom-control-label" for="enCoursCheck">En cours</label>
+                                        <!-- Filtre Type -->
+                                        <div class="col my-auto">
+                                            <select class="custom-select">
+                                                <option selected>Type</option>
+                                                <option value="1">Animal</option>
+                                                <option value="2">Incident</option>
+                                                <option value="3">Livraison</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- CheckBox en Cours -->
+                                        <div class="col my-auto">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="enCoursCheck">
+                                                <label class="custom-control-label" for="enCoursCheck">En cours</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div> <!-- Fin Filtres -->
 
                             <!-- Tableau des interventions -->
                             <div class="row">
-                                <div class="col">
-                                    <table class="table table-bordered table-striped">
+                                <div class="col-8 offset-2">
+                                    <table class="text-center table table-bordered table-striped">
                                         <!-- En-tête tableau -->
                                         <thead>
                                             <tr>
