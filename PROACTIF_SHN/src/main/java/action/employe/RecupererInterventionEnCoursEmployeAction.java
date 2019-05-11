@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import metier.modele.Employe;
 import metier.modele.Intervention;
+import metier.modele.Intervention_Animal;
+import metier.modele.Intervention_Livraison;
 import metier.service.Service;
 
 /**
@@ -37,18 +39,36 @@ public class RecupererInterventionEnCoursEmployeAction extends Action{
         String numInterv = intervEnCours.getNumIntervention().toString();
         String numEmploye = intervEnCours.getEmploye_associe().getIdPersonne().toString();
         String type = intervEnCours.getType();
-        String detail = "A gérer";
         String codeClient = intervEnCours.getClient_associe().getIdPersonne().toString();
-        String dateDemande = intervEnCours.getDateDebut().toString();
+        String dateDemande = formattageDate(intervEnCours.getDateDebut());
         String trajet = Double.toString(intervEnCours.getDistance());
-        String adresse = "A faire";
+        String adresse = intervEnCours.getClient_associe().getAdresse() 
+                +" "+ intervEnCours.getClient_associe().getCodePostal().toString()
+                +" "+ intervEnCours.getClient_associe().getVille();
         String description = intervEnCours.getDescription();
-        
-        //Ajout des données dans la requête
+
+        // Remplissage de la requête en fonction du type d'intervention
+        switch(type){
+            case "Intervention Animal":
+                Intervention_Animal intervA = (Intervention_Animal) intervEnCours;
+                request.setAttribute("animal_interv", intervA.getAnimal());
+                break;
+            
+            case "Intervention Livraison":
+                Intervention_Livraison intervL = (Intervention_Livraison) intervEnCours;
+                request.setAttribute("objet_interv", intervL.getObjet());
+                request.setAttribute("entreprise_interv", intervL.getEntreprise());
+                break;
+            
+            case "Intervention Incident":
+                
+                break;
+        }
+ 
+        //Ajout des données indépendante du type d'intervention dans la requête
         request.setAttribute("num_interv", numInterv);
         request.setAttribute("num_employe", numEmploye);
         request.setAttribute("type_interv", type);
-        request.setAttribute("detail_type_interv", detail);
         request.setAttribute("numero_client", codeClient);
         request.setAttribute("date_demande_interv", dateDemande);
         request.setAttribute("trajet_interv", trajet);

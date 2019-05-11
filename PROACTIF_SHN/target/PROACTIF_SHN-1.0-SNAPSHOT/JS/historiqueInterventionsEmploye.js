@@ -25,14 +25,18 @@ function voirDetail(numeroIntervention){
 /**
  * Fonction Ajax qui met à jours le tableau des interventions de 
  * l'employé connecté.
+ * @param {String} dropdownState 
+ * @param {String} checkboxState
  * @returns {undefined}
  */
-function remplirTableauHistorique() {
+function remplirTableauHistorique(dropdownState, checkboxState) {
     $.ajax({
         url: '../../ActionServlet',
         method: 'POST',
         data: {
             todo: 'remplir_historique_interventions_employe',
+            type : dropdownState,
+            enCours : checkboxState    
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
@@ -40,9 +44,12 @@ function remplirTableauHistorique() {
         $('#tableBody').empty();
         var interventions = response.interventions;
         
-        for (var i = 0; i < interventions.length; i++) {
-            ajouter(interventions[i]);
+        if(interventions !== "Vide"){
+            for (var i = 0; i < interventions.length; i++) {
+                ajouter(interventions[i]);
+            } 
         }
+        
         
     }).fail( function (error) { // Appel KO => erreur a gérer
         console.log("Fail remplir_historique_interventions_employe");          
@@ -51,10 +58,63 @@ function remplirTableauHistorique() {
     });
 }
 
+/**
+ * Fonction appellée lors d'un changement dans les filtres
+ * @returns {undefined}
+ */
+function filtrage(){
+    var checkBox = $("#enCoursCheck");
+    var dropdown = $("#typeSelect");
+    
+    checkboxState = getCheckBoxState(checkBox);
+    dropdownState = getDropdownState(dropdown);
+    
+    remplirTableauHistorique(dropdownState, checkboxState);
+}
+
+/**
+ * Get the checkBox state and returns it.
+ * @param {type} checkBox the checkbox to be checked
+ * @returns {undefined} the state of the checkbox
+ */
+function getCheckBoxState(checkBox){
+    if(checkBox.prop("checked") === true){ // Checked
+        console.log("Checked");
+        return "true";
+    }else if(checkBox.prop("checked") === false){ // Not Checked
+        console.log("Not Checked");
+        return "false";
+    }else{ // Erreur checkbox
+        console.log("Erreur checkbox");
+    }
+}
+
+/**
+ * Get the Dropdown state and returns it.
+ * @param {type} dropdown the dropdown to be checked
+ * @returns {String} the state of the dropdown
+ */
+function getDropdownState(dropdown){
+    type = dropdown.val();
+    if(type === "1"){
+        console.log("Animal");
+        return "Animal";
+    } else if(type === "3"){
+        console.log("Livraison");
+        return "Livraison";
+    } else if(type === "2"){
+        console.log("Incident");
+        return "Incident";
+    } else if(type === "Type"){
+        console.log("Type");
+        return "Type";
+    }
+}
+
 $(document).ready(function () {
     console.log("TODO : Résoudre le double chargement de la page")
-    
-    remplirTableauHistorique();
+   
+    remplirTableauHistorique("Type","false");
 });
 
 

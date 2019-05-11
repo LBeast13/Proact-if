@@ -72,7 +72,7 @@
 
                                         <!-- Filtre Type -->
                                         <div class="col my-auto">
-                                            <select class="custom-select">
+                                            <select class="custom-select" id="typeSelect" onChange="filtrage()">
                                                 <option selected>Type</option>
                                                 <option value="1">Animal</option>
                                                 <option value="2">Incident</option>
@@ -83,7 +83,7 @@
                                         <!-- CheckBox en Cours -->
                                         <div class="col my-auto">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="enCoursCheck">
+                                                <input type="checkbox" class="custom-control-input" id="enCoursCheck" onChange="filtrage()">
                                                 <label class="custom-control-label" for="enCoursCheck">En cours</label>
                                             </div>
                                         </div>

@@ -138,7 +138,7 @@ public class Service {
         return res;
     }
     
-     public static Employe connecterEmploye(String mail,String mdp){
+    public static Employe connecterEmploye(String mail,String mdp){
         JpaUtil.creerEntityManager();
         JpaUtil.ouvrirTransaction();
         Employe res = EmployeDAO.connecterEmploye(mail,mdp);
@@ -146,8 +146,7 @@ public class Service {
         JpaUtil.fermerEntityManager();
         return res;
     }
-     
-     
+       
     public static Intervention demanderIntervention(Client demandeur, Intervention inter){
         JpaUtil.creerEntityManager();
         JpaUtil.ouvrirTransaction();
@@ -215,6 +214,7 @@ public class Service {
         JpaUtil.fermerEntityManager();
         return unEmploye.getMesInterventions();
     }
+    
     public static boolean cloturerIntervention(Intervention inter, GregorianCalendar dateFin, String commentaireFin, STATUT_INTERVENTION statut)
     {
         boolean res = true;

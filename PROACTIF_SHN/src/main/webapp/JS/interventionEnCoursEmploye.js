@@ -13,11 +13,40 @@ function remplirInterventionEnCours() {
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
-        
+
         numIntervention = response.num_interv;
-        
-        $('#typeIntervention').html(response.type_interv);
-        $('#detailTypeIntervention').html(response.detail_type_interv);
+
+        if (response.type_interv === "Intervention Animal") {   // Animal
+            // Affichage et masquage des éléments
+            $('#animalConteneur').removeAttr("hidden");
+            $('#objetConteneur').attr("hidden");
+            $('#entrepriseConteneur').attr("hidden");
+
+            $('#animal').html(response.animal_interv);
+            
+            $('#radioAnimal').attr("checked",true);
+            
+        } else if (response.type_interv === "Intervention Livraison") { // Livraison
+            // Affichage et masquage des éléments
+            $('#animalConteneur').attr("hidden",true);
+            $('#objetConteneur').removeAttr("hidden");
+            $('#entrepriseConteneur').removeAttr("hidden");
+            
+            $('#objet').html(response.objet_interv);
+            $('#entreprise').html(response.entreprise_interv);
+            
+            $('#radioLivraison').attr("checked",true);
+            
+        } else if (response.type_interv === "Intervention Incident") { // Incident
+            // Affichage et masquage des éléments
+            $('#animalConteneur').attr("hidden",true);
+            $('#objetConteneur').attr("hidden",true);
+            $('#entrepriseConteneur').attr("hidden",true);
+
+            $('#radioIncident').attr("checked",true);
+        }
+ 
+        // Données indépendentes du type d'intervention
         $('#codeClientIntervention').html(response.numero_client);
         $('#dateDemandeIntervention').html(response.date_demande_interv);
         $('#trajetIntervention').html(response.trajet_interv);
@@ -40,7 +69,6 @@ function cloturerIntervention(){
 }
 
 $(document).ready(function () {
-    console.log("TODO : gérer les affichages des cases en fonction du type d'intervention");
     remplirInterventionEnCours();
 });
 
