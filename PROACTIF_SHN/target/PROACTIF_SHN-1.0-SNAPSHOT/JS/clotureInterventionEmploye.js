@@ -61,7 +61,7 @@ $(document).ready(function () {
     
     // Click bouton annuler
     $('#bouton-annuler').on('click', function () { 
-        window.location = "intervention-en-cours.html"
+        window.location = "intervention-en-cours-employe.html"
     });
     
     remplirInfoCloture();

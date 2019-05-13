@@ -18,12 +18,43 @@ function remplirDetailIntervention() {
         dataType: 'json'
     }).done(function (response) { // Appel OK
         
+        console.log(response.type_interv);
+        
+        if (response.type_interv === "Intervention Animal") {   // Animal
+            // Affichage et masquage des éléments
+            $('#conteneurAnimal').removeAttr("hidden");
+            $('#conteneurObjet').attr("hidden",true);
+            $('#conteneurEntreprise').attr("hidden",true);
+
+            $('#animal').html(response.animal_interv);
+            
+            $('#radioAnimal').attr("checked",true);
+            
+        } else if (response.type_interv === "Intervention Livraison") { // Livraison
+            // Affichage et masquage des éléments
+            $('#conteneurAnimal').attr("hidden",true);
+            $('#conteneurObjet').removeAttr("hidden");
+            $('#conteneurEntreprise').removeAttr("hidden");
+            
+            $('#objet').html(response.objet_interv);
+            $('#entreprise').html(response.entreprise_interv);
+            
+            $('#radioLivraison').attr("checked",true);
+            
+        } else if (response.type_interv === "Intervention Incident") { // Incident
+            // Affichage et masquage des éléments
+            $('#conteneurAnimal').attr("hidden",true);
+            $('#conteneurObjet').attr("hidden",true);
+            $('#conteneurEntreprise').attr("hidden",true);
+
+            $('#radioIncident').attr("checked",true);
+        }   
+        
+        // Données indépendantes du type d'intervention
         $('#numInterv').html(response.numero_interv);
         $('#numClient').html(response.numero_client);
         $('#numEmploye').html(response.numero_employe);
         $('#statut').html(response.statut_interv);
-        $('#objet').html(response.objet_interv);
-        $('#entreprise').html(response.entreprise_interv);
         $('#dateDemande').html(response.date_demande);
         $('#dateCloture').html(response.date_cloture);
         $('#description').html(response.description_interv);

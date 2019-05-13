@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Détail intervention</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -50,20 +50,20 @@
 
             <!-- Contenu de page -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col-8 offset-2 my-auto">
                             
                             <!-- Title -->
                             <div class="row">
-                                <div class="col">
+                                <div class="col text-center">
                                     <h1>Détails de l'intervention</h1>
                                 </div>
                             </div>
                             
                             <!-- Cadre de contenu (détail) -->
-                            <div class="row">
-                                <div class="col">
+                            <div class="row fenetre-centrale">
+                                <div class="col my-auto">
                                     
                                     <!-- 1ère ligne (Numéro, client, employé) -->
                                     <div class='row'>
@@ -160,8 +160,23 @@
                                             </div>
                                         </div> <!-- Fin statut de l'intervention -->
                                         
+                                        <!-- Animal -->
+                                        <div class="col" id="conteneurAnimal">
+                                            <div class="row">                                              
+                                                <!-- Label Objet -->
+                                                <div class="col">
+                                                    Animal
+                                                </div>
+                                                
+                                                <!-- Champ Objet (dynamique) -->
+                                                <div class="col champ-dyna" id="animal">
+                                                    Animal dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Objet -->
+                                        
                                         <!-- Objet -->
-                                        <div class="col">
+                                        <div class="col" id="conteneurObjet">
                                             <div class="row">                                              
                                                 <!-- Label Objet -->
                                                 <div class="col">
@@ -176,7 +191,7 @@
                                         </div><!-- Fin Objet -->
                                         
                                         <!-- Entreprise -->
-                                        <div class="col">
+                                        <div class="col" id="conteneurEntreprise">
                                             <div class="row">
                                                 
                                                 <!-- Label entreprise -->
@@ -248,7 +263,7 @@
                                             <!-- Champ Description (dynamique) -->
                                             <div class="row champ-dyna">
                                                 <div class="col scroll-div" id="description">
-                                                    Description dynamique
+                                                    Pas de description.
                                                 </div>
                                             </div>
                                         </div>
@@ -267,7 +282,7 @@
                                             <!-- Champ Commentaire (dynamique) -->
                                             <div class="row champ-dyna">
                                                 <div class="col scroll-div" id="commentaire">
-                                                    Commentaire dynamique
+                                                    Pas de commentaire.
                                                 </div>
                                             </div>
                                         </div>

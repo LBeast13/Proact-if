@@ -19,8 +19,8 @@ function remplirInterventionEnCours() {
         if (response.type_interv === "Intervention Animal") {   // Animal
             // Affichage et masquage des éléments
             $('#animalConteneur').removeAttr("hidden");
-            $('#objetConteneur').attr("hidden");
-            $('#entrepriseConteneur').attr("hidden");
+            $('#objetConteneur').attr("hidden",true);
+            $('#entrepriseConteneur').attr("hidden",true);
 
             $('#animal').html(response.animal_interv);
             
