@@ -35,8 +35,9 @@ function remplirInfoCloture() {
  * @returns {undefined}
  */
 function cloturerIntervention(){
+    console.log("Cloturer intervention");
     if(checkChampsValides()){   // Si les champs sont valides
-        
+        console.log("Champ valides");
     }
     else{  // Si les champs sont incorrects
         $('#myModal').modal('show');    // Affiche la Pop-Up d'erreur
@@ -47,16 +48,27 @@ function cloturerIntervention(){
     }
 }
 
+/**
+ * Vérification de la validité des champs de texte
+ * @returns {Boolean}
+ */
 function checkChampsValides(){
     statut = $("#inputStatut").val();
     date = $("#inputDateCloture").val();
     commentaire = $("#inputCommentaire").val();
     
+    console.log("statut: " + statut );
+    console.log("date: " + date);
+    console.log("commentaire: " + commentaire);
+    
     if(statut === "" || date === "" | commentaire === ""){
+        console.log("Erreur Champ vide");
         return false;
     } else if(statut !== "Echec" || statut !== "Succès"){
+        console.log("Erreur statut non valide");
         return false;
     } else if(!isValidDate(date)){
+        console.log("Erreur date non valide");
         return false;
     }
     
@@ -69,6 +81,7 @@ function checkChampsValides(){
  * @returns {Boolean} */
 function isValidDate(dateString)
 {
+    console.log("Test de validité de la date");
     // Première vérification du format
     if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
         return false;
@@ -84,7 +97,10 @@ function isValidDate(dateString)
     var dayDemande = parseInt(partsDemande[0], 10);
     var monthDemande = parseInt(partsDemande[1], 10);
     var yearDemande = parseInt(partsDemande[2], 10);
-
+    
+    console.log( day + "/" + month + "/" + year);
+    console.log("Date demande :"+ dayDemande + "/" + monthDemande + "/" + yearDemande);
+    
     // Vérification de l'année, du mois et du jour
     if(year < yearDemande || year > 3000 || month === 0 || month > 12){
         
@@ -121,7 +137,7 @@ $(document).ready(function () {
     
     // Click bouton annuler
     $('#bouton-annuler').on('click', function () { 
-        window.location = "intervention-en-cours-employe.html"
+        window.location = "intervention-en-cours-employe.html";
     });
     
     remplirInfoCloture();
