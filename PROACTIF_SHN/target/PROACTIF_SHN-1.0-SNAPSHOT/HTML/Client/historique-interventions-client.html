@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Historique des interventions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+    </head>
+    <body>
+        <!-- Conteneur global -->
+        <div class="d-flex" id="wrapper">
+            
+            <!-- Menu latéral -->
+            <div class="border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading text-center">
+                    Prénom et Nom (Dynamiquement)
+                    <img id="photo-profil" src="../../assets/img/photo-client.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                     <a href="info-perso-client.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="demandeIntervention.html" class="text-center list-group-item list-group-item-action">Demande interventions</a>
+                    <a href="historique-interventions.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+
+
+            <!-- Contenu de page -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col my-auto">
+
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h1><b>Historique d'interventions</b></h1>
+                                </div>
+                            </div>
+
+                            <!-- Filtres -->
+                            <div class='row'>
+                                <div class="col-6 offset-3 marg-bot" id="filtres">
+                                    <div class="row">
+                                        <!-- Logo filtre -->
+                                        <div class='col my-auto'>
+                                            Logo filtre
+                                        </div>
+
+                                        <!-- Filtre Type -->
+                                        <div class="col my-auto">
+                                            <select class="custom-select" id="typeSelect" onChange="filtrage()">
+                                                <option selected>Type</option>
+                                                <option value="1">Animal</option>
+                                                <option value="2">Incident</option>
+                                                <option value="3">Livraison</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- CheckBox en Cours -->
+                                        <div class="col my-auto">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="enCoursCheck" onChange="filtrage()">
+                                                <label class="custom-control-label" for="enCoursCheck">En cours</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- Fin Filtres -->
+
+                            <!-- Tableau des interventions -->
+                            <div class="row">
+                                <div class="col-8 offset-2">
+                                    <table class="text-center table table-bordered table-striped">
+                                        <!-- En-tête tableau -->
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Numéro</th>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Client</th>
+                                                <th scope="col">Statut</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <!-- Corps du tableau -->
+                                        <tbody id="tableBody">
+                                            <!-- Template
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>    -->                                   
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>  <!-- Fin Tableau des interventions -->
+
+                        </div>
+                    </div>
+                </div> <!-- Fin du conteneur -->
+            </div> <!-- Fin du contenu de page -->
+        </div> <!-- Fin du conteneur global -->
+        
+        <script type="text/javascript" src="../../JS/historiqueInterventionsEmploye.js"></script>
+    </body>
+</html>

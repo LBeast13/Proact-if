@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,12 +18,33 @@
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
-        <link rel="stylesheet" type="text/css" href="../../Style/imageInscriptionsClient.css">
-       
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/infoPersoEmp.css">
     </head>
     <body>
         <!-- Conteneur global -->
-        <div class="d-flex" id="wrapper">         
+        <div class="d-flex" id="wrapper">
+            
+            <!-- Menu latéral -->
+            <div class="border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading text-center">
+                    Prénom et Nom (Dynamiquement)
+                    <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                    <a href="info-perso-client.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="demandeIntervention.html" class="text-center list-group-item list-group-item-action">Demande intervention</a>
+                    <a href="historique-interventions-client.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+            
 
             <!-- Contenu de page -->
             <div id="page-content-wrapper">
@@ -35,7 +55,7 @@
                             <!-- Title -->
                             <div class="row">
                                 <div class="col text-center">
-                                    <h1><b>Créer votre compte</b></h1>
+                                    <h1><b>Informations personnelles</b></h1>
                                 </div>
                             </div>
                             
@@ -79,11 +99,10 @@
                                             </div>
                                             
                                             <!-- Champ de Nom -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="nomEmploye">
-                                                    Nom dynamique
-                                                </div>
-                                            </div>
+                                           
+                                             <div class="row margin-bottom">
+                                <input id="champ-nom" type="text" class="form-control" placeholder="Nom dynamique">
+                            </div>
                                         </div> <!-- Fin Nom -->
                                         
                                         <!-- Prénom -->
@@ -96,11 +115,11 @@
                                             </div> 
                                             
                                             <!-- Champ de Nom -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="prenomEmploye">
-                                                    Prénom dynamique
-                                                </div>
-                                            </div>
+                                              
+                            <div class="row margin-bottom">
+                                <input id="champ-prenom" type="text" class="form-control" placeholder="Prenom dynamique">
+                            </div>
+
                                         </div> <!-- Fin prénom -->
                                     </div> <!-- Fin 2ème ligne -->
                                      
@@ -115,7 +134,7 @@
                                         <div class="col">
                                             <div class="row">
                                                 <!-- Champ date de naissance -->
-                                                <div class="col champ-dyna" id="dateNaissanceEmploye">
+                                                <div class="col champ-dyna" id="dateNaissanceClient">
                                                     Date dynamique
                                                 </div>
 
@@ -141,7 +160,7 @@
                                             
                                             <!-- Champ de l'Email -->
                                             <div class="row champ-dyna">
-                                                <div class="col" id="emailEmploye">
+                                                <div class="col" id="emailClient">
                                                     Email dynamique
                                                 </div>
                                             </div>
@@ -157,11 +176,9 @@
                                             </div> 
                                             
                                             <!-- Champ de téléphone -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="telephoneEmploye">
-                                                    Téléphone dynamique
-                                                </div>
-                                            </div>
+                                            <div class="row margin-bottom">
+                                <input id="champ-number" type="tel" class="form-control" placeholder="telephone dynamique">
+                            </div>
                                         </div> <!-- Fin Téléphone -->   
                                     </div> <!-- Fin 4ème ligne -->
                                      
@@ -177,11 +194,9 @@
                                             </div>
                                             
                                             <!-- Champ Adresse -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="adresseEmploye">
-                                                    Adresse dynamique
-                                                </div>
-                                            </div>
+                                             <div class="row margin-bottom">
+                                <input id="champ-adresse" type="text" class="form-control" placeholder="adresse dynamique">
+                            </div>
                                         </div>
                                     </div>
                                     
@@ -197,11 +212,9 @@
                                             </div>
                                             
                                             <!-- Champ de Code postal -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="codePostalEmploye">
-                                                    Code postal dynamique
-                                                </div>
-                                            </div>
+                                             <div class="row margin-bottom">
+                                <input id="champ-codepostal" type="text" class="form-control" placeholder="code postal dynamique">
+                            </div>
                                         </div> <!-- Fin Code postal -->
                                         
                                         <!-- Ville -->
@@ -214,27 +227,25 @@
                                             </div> 
                                             
                                             <!-- Champ de Ville -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="villeAdresseEmploye">
-                                                    Ville dynamique
-                                                </div>
-                                            </div>
+                                            <div class="row margin-bottom">
+                                <input id="champ-ville" type="text" class="form-control" placeholder="ville dynamique">
+                            </div>
+                                        
                                         </div> <!-- Fin Ville -->
                                     </div> <!-- Fin 6ème ligne -->
+                                     <div class="row">
+                                         <button type="button" id="bouton-valider" class="col btn btn-success" onclick="ModifierInfoPerso()">Valider</button>
+                                        <button type="button" id="bouton-annuler" class="col btn btn-danger">Annuler</button>
+                                    </div> <!-- Fin Boutons -->
                                 </div>
                             </div> <!-- Fin fenêtre centrale -->
 
                         </div>
                     </div>
                 </div> <!-- Fin du conteneur -->
-                  <!-- Boutons Valider et Annuler -->
-                                    <div class="row">
-                                        <button type="button" id="bouton-valider" class="col btn btn-success">Valider</button>
-                                        <button type="button" id="bouton-annuler" class="col btn btn-danger">Annuler</button>
-                                    </div> <!-- Fin Boutons -->
             </div> <!-- Fin du contenu de page -->
         </div> <!-- Fin du conteneur global -->
 
-        <script type="text/javascript" src="../../JS/infoPersoEmploye.js"></script>
+        <script type="text/javascript" src="../../JS/modifInfoPersoClient.js"></script>
     </body>
 </html>

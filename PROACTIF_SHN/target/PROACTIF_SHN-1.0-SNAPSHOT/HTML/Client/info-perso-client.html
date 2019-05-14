@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,12 +18,33 @@
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
-        <link rel="stylesheet" type="text/css" href="../../Style/imageInscriptionsClient.css">
-       
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/infoPersoEmp.css">
     </head>
     <body>
         <!-- Conteneur global -->
-        <div class="d-flex" id="wrapper">         
+        <div class="d-flex" id="wrapper">
+            
+            <!-- Menu latéral -->
+            <div class="border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading text-center">
+                    Prénom et Nom (Dynamiquement)
+                    <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                    <a href="info-perso-client.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="demandeIntervention.html" class="text-center list-group-item list-group-item-action">Demande intervention</a>
+                    <a href="historique-interventions.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+            
 
             <!-- Contenu de page -->
             <div id="page-content-wrapper">
@@ -35,7 +55,7 @@
                             <!-- Title -->
                             <div class="row">
                                 <div class="col text-center">
-                                    <h1><b>Créer votre compte</b></h1>
+                                    <h1><b>Informations personnelles</b></h1>
                                 </div>
                             </div>
                             
@@ -83,9 +103,8 @@
                                                 <div class="col" id="nomEmploye">
                                                     Nom dynamique
                                                 </div>
-                                            </div>
-                                        </div> <!-- Fin Nom -->
-                                        
+                                            </div> <!-- Fin Nom -->
+                                         </div> 
                                         <!-- Prénom -->
                                         <div class="col">
                                             <!-- Label Prénom -->
@@ -96,11 +115,12 @@
                                             </div> 
                                             
                                             <!-- Champ de Nom -->
-                                            <div class="row champ-dyna">
+                                           <div class="row champ-dyna">
                                                 <div class="col" id="prenomEmploye">
                                                     Prénom dynamique
                                                 </div>
                                             </div>
+
                                         </div> <!-- Fin prénom -->
                                     </div> <!-- Fin 2ème ligne -->
                                      
@@ -157,7 +177,7 @@
                                             </div> 
                                             
                                             <!-- Champ de téléphone -->
-                                            <div class="row champ-dyna">
+                                             <div class="row champ-dyna">
                                                 <div class="col" id="telephoneEmploye">
                                                     Téléphone dynamique
                                                 </div>
@@ -177,13 +197,11 @@
                                             </div>
                                             
                                             <!-- Champ Adresse -->
-                                            <div class="row champ-dyna">
+                                             <div class="row champ-dyna">
                                                 <div class="col" id="adresseEmploye">
                                                     Adresse dynamique
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
                                     
                                      <!-- 6ème ligne (ville, code postal)-->
                                     <div class="row marg-bot">
@@ -197,13 +215,12 @@
                                             </div>
                                             
                                             <!-- Champ de Code postal -->
-                                            <div class="row champ-dyna">
+                                              <div class="row champ-dyna">
                                                 <div class="col" id="codePostalEmploye">
                                                     Code postal dynamique
                                                 </div>
-                                            </div>
-                                        </div> <!-- Fin Code postal -->
-                                        
+                                            </><!-- Fin Code postal -->
+                                         </div> 
                                         <!-- Ville -->
                                         <div class="col">
                                             <!-- Label Ville -->
@@ -219,22 +236,27 @@
                                                     Ville dynamique
                                                 </div>
                                             </div>
+                                        
                                         </div> <!-- Fin Ville -->
                                     </div> <!-- Fin 6ème ligne -->
+                                   
                                 </div>
+                                      <div class="row">
+                                        <button onclick="window.location.href='modifInfoPerso.html'" type="button" id="bouton-modifier" class="col btn btn-warning">Modifier</button>
+                                        
+                                    </div> <!-- Fin Boutons -->
                             </div> <!-- Fin fenêtre centrale -->
 
                         </div>
                     </div>
                 </div> <!-- Fin du conteneur -->
-                  <!-- Boutons Valider et Annuler -->
-                                    <div class="row">
-                                        <button type="button" id="bouton-valider" class="col btn btn-success">Valider</button>
-                                        <button type="button" id="bouton-annuler" class="col btn btn-danger">Annuler</button>
-                                    </div> <!-- Fin Boutons -->
             </div> <!-- Fin du contenu de page -->
         </div> <!-- Fin du conteneur global -->
-
-        <script type="text/javascript" src="../../JS/infoPersoEmploye.js"></script>
-    </body>
+                </div> 
+                
+                </div> 
+            </div> 
+        
+        <script type="text/javascript" src="../../JS/infoPersoClient.js"></script>
+    </body>    
 </html>

@@ -1,16 +1,240 @@
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page d'informations personnelles</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/imageInscriptionsClient.css">
+       
     </head>
     <body>
-        <div>TODO write content</div>
+        <!-- Conteneur global -->
+        <div class="d-flex" id="wrapper">         
+
+            <!-- Contenu de page -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid h-100 ">
+                    <div class="row h-100">
+                        <div class="col-8 offset-2 my-auto">
+                            
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h1><b>Créer votre compte</b></h1>
+                                </div>
+                            </div>
+                            
+                            <!-- Fenêtre centrale -->
+                            <div class="row fenetre-centrale">
+                                <div class="col my-auto">
+                                    
+                                    <!-- 1ère ligne -->
+                                    <div class="row marg-bot">
+                                        <!-- Logo silhouette -->
+                                        <div class="col ">
+                                            Logo avatar
+                                            <!-- <img id="avatar" src="../../assets/img/avatar-info-emp.png" alt="Avatar">-->
+                                        </div>
+
+                                        <!-- Genre Tab -->
+                                        <div class="col">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+                                                <button type="button" class="border border-secondary btn btn-light active" id="ongletMr" disabled="disabled">Mr</button>
+                                                <button type="button" class="border border-secondary btn btn-light" id="ongletMme" disabled="disabled">Mme</button>
+                                                <button type="button" class="border border-secondary btn btn-light" id="ongletMlle" disabled="disabled">Mlle</button>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col">
+                                            Planning
+                                        </div>
+                                    </div> <!-- Fin 1ère ligne -->
+                                    
+                                    <!-- 2ème ligne (Nom Prénom)-->
+                                    <div class="row marg-bot">
+                                        
+                                        <!-- Nom -->
+                                        <div class="col marg-right">
+                                            <!-- Label Prénom -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Nom</b>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ de Nom -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="nomEmploye">
+                                                    Nom dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin Nom -->
+                                        
+                                        <!-- Prénom -->
+                                        <div class="col">
+                                            <!-- Label Prénom -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Prénom</b>
+                                                </div>
+                                            </div> 
+                                            
+                                            <!-- Champ de Nom -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="prenomEmploye">
+                                                    Prénom dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin prénom -->
+                                    </div> <!-- Fin 2ème ligne -->
+                                     
+                                    <!-- 3ème ligne (Date de naissance)-->
+                                    <div class="row marg-bot">
+                                        <!-- Label date de naissance -->
+                                        <div class="col">
+                                            <b>Date de naissance</b>
+                                        </div>
+
+                                        <!-- Date de naissance et logo -->
+                                        <div class="col">
+                                            <div class="row">
+                                                <!-- Champ date de naissance -->
+                                                <div class="col champ-dyna" id="dateNaissanceEmploye">
+                                                    Date dynamique
+                                                </div>
+
+                                                <!-- Logo Calendrier -->
+                                                <div class="col">
+                                                    Calendrier
+                                                </div> 
+                                            </div>
+                                        </div> <!-- Fin date de naissance et logo -->                                      
+                                    </div> <!-- Fin 3ème ligne -->
+                                    
+                                    <!-- 4ème ligne (email, téléphone) -->
+                                    <div class="row marg-bot">
+                                        
+                                        <!-- Email -->
+                                        <div class="col marg-right">
+                                            <!-- Label Email -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Email</b>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ de l'Email -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="emailEmploye">
+                                                    Email dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin Email -->
+                                        
+                                        <!-- Téléphone -->
+                                        <div class="col">
+                                            <!-- Label Téléphone -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Téléphone</b>
+                                                </div>
+                                            </div> 
+                                            
+                                            <!-- Champ de téléphone -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="telephoneEmploye">
+                                                    Téléphone dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin Téléphone -->   
+                                    </div> <!-- Fin 4ème ligne -->
+                                     
+                                    <!-- 5ème ligne (adresse) -->
+                                    <div class="row marg-bot">
+                                        <div class="col">
+                                            
+                                            <!-- Label Adresse -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Adresse postale</b>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ Adresse -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="adresseEmploye">
+                                                    Adresse dynamique
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                     <!-- 6ème ligne (ville, code postal)-->
+                                    <div class="row marg-bot">
+                                        <!-- Code postal -->
+                                        <div class="col marg-right">
+                                            <!-- Label Code postal -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Code postal</b>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ de Code postal -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="codePostalEmploye">
+                                                    Code postal dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin Code postal -->
+                                        
+                                        <!-- Ville -->
+                                        <div class="col">
+                                            <!-- Label Ville -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Ville</b>
+                                                </div>
+                                            </div> 
+                                            
+                                            <!-- Champ de Ville -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="villeAdresseEmploye">
+                                                    Ville dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin Ville -->
+                                    </div> <!-- Fin 6ème ligne -->
+                                </div>
+                            </div> <!-- Fin fenêtre centrale -->
+
+                        </div>
+                    </div>
+                </div> <!-- Fin du conteneur -->
+                  <!-- Boutons Valider et Annuler -->
+                                    <div class="row">
+                                        <button type="button" id="bouton-valider" class="col btn btn-success">Valider</button>
+                                        <button type="button" id="bouton-annuler" class="col btn btn-danger">Annuler</button>
+                                    </div> <!-- Fin Boutons -->
+            </div> <!-- Fin du contenu de page -->
+        </div> <!-- Fin du conteneur global -->
+
+        <script type="text/javascript" src="../../JS/infoPersoEmploye.js"></script>
     </body>
 </html>
