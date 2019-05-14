@@ -1,4 +1,6 @@
 import action.Action;
+import action.client.ModifierInfoClientAction;
+import action.client.RecupererInfoClientAction;
 import action.employe.RecupererDetailInterventionEmployeAction;
 import action.employe.RecupererHistoriqueEmployeAction;
 import action.employe.RecupererInfoEmployeAction;
@@ -16,8 +18,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import metier.modele.Employe;
+import metier.modele.Client;
 import metier.service.Service;
 import serialisation.Serialisation;
+import serialisation.client.ModifierInfoClientSerialisation;
+import serialisation.client.RecupererInfoClientSerialisation;
 import serialisation.employe.RecupererDetailInterventionEmployeSerialisation;
 import serialisation.employe.RecupererHistoriqueEmployeSerialisation;
 import serialisation.employe.RecupererInfoEmployeSerialisation;
@@ -76,6 +81,39 @@ public class ActionServlet extends HttpServlet {
             gson.toJson(jsonContainer,out);
             
         } 
+        
+         
+        // Cas de connexion de client
+        if("connecterClient".equals(todo)){
+            String login = request.getParameter("login");
+            String password = request.getParameter("password");
+            
+            JsonObject jsonContainer = new JsonObject();
+            
+            Client c = Service.connecterClient(login, password); 
+        
+            if(c != null){ // Cas Login et password corrects
+                // Enregistrement de la session
+                session.setAttribute("utilisateur",login);  
+                session.setAttribute("mdp",password);
+                
+                jsonContainer.addProperty("connexion", Boolean.TRUE);
+                System.out.println("Test connexion : Client connecté");
+            }
+            else{  // Echec Connexion
+                jsonContainer.addProperty("connexion", Boolean.FALSE);
+                System.out.println("Test connexion : Erreur de connexion client");
+            }
+            
+            // Formattage et écriture de la sortie
+            response.setContentType("application/json;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(jsonContainer,out);
+            
+        } 
+        
+        
         // Autres actions
         else{
             String user = (String) session.getAttribute("utilisateur");
@@ -92,12 +130,12 @@ public class ActionServlet extends HttpServlet {
                 
                 // Ensemble des actions
                 switch(todo){
-                    case "remplir_informations_perso":
+                    case "remplir_informations_perso_employe":
                         action = new RecupererInfoEmployeAction();
                         serialisation = new RecupererInfoEmployeSerialisation();
                         System.out.println("Test appel de la fonction " + todo +" OK");
                         break;
-                        
+                
                     case "remplir_historique_interventions_employe":
                         action = new RecupererHistoriqueEmployeAction();
                         serialisation = new RecupererHistoriqueEmployeSerialisation();
@@ -115,6 +153,18 @@ public class ActionServlet extends HttpServlet {
                         serialisation = new RecupererInterventionEnCoursEmployeSerialisation();
                         System.out.println("Test appel de la fonction " + todo +" OK");
                         break;
+                        
+                    case "remplir_informations_perso_client":
+                        action = new RecupererInfoClientAction();
+                        serialisation = new RecupererInfoClientSerialisation();
+                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        break;
+                    
+                   case "modifer_info_perso_client":
+                        action = new ModifierInfoClientAction();
+                        serialisation = new ModifierInfoClientSerialisation();
+                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        break;     
                        
                 }
                 

@@ -84,7 +84,7 @@ function ModifierInfoPerso() {
             "Adresse" : $("#champ-adresse").val,
             "CodePostal" : $("#champ-codepostal").val,  
             "Ville" : $("#champ-ville").val,   
-            "todo": "ModiferInfo"
+            "todo": "modifer_info_perso_client"
                 })
          
         ,
