@@ -1,5 +1,6 @@
 import action.Action;
 import action.employe.RecupererDetailInterventionEmployeAction;
+import action.employe.RecupererEmplacementsInterventionsAction;
 import action.employe.RecupererHistoriqueEmployeAction;
 import action.employe.RecupererInfoEmployeAction;
 import action.employe.RecupererInterventionEnCoursEmployeAction;
@@ -19,6 +20,7 @@ import metier.modele.Employe;
 import metier.service.Service;
 import serialisation.Serialisation;
 import serialisation.employe.RecupererDetailInterventionEmployeSerialisation;
+import serialisation.employe.RecupererEmplacementsInterventionsSerialisation;
 import serialisation.employe.RecupererHistoriqueEmployeSerialisation;
 import serialisation.employe.RecupererInfoEmployeSerialisation;
 import serialisation.employe.RecupererInterventionEnCoursEmployeSerialisation;
@@ -113,6 +115,12 @@ public class ActionServlet extends HttpServlet {
                     case "remplir_intervention_en_cours":
                         action = new RecupererInterventionEnCoursEmployeAction();
                         serialisation = new RecupererInterventionEnCoursEmployeSerialisation();
+                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        break;
+                    
+                    case "recuperer_emplacements_interventions":
+                        action = new RecupererEmplacementsInterventionsAction();
+                        serialisation = new RecupererEmplacementsInterventionsSerialisation();
                         System.out.println("Test appel de la fonction " + todo +" OK");
                         break;
                        

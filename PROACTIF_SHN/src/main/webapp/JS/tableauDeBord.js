@@ -15,6 +15,7 @@ function attachInfoWindow(marker, infowindow, htmlDescription) {
 }
 
 function initMap() {
+    console.log("TODO : Régler le problème de la liste d'intervention vide dans action")
 
     googleMapInstance = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 45.7601424, lng: 4.8961779},
@@ -54,6 +55,32 @@ function initMap() {
             generateMarkers,
             5000
             );
+    
+    // Appel Ajax
+    getEmplacementsAjax();
+    
+}
+
+/**
+ * Fonction Ajax qui met à jours la fiche de l'intervention prête à Être clôturée
+ * @returns {undefined}
+ */
+function getEmplacementsAjax() {
+    $.ajax({
+        url: '../../ActionServlet',
+        method: 'POST',
+        data: {
+            todo: 'recuperer_emplacements_interventions'
+        },
+        dataType: 'json'
+    }).done(function (response) { // Appel OK
+       console.log(response.coordInterv);
+        
+    }).fail( function (error) { // Appel KO => erreur a gérer
+        console.log("Fail recuperer_emplacements_interventions");          
+        // Popup avec message d'erreur :
+        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+    });
 }
 
 function generateMarkers() {
