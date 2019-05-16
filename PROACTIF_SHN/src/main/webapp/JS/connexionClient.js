@@ -5,7 +5,7 @@ function connexion() {
     //$('#message').html('Connexion en cours...');
 
     $.ajax({
-        url: './ActionServlet',
+        url: '../../ActionServlet',
         method: 'POST',
         data: {
             todo: 'connecterClient',
