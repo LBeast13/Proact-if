@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Détail intervention</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+    </head>
+    <body>
+        <!-- Conteneur global -->
+        <div class="d-flex" id="wrapper">
+            
+            <!-- Menu latéral -->
+            <div class="border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading text-center">
+                    Prénom et Nom (Dynamiquement)
+                    <img id="photo-profil" src="../../assets/img/photo-client.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                    <a href="info-perso-client.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="demandeIntervention.html" class="text-center list-group-item list-group-item-action">Demande intervention</a>
+                    <a href="historique-interventions-client.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+            
+
+            <!-- Contenu de page -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col-8 offset-2 my-auto">
+                            
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h1>Détails de l'intervention</h1>
+                                </div>
+                            </div>
+                            
+                            <!-- Cadre de contenu (détail) -->
+                            <div class="row fenetre-centrale">
+                                <div class="col my-auto">
+                                    
+                                    <!-- 1ère ligne (Numéro, client, employé) -->
+                                    <div class='row'>
+                                        <!-- Numéro de l'intervention -->
+                                        <div class='col'> 
+                                            <div class="row">
+                                                <!-- Label Numéro -->
+                                                <div class="col">
+                                                    Numéro
+                                                </div>
+                                                
+                                                <!-- Champ Numéro (dynamique) -->
+                                                <div class="col champ-dyna" id="numInterv">
+                                                    Numéro dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin Numéro de l'intervention -->
+                                        
+                                        <!-- Numéro du client -->
+                                        <div class="col">
+                                            <div class="row">
+                                                
+                                                <!-- Label Numéro client -->
+                                                <div class="col">
+                                                    Client
+                                                </div>
+                                                
+                                                <!-- Champ Numéro client (dynamique) -->
+                                                <div class="col champ-dyna" id="numClient">
+                                                    Client dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Numéro du client -->
+                                        
+                                        <!-- Numéro de l'employé -->
+                                        <div class="col">
+                                            <div class="row">
+                                                
+                                                <!-- Label Numéro employé -->
+                                                <div class="col">
+                                                    Employé
+                                                </div>
+                                                
+                                                <!-- Champ Numéro employé (dynamique) -->
+                                                <div class="col champ-dyna" id="numEmploye">
+                                                    Employé dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Numéro de l'employé -->
+                                    </div> <!-- Fin 1ère ligne (Numéro, client, employé) -->
+                                    
+                                    <!-- 2ème ligne (Type avec checkbox) -->
+                                    <div class='row'>
+                                        <div class="col">
+                                            Type
+                                        </div>
+
+                                        <!-- Radio Buttons Type -->
+                                        <div class="col">
+                                            <!-- Animal -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioAnimal" value="option1" disabled checked>
+                                                <label class="form-check-label" for="radioAnimal">Animal</label>
+                                            </div>
+                                            
+                                            <!-- Incident -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioIncident" value="option2" disabled>
+                                                <label class="form-check-label" for="radioIncident">Incident</label>
+                                            </div>
+                                            
+                                            <!-- Livraison -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioLivraison" value="option3" disabled>
+                                                <label class="form-check-label" for="radioLivraison">Livraison</label>
+                                            </div>
+                                        </div> <!-- Fin Radio Buttons type -->
+                                    </div> <!-- Fin 2ème ligne (Type avec checkbox) -->
+                                    
+                                    <!-- 3ème ligne (Statut, Objet, Entreprise) -->
+                                    <div class='row'>
+                                        <!-- Statut -->
+                                        <div class='col'> 
+                                            <div class="row">
+                                                <!-- Label statut -->
+                                                <div class="col">
+                                                    Statut
+                                                </div>
+                                                
+                                                <!-- Champ statut (dynamique) -->
+                                                <div class="col champ-dyna" id="statut">
+                                                    Statut dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin statut de l'intervention -->
+                                        
+                                        <!-- Animal -->
+                                        <div class="col" id="conteneurAnimal">
+                                            <div class="row">                                              
+                                                <!-- Label Objet -->
+                                                <div class="col">
+                                                    Animal
+                                                </div>
+                                                
+                                                <!-- Champ Objet (dynamique) -->
+                                                <div class="col champ-dyna" id="animal">
+                                                    Animal dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Objet -->
+                                        
+                                        <!-- Objet -->
+                                        <div class="col" id="conteneurObjet">
+                                            <div class="row">                                              
+                                                <!-- Label Objet -->
+                                                <div class="col">
+                                                    Objet
+                                                </div>
+                                                
+                                                <!-- Champ Objet (dynamique) -->
+                                                <div class="col champ-dyna" id="objet">
+                                                    Objet dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Objet -->
+                                        
+                                        <!-- Entreprise -->
+                                        <div class="col" id="conteneurEntreprise">
+                                            <div class="row">
+                                                
+                                                <!-- Label entreprise -->
+                                                <div class="col">
+                                                    Entreprise
+                                                </div>
+                                                
+                                                <!-- Champ Entreprise (dynamique) -->
+                                                <div class="col champ-dyna" id="entreprise">
+                                                    Entreprise dynamique
+                                                </div>
+                                            </div>
+                                        </div><!-- Fin Entreprise -->
+                                    </div> <!-- Fin 3ème ligne (Statut, Objet, Entreprise) -->
+                                    
+                                    <!-- 4ème ligne (Date demande,cloture) -->
+                                    <div class='row'>
+                                        <!-- Demande -->
+                                        <div class="col">
+                                            <!-- Label Demande -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    Date de demande
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ Demande (dynamique) -->
+                                            <div class="row">
+                                                <div class="col champ-dyna" id="dateDemande">
+                                                    Date de demande (dynamique)
+                                                </div>
+                                                <div class="col">
+                                                    Logo calendrier
+                                                </div>
+                                            </div>    
+                                        </div> <!-- Fin Demande -->
+                                        
+                                        <!-- Cloture -->
+                                        <div class="col">
+                                            <!-- Label Cloture -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    Date de clôture
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ Cloture (dynamique) -->
+                                            <div class="row">
+                                                <div class="col champ-dyna" id="dateCloture">
+                                                    Date de clôture (dynamique)
+                                                </div>
+                                                <div class="col">
+                                                    Logo calendrier
+                                                </div>
+                                            </div>  
+                                        </div> <!-- Fin Cloture -->
+                                    </div> <!-- Fin 4ème ligne (Date demande,cloture) -->
+                                    
+                                    <!-- 5ème ligne (Description)-->
+                                    <div class='row'>
+                                        <div class="col">
+                                            <!-- Label Description -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    Description
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ Description (dynamique) -->
+                                            <div class="row champ-dyna">
+                                                <div class="col scroll-div" id="description">
+                                                    Pas de description.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- Fin 5ème ligne (Description)-->
+                                    
+                                    <!-- 6ème ligne (Commentaire)-->
+                                    <div class='row'>
+                                        <div class="col">
+                                            <!-- Label Commentaire -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    Commentaire
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Champ Commentaire (dynamique) -->
+                                            <div class="row champ-dyna">
+                                                <div class="col scroll-div" id="commentaire">
+                                                    Pas de commentaire.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- Fin 6ème ligne (Commentaire)-->
+                                </div>
+                            </div> <!-- Fin cadre contenu détail -->
+
+                        </div>
+                    </div>
+                </div> <!-- Fin du conteneur -->
+            </div> <!-- Fin du contenu de page -->
+        </div> <!-- Fin du conteneur global -->
+        
+        <script type="text/javascript" src="../../JS/detailInterventionEmploye.js"></script>
+    </body>
+</html>

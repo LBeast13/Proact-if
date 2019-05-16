@@ -1,6 +1,6 @@
 /**
- * Fonction Ajax qui met à jours le DOM avec les données personnelles de 
- * l'employé connecté.
+ * Fonction Ajax qui met à jours le DOM avec les données personnelles du
+ *client connecté.
  * @returns {undefined}
  */
 function remplirDonneesPerso() {
@@ -8,7 +8,7 @@ function remplirDonneesPerso() {
         url: '../../ActionServlet',
         method: 'POST',
         data: {
-            todo: 'remplir_informations_perso_employe',
+            todo: 'remplir_informations_perso',
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
@@ -16,14 +16,14 @@ function remplirDonneesPerso() {
         AJAX de remplir d'info perso (on ne veut pas de raffraichissement pour pas avoir 2 appels)");
         civilite = response.civilite;
         updateCivilite(civilite);
-        $('#nomEmploye').html(response.nom);
-        $('#prenomEmploye').html(response.prenom);
-        $('#dateNaissanceEmploye').html(response.dateNaissance);
-        $('#emailEmploye').html(response.email);
-        $('#telephoneEmploye').html(response.tel);
-        $('#adresseEmploye').html(response.adresse);
-        $('#codePostalEmploye').html(response.codePostal);
-        $('#villeAdresseEmploye').html(response.ville);
+        $('#nomClient').html(response.nom);
+        $('#prenomClient').html(response.prenom);
+        $('#dateNaissanceClient').html(response.dateNaissance);
+        $('#emailClient').html(response.email);
+        $('#telephoneClient').html(response.tel);
+        $('#adresseClient').html(response.adresse);
+        $('#codePostalClient').html(response.codePostal);
+        $('#villeAdresseClient').html(response.ville);
        
     }).fail( function (error) { // Appel KO => erreur a gérer
         console.log("Fail remplir_informations_perso");          
@@ -34,7 +34,7 @@ function remplirDonneesPerso() {
 
 /**
  * Met à jour la Tab du DOM pour la civilité
- * @param {String} civilite de l'employé connecté
+ * @param {String} civilite du client connecté
  * @returns {undefined}
  */
 function updateCivilite(civilite){
@@ -60,7 +60,6 @@ function updateCivilite(civilite){
 $(document).ready(function () {
     remplirDonneesPerso();
 });
-
 
 
 

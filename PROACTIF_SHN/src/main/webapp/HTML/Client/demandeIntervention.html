@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Intervention en cours - Employé</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+        <link rel="stylesheet" type="text/css" href="../../Style/interventionEnCoursEmploye.css">
+    </head>
+    <body>
+        <!-- Conteneur global -->
+        <div class="d-flex" id="wrapper">
+
+            <!-- Menu latéral -->
+            <div class="border-right" id="sidebar-wrapper">
+                <!-- Bouton de montrer/cacher Menu -->
+                <div class="btn">Menu</div>
+
+                <!-- Prénom, Nom et photo -->
+                <div class="sidebar-heading text-center">
+                    Prénom et Nom (Dynamiquement)
+                    <img id="photo-profil" src="../../assets/img/photo-client.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
+                </div>
+
+                <!-- Items de navigation -->
+                <div class="list-group list-group-flush">
+                    <a href="info-perso-client.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
+                    <a href="demandeIntervention.html" class="text-center list-group-item list-group-item-action">Demande interventions</a>
+                    <a href="historique-interventions-client.html" class="text-center list-group-item list-group-item-action">Historique</a>
+                    <a href="#" class="list-group-item list-group-item-action">Déconnexion</a>
+                </div>
+            </div>  <!-- fin du menu latéral -->
+
+
+            <!-- Contenu de page -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col-8 offset-2 my-auto">
+
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-center"><b>Intervention en cours</b></h1>
+                                </div>
+                            </div>
+
+                            <!-- Fenêtre centrale -->
+                            <div class="row fenetre-centrale">
+                                <div class="col">
+
+                                    <!-- 1ère ligne (Type intervention)-->
+                                    <div class="row marg-bot">
+                                        <div class="col">
+                                            <b>Type</b>
+                                        </div>
+
+                                        <!-- Radio Buttons Type -->
+                                        <div class="col">
+                                            <!-- Animal -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioAnimal" value="option1" disabled checked>
+                                                <label class="form-check-label" for="radioAnimal">Animal</label>
+                                            </div>
+
+                                            <!-- Incident -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioIncident" value="option2" disabled>
+                                                <label class="form-check-label" for="radioIncident">Incident</label>
+                                            </div>
+
+                                            <!-- Livraison -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioLivraison" value="option3" disabled>
+                                                <label class="form-check-label" for="radioLivraison">Livraison</label>
+                                            </div>
+                                        </div> <!-- Fin Radio Buttons type -->
+                                    </div> <!-- Fin 1ère ligne (Type d'intervention) -->
+
+                                    <!-- 2ème ligne (Caractéristiques, date de demande)-->
+                                    <div class="row ">
+
+                                        <!-- Détails Type dynamique (Show/Hide en fonction du type) -->
+
+                                        <!-- Animal -->
+                                        <div class="col" id='animalConteneur'>
+                                            <!-- Label Animal -->
+                                            <div class="row">
+                                                <div class="col" >
+                                                    <b>Animal</b>
+                                                </div>
+                                            </div>
+
+                                            <!-- Champ Animal dynamique -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="animal">
+                                                    Champ Animal dynamique
+                                                </div>
+                                            </div>
+                                        </div>
+ <!-- 3ème ligne (Client et trajet) -->
+                                    <div class="row">
+                                        <!-- Client -->
+                                         <!-- Entreprise -->
+                                        <div class="col" id='entrepriseConteneur' hidden>
+                                            <!-- Label Entreprise -->
+                                            <div class="row">
+                                                <div class="col" >
+                                                    <b>Entreprise</b>
+                                                </div>
+                                            </div>
+
+                                            <!-- Champ Entreprise dynamique -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="entreprise">
+                                                    Champ Entreprise dynamique
+                                                </div>
+                                            </div>
+                                        </div>
+<!-- Objet -->
+                                        <div class="col" id='objetConteneur' hidden>
+                                            <!-- Label Objet -->
+                                            <div class="row">
+                                                <div class="col" >
+                                                    <b>Objet</b>
+                                                </div>
+                                            </div>
+
+                                            <!-- Champ Objet dynamique -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="objet">
+                                                    Champ Objet dynamique
+                                                </div>
+                                            </div>
+                                        </div> <!-- Fin Trajet -->
+                                    </div> <!-- Fin 3ème ligne (Client, trajet) -->
+                                        
+
+                                        <!-- Entreprise -->
+                                        <div class="col" id='entrepriseConteneur' hidden>
+                                            <!-- Label Entreprise -->
+                                            <div class="row">
+                                                <div class="col" >
+                                                    <b>Entreprise</b>
+                                                </div>
+                                            </div>
+
+                                            <!-- Champ Entreprise dynamique -->
+                                            <div class="row champ-dyna">
+                                                <div class="col" id="entreprise">
+                                                    Champ Entreprise dynamique
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                      </div> <!-- Fin 2ème ligne (détails type et date demande) --> 
+
+                                    <!-- 3ème ligne (Client et trajet) -->
+                                    <div class="row">
+                                        <div class="row">
+                                        <div class="col marg-bot">
+
+                                            <!-- Label Description -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b>Description</b>
+                                                </div>
+                                            </div>
+
+                                            <!-- Champ de Description (Scrollable)-->
+                                             <div class="row">
+                                                <div class="col">
+                                                    <b>Description</b>
+                                                </div>
+                                            </div> 
+                                        
+                                    </div>
+                                    </div> <!-- Fin 3ème ligne (Client, trajet) -->
+
+                                    
+                                    
+
+                                    <div class="row">
+                                        <div class="col-1 offset-5">
+                                            <button class="btn btn-primary" onclick="cloturerIntervention()">Cloturer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- Fin fenêtre centrale -->
+
+
+
+                        </div>
+                    </div>
+                </div> <!-- Fin du conteneur -->
+            </div> <!-- Fin du contenu de page -->
+        </div> <!-- Fin du conteneur global -->
+
+        <script type="text/javascript" src="../../JS/interventionEnCoursEmploye.js"></script>
+    </body>
+</html>

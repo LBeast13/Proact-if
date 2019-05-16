@@ -8,7 +8,7 @@ function remplirDonneesPerso() {
         url: '../../ActionServlet',
         method: 'POST',
         data: {
-            todo: 'remplir_informations_perso',
+            todo: 'remplir_informations_perso_employe',
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK

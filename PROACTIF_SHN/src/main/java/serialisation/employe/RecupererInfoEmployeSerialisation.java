@@ -16,7 +16,7 @@ import serialisation.Serialisation;
 public class RecupererInfoEmployeSerialisation extends Serialisation{
 
     @Override
-    public void serialiser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void serialiser(HttpServletRequest request, HttpServletResponse response) throws IOException  {
         
         JsonObject jsonContainer = new JsonObject();
         
