@@ -9,6 +9,7 @@ function inscriptionClient() {
     inputPrenom = $("#prenom").val();
     inputDate = $("#dateNaissance").val();
     inputEmail = $("#email").val();
+    inputMdp = $("#motDePasse").val();
     inputTel = $("#telephone").val();
     inputAdresse = $("#adresse").val();
     inputCodePostal = $("#codePostal").val();
@@ -36,6 +37,7 @@ function inscriptionClient() {
             date_naissance : inputDate,
             email : inputEmail,
             telephone : inputTel,
+            mdp : inputMdp,
             adresse : inputAdresse,
             code_postal : inputCodePostal,
             ville : inputVille
