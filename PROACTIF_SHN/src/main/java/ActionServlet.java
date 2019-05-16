@@ -1,4 +1,5 @@
 import action.Action;
+import action.client.InscrireClientAction;
 import action.client.ModifierInfoClientAction;
 import action.client.RecupererInfoClientAction;
 import action.employe.RecupererDetailInterventionEmployeAction;
@@ -161,6 +162,12 @@ public class ActionServlet extends HttpServlet {
                         System.out.println("Test appel de la fonction " + todo +" OK");
                         break;
                         
+                    case "inscrire_client":
+                        action = new InscrireClientAction();
+                        //serialisation = new InscrireClientSerialisation();
+                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        break; 
+                    
                     case "remplir_informations_perso_client":
                         action = new RecupererInfoClientAction();
                         serialisation = new RecupererInfoClientSerialisation();
