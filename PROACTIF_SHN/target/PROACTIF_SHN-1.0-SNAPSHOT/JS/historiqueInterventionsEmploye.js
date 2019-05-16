@@ -112,8 +112,6 @@ function getDropdownState(dropdown){
 }
 
 $(document).ready(function () {
-    console.log("TODO : Résoudre le double chargement de la page")
-   
     remplirTableauHistorique("Type","false");
 });
 

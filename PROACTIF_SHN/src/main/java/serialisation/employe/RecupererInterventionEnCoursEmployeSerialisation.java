@@ -44,6 +44,7 @@ public class RecupererInterventionEnCoursEmployeSerialisation extends Serialisat
 
         //System.out.println(jsonContainer.toString());
         // Formattage et écriture sur la sortie
+        response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = this.getWriterWithJsonHeader(response);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         gson.toJson(jsonContainer,out);

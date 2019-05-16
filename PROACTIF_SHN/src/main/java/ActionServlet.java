@@ -83,10 +83,9 @@ public class ActionServlet extends HttpServlet {
             gson.toJson(jsonContainer,out);
             
         } 
-        
-         
+    
         // Cas de connexion de client
-        if("connecterClient".equals(todo)){
+        else if("connecterClient".equals(todo)){
             String login = request.getParameter("login");
             String password = request.getParameter("password");
             
