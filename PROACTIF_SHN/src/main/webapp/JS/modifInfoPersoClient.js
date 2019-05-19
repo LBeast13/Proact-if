@@ -1,6 +1,6 @@
 /**
  * Fonction Ajax qui met à jours le DOM avec les données personnelles du
- *client connecté.
+ * client connecté.
  * @returns {undefined}
  */
 function remplirDonneesPerso() {
@@ -9,22 +9,59 @@ function remplirDonneesPerso() {
         method: 'POST',
         data: {
             
-            todo: 'remplir_informations_perso',
+            todo: 'remplir_informations_perso_client',
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
-        console.log("TODO : Régler le raffraichissement de la page lors de l'appel\n\
-        AJAX de remplir d'info perso (on ne veut pas de raffraichissement pour pas avoir 2 appels)");
+
         civilite = response.civilite;
         updateCivilite(civilite);
-        $('#nomClient').html(response.nom);
-        $('#prenomClient').html(response.prenom);
+        $('#champ-nom').val(response.nom);
+        $('#champ-prenom').val(response.prenom);
         $('#dateNaissanceClient').html(response.dateNaissance);
         $('#emailClient').html(response.email);
-        $('#telephoneClient').html(response.tel);
-        $('#adresseClient').html(response.adresse);
-        $('#codePostalClient').html(response.codePostal);
-        $('#villeAdresseClient').html(response.ville);
+        $('#champ-tel').val(response.tel);
+        $('#champ-adresse').val(response.adresse);
+        $('#champ-codepostal').val(response.codePostal);
+        $('#champ-ville').val(response.ville);
+       
+    }).fail( function (error) { // Appel KO => erreur a gérer
+        console.log("Fail remplir_informations_perso");          
+        // Popup avec message d'erreur :
+        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+    });
+}
+
+/**
+ * Fonction Ajax qui prend en compte les modifications
+ * @returns {undefined}
+ */
+function ModifierInfoPerso() {
+    
+    nomInput = $("#champ-nom").val();
+    console.log(nomInput);
+    prenomInput = $("#champ-prenom").val();
+    numeroInput = $("#champ-tel").val();
+    adresseInput = $("#champ-adresse").val();
+    codePostalInput = $("#champ-codepostal").val();
+    ville = $("#champ-ville").val();
+    
+    $.ajax({
+        url: '../../ActionServlet',
+        method: 'POST',
+        data:{
+            todo: "modifer_info_perso_client",
+            nom : nomInput,
+            prenom : prenomInput,
+            numero : numeroInput,
+            adresse : adresseInput,
+            codePostal : codePostalInput,  
+            ville : ville
+        }
+
+    }).done(function () { // Appel OK
+        
+        window.location = "info-perso-client.html";
        
     }).fail( function (error) { // Appel KO => erreur a gérer
         console.log("Fail remplir_informations_perso");          
@@ -34,15 +71,12 @@ function remplirDonneesPerso() {
 }
 
 
-
-
 /**
  * Met à jour la Tab du DOM pour la civilité
  * @param {String} civilite du client connecté
  * @returns {undefined}
  */
 function updateCivilite(civilite){
-    console.log(civilite);
     if(civilite === 'M'){
         $('#ongletMr').prop("disabled", false);
         $('#ongletMme').prop("disabled", true);
@@ -60,52 +94,22 @@ function updateCivilite(civilite){
     }
 }
 
-
 $(document).ready(function () {
     remplirDonneesPerso();
+    
+    $('#bouton-valider').on('click', function () {
+        // affichage pour debugage dans la console javascript du navigateur
+        console.log('Click sur le bouton "Modifier"');
+        // appel de la fonction de modification des infos persos
+        ModifierInfoPerso();
+    });
+    
+    $('#bouton-annuler').on('click', function () {
+        // affichage pour debugage dans la console javascript du navigateur
+        console.log('Click sur le bouton "Annuler"');
+        
+        window.location = "info-perso-client.html";
+    });
 });
 
 
-
-/**
- * Fonction Ajax qui met à jours le DOM avec les données personnelles du
- *client connecté.
- * @returns {undefined}
- */
-function ModifierInfoPerso() {
-    $.ajax({
-        url: '../../ActionServlet',
-        method: 'POST',
-        data: JSON.stringify(
-                {
-            "Nom" : $("#champ-nom").val,
-            "Prenom" :$("#champ-prenom").val,
-            "Numero" : $("#champ-number").val,
-            "Adresse" : $("#champ-adresse").val,
-            "CodePostal" : $("#champ-codepostal").val,  
-            "Ville" : $("#champ-ville").val,   
-            "todo": "modifer_info_perso_client"
-                })
-         
-        ,
-        dataType: "json"
-    }).done(function (response) { // Appel OK
-        console.log("TODO : Régler le raffraichissement de la page lors de l'appel\n\
-        AJAX de remplir d'info perso (on ne veut pas de raffraichissement pour pas avoir 2 appels)");
-        civilite = response.civilite;
-        updateCivilite(civilite);
-        $('#nomClient').html(response.nom);
-        $('#prenomClient').html(response.prenom);
-        $('#dateNaissanceClient').html(response.dateNaissance);
-        $('#emailClient').html(response.email);
-        $('#telephoneClient').html(response.tel);
-        $('#adresseClient').html(response.adresse);
-        $('#codePostalClient').html(response.codePostal);
-        $('#villeAdresseClient').html(response.ville);
-       
-    }).fail( function (error) { // Appel KO => erreur a gérer
-        console.log("Fail remplir_informations_perso");          
-        // Popup avec message d'erreur :
-        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
-    });
-}

@@ -22,9 +22,6 @@ function remplirDonneesPerso() {
         $('#adresseClient').html(response.adresse);
         $('#codePostalClient').html(response.codePostal);
         $('#villeAdresseClient').html(response.ville);
-        
-        console.log(response.nom);
-        console.log(response.prenom);
        
     }).fail( function (error) { // Appel KO => erreur a gérer
         console.log("Fail remplir_informations_perso_client");          
