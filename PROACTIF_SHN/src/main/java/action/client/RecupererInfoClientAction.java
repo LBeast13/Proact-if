@@ -1,8 +1,5 @@
 package action.client;
 
-
-
-
 import action.Action;
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;

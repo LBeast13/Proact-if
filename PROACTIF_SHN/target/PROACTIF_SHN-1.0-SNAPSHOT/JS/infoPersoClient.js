@@ -1,6 +1,6 @@
 /**
  * Fonction Ajax qui met à jours le DOM avec les données personnelles du
- *client connecté.
+ * client connecté.
  * @returns {undefined}
  */
 function remplirDonneesPerso() {
@@ -8,12 +8,10 @@ function remplirDonneesPerso() {
         url: '../../ActionServlet',
         method: 'POST',
         data: {
-            todo: 'remplir_informations_perso',
+            todo: 'remplir_informations_perso_client'
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
-        console.log("TODO : Régler le raffraichissement de la page lors de l'appel\n\
-        AJAX de remplir d'info perso (on ne veut pas de raffraichissement pour pas avoir 2 appels)");
         civilite = response.civilite;
         updateCivilite(civilite);
         $('#nomClient').html(response.nom);
@@ -24,9 +22,12 @@ function remplirDonneesPerso() {
         $('#adresseClient').html(response.adresse);
         $('#codePostalClient').html(response.codePostal);
         $('#villeAdresseClient').html(response.ville);
+        
+        console.log(response.nom);
+        console.log(response.prenom);
        
     }).fail( function (error) { // Appel KO => erreur a gérer
-        console.log("Fail remplir_informations_perso");          
+        console.log("Fail remplir_informations_perso_client");          
         // Popup avec message d'erreur :
         alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
     });
@@ -38,7 +39,6 @@ function remplirDonneesPerso() {
  * @returns {undefined}
  */
 function updateCivilite(civilite){
-    console.log(civilite);
     if(civilite === 'M'){
         $('#ongletMr').prop("disabled", false);
         $('#ongletMme').prop("disabled", true);
@@ -58,6 +58,7 @@ function updateCivilite(civilite){
 
 
 $(document).ready(function () {
+    console.log("Test infoPersoClient.js");
     remplirDonneesPerso();
 });
 

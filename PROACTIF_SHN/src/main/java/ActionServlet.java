@@ -115,7 +115,6 @@ public class ActionServlet extends HttpServlet {
             
         } 
         
-        
         // Autres actions
         else{
             String user = (String) session.getAttribute("utilisateur");
