@@ -51,7 +51,7 @@ function inscriptionClient() {
         }).done(function (response) { // Appel OK
 
             setTimeout(function () {  // Redirection avec délai de 3s
-                window.location = "connexion-client.html";
+                window.location = "connexion-client.html?registration=success";
             }, 2000);
 
         }).fail(function (error) { // Appel KO => erreur a gérer

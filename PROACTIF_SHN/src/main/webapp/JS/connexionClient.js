@@ -1,3 +1,23 @@
+/**
+ * Récupère la valeur du paramètre de l'url souhaité
+ * @param {type} sParam le paramètre de l'url
+ * @returns {Boolean}
+ */
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+
 function connexion() {
     var champLogin = $('#champ-login').val();
     var champPassword = $('#champ-password').val();
@@ -44,6 +64,14 @@ $(document).ready(function () {
         // appel de la fonction connexion
         connexion();
     });
+    
+    if(getUrlParameter('registration') === "success") {
+        $('#myRegModal').modal('show');    // Affiche la Pop-Up de succès
+
+        setTimeout(function () {  // Fermeture au bout de 15s
+            $('#myRegModal').modal('hide');
+        }, 15000);
+    }
 });
 
 
