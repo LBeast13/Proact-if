@@ -54,9 +54,12 @@ function remplirInterventionEnCours() {
         $('#descriptionIntervention').html(response.description_interv);
         
     }).fail( function (error) { // Appel KO => erreur a gérer
-        console.log("Fail remplir_intervention_en_cours");          
-        // Popup avec message d'erreur :
-        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+        console.log("Fail remplir_intervention_en_cours");
+        if (error.status === 403) {
+            window.location = "../../index.html";
+        } else {
+            alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+        }
     });
 }
 

@@ -25,10 +25,13 @@ function remplirDonneesPerso() {
         $('#codePostalEmploye').html(response.codePostal);
         $('#villeAdresseEmploye').html(response.ville);
        
-    }).fail( function (error) { // Appel KO => erreur a gérer
-        console.log("Fail remplir_informations_perso");          
-        // Popup avec message d'erreur :
-        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+    }).fail(function (error) { // Appel KO => erreur a gérer
+        console.log("Fail remplir_informations_perso");
+        if (error.status === 403) {
+            window.location = "../../index.html";
+        } else {
+            alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+        }
     });
 }
 
