@@ -1,4 +1,6 @@
+
 import action.Action;
+import action.client.DemanderInterventionAction;
 import action.client.InscrireClientAction;
 import action.client.ModifierInfoClientAction;
 import action.client.RecupererInfoClientAction;
@@ -23,6 +25,7 @@ import metier.modele.Employe;
 import metier.modele.Client;
 import metier.service.Service;
 import serialisation.Serialisation;
+import serialisation.client.DemanderInterventionSerialisation;
 import serialisation.client.ModifierInfoClientSerialisation;
 import serialisation.client.RecupererInfoClientSerialisation;
 import serialisation.employe.RecupererDetailInterventionEmployeSerialisation;
@@ -49,150 +52,145 @@ public class ActionServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         HttpSession session = request.getSession(true); // Contexte de la Session
         request.setCharacterEncoding("UTF-8"); // Encodage des paramètres de la requête
         String todo = request.getParameter("todo"); // Paramètre de choix de l'action
         System.out.println(todo);
-        
+
         // Cas de connexion d'employe
-        if("connecterEmploye".equals(todo)){
+        if ("connecterEmploye".equals(todo)) {
             String login = request.getParameter("login");
             String password = request.getParameter("password");
-            
+
             JsonObject jsonContainer = new JsonObject();
-            
-            Employe c = Service.connecterEmploye(login, password); 
-        
-            if(c != null){ // Cas Login et password corrects
+
+            Employe c = Service.connecterEmploye(login, password);
+
+            if (c != null) { // Cas Login et password corrects
                 // Enregistrement de la session
-                session.setAttribute("utilisateur",login);  
-                session.setAttribute("mdp",password);
-                
+                session.setAttribute("utilisateur", login);
+                session.setAttribute("mdp", password);
+
                 jsonContainer.addProperty("connexion", Boolean.TRUE);
                 System.out.println("Test connexion : Employé connecté");
-            }
-            else{  // Echec Connexion
+            } else {  // Echec Connexion
                 jsonContainer.addProperty("connexion", Boolean.FALSE);
                 System.out.println("Test connexion : Erreur de connexion employé");
             }
-            
+
             // Formattage et écriture de la sortie
             response.setContentType("application/json;charset=UTF-8");
             PrintWriter out = response.getWriter();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(jsonContainer,out);
-            
-        } 
-    
-        // Cas de connexion de client
-        else if("connecterClient".equals(todo)){
+            gson.toJson(jsonContainer, out);
+
+        } // Cas de connexion de client
+        else if ("connecterClient".equals(todo)) {
             String login = request.getParameter("login");
             String password = request.getParameter("password");
-            
+
             JsonObject jsonContainer = new JsonObject();
-            
-            Client c = Service.connecterClient(login, password); 
-        
-            if(c != null){ // Cas Login et password corrects
+
+            Client c = Service.connecterClient(login, password);
+
+            if (c != null) { // Cas Login et password corrects
                 // Enregistrement de la session
-                session.setAttribute("utilisateur",login);  
-                session.setAttribute("mdp",password);
-                
+                session.setAttribute("utilisateur", login);
+                session.setAttribute("mdp", password);
+
                 jsonContainer.addProperty("connexion", Boolean.TRUE);
                 System.out.println("Test connexion : Client connecté");
-            }
-            else{  // Echec Connexion
+            } else {  // Echec Connexion
                 jsonContainer.addProperty("connexion", Boolean.FALSE);
                 System.out.println("Test connexion : Erreur de connexion client");
             }
-            
+
             // Formattage et écriture de la sortie
             response.setContentType("application/json;charset=UTF-8");
             PrintWriter out = response.getWriter();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(jsonContainer,out);
-            
-        } 
-        
-        // Autres actions
-        else{
+            gson.toJson(jsonContainer, out);
+
+        } // Autres actions
+        else {
             String user = (String) session.getAttribute("utilisateur");
             System.out.println("Test utilisateur dans la session " + user);
             // Cas utilisateur non connecté (accès refusé)
-            if(user==null){
-                response.sendError(403,"Forbidden (No User)");
-            }
-            
-            // Cas utilisateur connecté
-            else{
+            if (user == null) {
+                response.sendError(403, "Forbidden (No User)");
+            } // Cas utilisateur connecté
+            else {
                 Action action = null;
                 Serialisation serialisation = null;
-                
+
                 // Ensemble des actions
-                switch(todo){
+                switch (todo) {
                     case "remplir_informations_perso_employe":
                         action = new RecupererInfoEmployeAction();
                         serialisation = new RecupererInfoEmployeSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
-                
+
                     case "remplir_historique_interventions_employe":
                         action = new RecupererHistoriqueEmployeAction();
                         serialisation = new RecupererHistoriqueEmployeSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
-                        
+
                     case "remplir_detail_intervention_employe":
                         action = new RecupererDetailInterventionEmployeAction();
                         serialisation = new RecupererDetailInterventionEmployeSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
-                        
+
                     case "remplir_intervention_en_cours":
                         action = new RecupererInterventionEnCoursEmployeAction();
                         serialisation = new RecupererInterventionEnCoursEmployeSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
-                    
+
                     case "recuperer_emplacements_interventions":
                         action = new RecupererEmplacementsInterventionsAction();
                         serialisation = new RecupererEmplacementsInterventionsSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
-                        
+
                     case "inscrire_client":
                         action = new InscrireClientAction();
                         //serialisation = new InscrireClientSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
-                        break; 
-                    
+                        System.out.println("Test appel de la fonction " + todo + " OK");
+                        break;
+
                     case "remplir_informations_perso_client":
                         action = new RecupererInfoClientAction();
                         serialisation = new RecupererInfoClientSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
+                        System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
-                    
-                   case "modifer_info_perso_client":
+
+                    case "modifer_info_perso_client":
                         action = new ModifierInfoClientAction();
                         serialisation = new ModifierInfoClientSerialisation();
-                        System.out.println("Test appel de la fonction " + todo +" OK");
-                        break;     
-                       
+                        System.out.println("Test appel de la fonction " + todo + " OK");
+                        break;
+
+                    case "demander_intervention":
+                        action = new DemanderInterventionAction();
+                        serialisation = new DemanderInterventionSerialisation();
+                        System.out.println("Test appel de la fonction " + todo + " OK");
+                        break;
                 }
-                
+
                 // Cas action introuvable
-                if(action == null){
+                if (action == null) {
                     response.sendError(400, "Bad Request (Wrong TODO parameter)");
                     System.out.println("TODO inconnu");
-                }
-                
-                // Execution de l'action et de la sérialisation
-                else{
+                } // Execution de l'action et de la sérialisation
+                else {
                     System.out.println("TODO : " + todo);
-                    boolean actionStatus = action.executer(request,session);
-                    if(serialisation != null){
-                        serialisation.serialiser(request,response);   
+                    boolean actionStatus = action.executer(request, session);
+                    if (serialisation != null) {
+                        serialisation.serialiser(request, response);
                         System.out.println("Test Sérialisation OK");
                     }
                 }
@@ -251,8 +249,4 @@ public class ActionServlet extends HttpServlet {
         JpaUtil.destroy();
     }
 
-    
-
-
-    
 }

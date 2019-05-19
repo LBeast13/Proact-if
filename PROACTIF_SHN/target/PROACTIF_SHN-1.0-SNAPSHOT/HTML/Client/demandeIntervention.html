@@ -57,7 +57,7 @@
                             <!-- Title -->
                             <div class="row">
                                 <div class="col">
-                                    <h1 class="text-center"><b>Intervention en cours</b></h1>
+                                    <h1 class="text-center"><b>Demande d'intervention</b></h1>
                                 </div>
                             </div>
 
@@ -75,28 +75,26 @@
                                         <div class="col">
                                             <!-- Animal -->
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioAnimal" value="option1" disabled checked>
+                                                <input class="form-check-input" onChange="setChamps()" type="radio" name="radioInterv" id="radioAnimal" value="Animal" checked>
                                                 <label class="form-check-label" for="radioAnimal">Animal</label>
                                             </div>
 
                                             <!-- Incident -->
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioIncident" value="option2" disabled>
+                                                <input class="form-check-input" onChange="setChamps()" type="radio" name="radioInterv" id="radioIncident" value="Incident" >
                                                 <label class="form-check-label" for="radioIncident">Incident</label>
                                             </div>
 
                                             <!-- Livraison -->
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioLivraison" value="option3" disabled>
+                                                <input class="form-check-input" onChange="setChamps()" type="radio" name="radioInterv" id="radioLivraison" value="Livraison">
                                                 <label class="form-check-label" for="radioLivraison">Livraison</label>
                                             </div>
                                         </div> <!-- Fin Radio Buttons type -->
                                     </div> <!-- Fin 1ère ligne (Type d'intervention) -->
 
-                                    <!-- 2ème ligne (Caractéristiques, date de demande)-->
+                                    <!-- 2ème ligne (Animal)-->
                                     <div class="row ">
-
-                                        <!-- Détails Type dynamique (Show/Hide en fonction du type) -->
 
                                         <!-- Animal -->
                                         <div class="col" id='animalConteneur'>
@@ -108,33 +106,16 @@
                                             </div>
 
                                             <!-- Champ Animal dynamique -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="animal">
-                                                    Champ Animal dynamique
-                                                </div>
-                                            </div>
-                                        </div>
- <!-- 3ème ligne (Client et trajet) -->
-                                    <div class="row">
-                                        <!-- Client -->
-                                         <!-- Entreprise -->
-                                        <div class="col" id='entrepriseConteneur' hidden>
-                                            <!-- Label Entreprise -->
                                             <div class="row">
-                                                <div class="col" >
-                                                    <b>Entreprise</b>
-                                                </div>
-                                            </div>
-
-                                            <!-- Champ Entreprise dynamique -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="entreprise">
-                                                    Champ Entreprise dynamique
-                                                </div>
+                                                <input id="champ-animal" type="text" class="form-control" placeholder="Entrez l'animal">
                                             </div>
                                         </div>
-<!-- Objet -->
-                                        <div class="col" id='objetConteneur' hidden>
+                                    </div>
+
+                                    <!-- 3ème ligne (Objet, Entreprise) -->
+                                    <div class="row">
+                                        <!-- Objet -->
+                                        <div class="col" id='objetConteneur'>
                                             <!-- Label Objet -->
                                             <div class="row">
                                                 <div class="col" >
@@ -143,17 +124,13 @@
                                             </div>
 
                                             <!-- Champ Objet dynamique -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="objet">
-                                                    Champ Objet dynamique
-                                                </div>
+                                            <div class="row">
+                                                <input id="champ-objet" type="text" class="form-control" placeholder="Entrez l'objet">
                                             </div>
-                                        </div> <!-- Fin Trajet -->
-                                    </div> <!-- Fin 3ème ligne (Client, trajet) -->
-                                        
+                                        </div> <!-- Fin Objet -->
 
                                         <!-- Entreprise -->
-                                        <div class="col" id='entrepriseConteneur' hidden>
+                                        <div class="col" id='entrepriseConteneur'>
                                             <!-- Label Entreprise -->
                                             <div class="row">
                                                 <div class="col" >
@@ -162,56 +139,60 @@
                                             </div>
 
                                             <!-- Champ Entreprise dynamique -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="entreprise">
-                                                    Champ Entreprise dynamique
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                      </div> <!-- Fin 2ème ligne (détails type et date demande) --> 
-
-                                    <!-- 3ème ligne (Client et trajet) -->
-                                    <div class="row">
-                                        <div class="row">
-                                        <div class="col marg-bot">
-
-                                            <!-- Label Description -->
                                             <div class="row">
-                                                <div class="col">
-                                                    <b>Description</b>
-                                                </div>
+                                                <input id="champ-entreprise" type="text" class="form-control" placeholder="Entrez l'entreprise">
                                             </div>
+                                        </div>
+                                    </div> <!-- Fin ligne Livraison(Objet, Entreprise) -->
 
-                                            <!-- Champ de Description (Scrollable)-->
-                                             <div class="row">
-                                                <div class="col">
-                                                    <b>Description</b>
-                                                </div>
-                                            </div> 
-                                        
-                                    </div>
-                                    </div> <!-- Fin 3ème ligne (Client, trajet) -->
 
-                                    
-                                    
+                                    <!-- Description intervention -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="inputDescription">Description</label>
+                                                <textarea class="form-control" id="inputDescription" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div> <!-- Fin Description Intervention -->
+
+                                    <!-- Boutons -->
 
                                     <div class="row">
-                                        <div class="col-1 offset-5">
-                                            <button class="btn btn-primary" onclick="cloturerIntervention()">Cloturer</button>
-                                        </div>
-                                    </div>
+                                        <button type="button" id="bouton-valider" class="col btn btn-success">Valider</button>
+                                        <button type="button" id="bouton-annuler" class="col btn btn-danger">Annuler</button>
+                                    </div> <!-- Fin Boutons -->
+
                                 </div>
                             </div> <!-- Fin fenêtre centrale -->
+                            
+                            <!-- Pop-Up d'échec -->
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content bg-danger text-white">
 
+                                        <!-- Pop-Up Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Accès refusé</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
 
+                                        <!-- Pop-Up body -->
+                                        <div class="modal-body">
+                                            Les champs requis ne sont pas tous renseignés pour ce type d'intervention.
+                                            </br>Veuillez réessayer.
+                                        </div>
 
+                                    </div> <!-- Fin modal-content -->
+                                </div> <!-- Fin modal-dialog -->
+                            </div> <!-- Fin modal -->
+                            
                         </div>
                     </div>
                 </div> <!-- Fin du conteneur -->
             </div> <!-- Fin du contenu de page -->
         </div> <!-- Fin du conteneur global -->
 
-        <script type="text/javascript" src="../../JS/interventionEnCoursEmploye.js"></script>
+        <script type="text/javascript" src="../../JS/demandeIntervention.js"></script>
     </body>
 </html>
