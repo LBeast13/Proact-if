@@ -114,7 +114,22 @@ public class ActionServlet extends HttpServlet {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(jsonContainer, out);
 
-        } // Autres actions
+        } 
+        // Déconnexion
+        else if("deconnexion".equals(todo)){
+            session.setAttribute("utilisateur", null);
+            session.setAttribute("mdp", null);
+            
+            JsonObject jsonContainer = new JsonObject();
+            jsonContainer.addProperty("connexion", Boolean.FALSE);
+            
+            // Formattage et écriture de la sortie
+            response.setContentType("application/json;charset=UTF-8");
+            PrintWriter out = response.getWriter();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(jsonContainer, out);
+        }
+        // Autres actions
         else {
             String user = (String) session.getAttribute("utilisateur");
             System.out.println("Test utilisateur dans la session " + user);
@@ -140,7 +155,7 @@ public class ActionServlet extends HttpServlet {
                         System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
 
-                    case "remplir_detail_intervention_employe":
+                    case "remplir_detail_intervention":
                         action = new RecupererDetailInterventionEmployeAction();
                         serialisation = new RecupererDetailInterventionEmployeSerialisation();
                         System.out.println("Test appel de la fonction " + todo + " OK");

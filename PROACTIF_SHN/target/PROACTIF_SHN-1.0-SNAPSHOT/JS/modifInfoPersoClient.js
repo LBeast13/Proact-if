@@ -27,8 +27,11 @@ function remplirDonneesPerso() {
 
     }).fail(function (error) { // Appel KO => erreur a gérer
         console.log("Fail remplir_informations_perso");
-        // Popup avec message d'erreur :
-        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+        if (error.status === 403) {
+            window.location = "connexion-client.html";
+        } else {
+            alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+        }
     });
 }
 

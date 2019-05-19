@@ -12,7 +12,7 @@ function remplirDetailIntervention() {
         url: '../../ActionServlet',
         method: 'POST',
         data: {
-            todo: 'remplir_detail_intervention_employe',
+            todo: 'remplir_detail_intervention',
             numero_interv: $.urlParam('numInterv')
         },
         dataType: 'json'
@@ -63,7 +63,12 @@ function remplirDetailIntervention() {
     }).fail( function (error) { // Appel KO => erreur a gérer
         console.log("Fail remplir_detail_intervention_employe");          
         // Popup avec message d'erreur :
-        alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+        if(error.status === 403){
+            window.location = "../../index.html";
+        }
+        else{
+            alert('Erreur lors de l\'appel: HTTP Code ' + error.status + ' ~ ' + error.statusText + ' ~ ' + error.getResponseHeader('Content-Type'));
+        }
     });
 }
 

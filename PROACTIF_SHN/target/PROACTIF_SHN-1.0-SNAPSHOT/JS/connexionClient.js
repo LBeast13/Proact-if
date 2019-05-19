@@ -36,6 +36,7 @@ function connexion() {
 }
 
 $(document).ready(function () {
+    
     // ajout d'un "handler" sur le clic du bouton de connexion
     $('#bouton-connexion').on('click', function () {
         // affichage pour debugage dans la console javascript du navigateur
