@@ -12,8 +12,6 @@ function remplirDonneesPerso() {
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
-        console.log("TODO : Régler le raffraichissement de la page lors de l'appel\n\
-        AJAX de remplir d'info perso (on ne veut pas de raffraichissement pour pas avoir 2 appels)");
         civilite = response.civilite;
         updateCivilite(civilite);
         $('#nomEmploye').html(response.nom);
@@ -41,7 +39,6 @@ function remplirDonneesPerso() {
  * @returns {undefined}
  */
 function updateCivilite(civilite){
-    console.log(civilite);
     if(civilite === 'M'){
         $('#ongletMr').prop("disabled", false);
         $('#ongletMme').prop("disabled", true);

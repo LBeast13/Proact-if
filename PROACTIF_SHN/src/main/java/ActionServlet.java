@@ -5,6 +5,7 @@ import action.client.InscrireClientAction;
 import action.client.ModifierInfoClientAction;
 import action.client.RecupererHistoriqueClientAction;
 import action.client.RecupererInfoClientAction;
+import action.employe.CloturerInterventionEnCoursAction;
 import action.employe.RecupererDetailInterventionEmployeAction;
 import action.employe.RecupererEmplacementsInterventionsAction;
 import action.employe.RecupererHistoriqueEmployeAction;
@@ -30,6 +31,7 @@ import serialisation.client.DemanderInterventionSerialisation;
 import serialisation.client.ModifierInfoClientSerialisation;
 import serialisation.client.RecupererHistoriqueClientSerialisation;
 import serialisation.client.RecupererInfoClientSerialisation;
+import serialisation.employe.CloturerInterventionEnCoursSerialisation;
 import serialisation.employe.RecupererDetailInterventionEmployeSerialisation;
 import serialisation.employe.RecupererEmplacementsInterventionsSerialisation;
 import serialisation.employe.RecupererHistoriqueEmployeSerialisation;
@@ -165,6 +167,12 @@ public class ActionServlet extends HttpServlet {
                     case "remplir_intervention_en_cours":
                         action = new RecupererInterventionEnCoursEmployeAction();
                         serialisation = new RecupererInterventionEnCoursEmployeSerialisation();
+                        System.out.println("Test appel de la fonction " + todo + " OK");
+                        break;
+                        
+                    case "cloturer_intervention_en_cours":
+                        action = new CloturerInterventionEnCoursAction();
+                        serialisation = new CloturerInterventionEnCoursSerialisation();
                         System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
 
