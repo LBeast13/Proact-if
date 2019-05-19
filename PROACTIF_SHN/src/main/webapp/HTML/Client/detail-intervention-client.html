@@ -64,7 +64,7 @@
                             <div class="row fenetre-centrale">
                                 <div class="col my-auto">
                                     
-                                    <!-- 1ère ligne (Numéro, client, employé) -->
+                                    <!-- 1ère ligne (Numéro, employé) -->
                                     <div class='row'>
                                         <!-- Numéro de l'intervention -->
                                         <div class='col'> 
@@ -80,22 +80,6 @@
                                                 </div>
                                             </div>
                                         </div> <!-- Fin Numéro de l'intervention -->
-                                        
-                                        <!-- Numéro du client -->
-                                        <div class="col">
-                                            <div class="row">
-                                                
-                                                <!-- Label Numéro client -->
-                                                <div class="col">
-                                                    Client
-                                                </div>
-                                                
-                                                <!-- Champ Numéro client (dynamique) -->
-                                                <div class="col champ-dyna" id="numClient">
-                                                    Client dynamique
-                                                </div>
-                                            </div>
-                                        </div><!-- Fin Numéro du client -->
                                         
                                         <!-- Numéro de l'employé -->
                                         <div class="col">
@@ -286,6 +270,8 @@
                                             </div>
                                         </div>
                                     </div> <!-- Fin 6ème ligne (Commentaire)-->
+                                    
+                                    <button class='btn btn-primary' id="bouton-retour">Retour</button>
                                 </div>
                             </div> <!-- Fin cadre contenu détail -->
 
@@ -296,5 +282,6 @@
         </div> <!-- Fin du conteneur global -->
         
         <script type="text/javascript" src="../../JS/detailInterventionEmploye.js"></script>
+        <script type="text/javascript" src="../../JS/detailInterventionClient.js"></script>
     </body>
 </html>

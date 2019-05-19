@@ -3,6 +3,7 @@ import action.Action;
 import action.client.DemanderInterventionAction;
 import action.client.InscrireClientAction;
 import action.client.ModifierInfoClientAction;
+import action.client.RecupererHistoriqueClientAction;
 import action.client.RecupererInfoClientAction;
 import action.employe.RecupererDetailInterventionEmployeAction;
 import action.employe.RecupererEmplacementsInterventionsAction;
@@ -27,6 +28,7 @@ import metier.service.Service;
 import serialisation.Serialisation;
 import serialisation.client.DemanderInterventionSerialisation;
 import serialisation.client.ModifierInfoClientSerialisation;
+import serialisation.client.RecupererHistoriqueClientSerialisation;
 import serialisation.client.RecupererInfoClientSerialisation;
 import serialisation.employe.RecupererDetailInterventionEmployeSerialisation;
 import serialisation.employe.RecupererEmplacementsInterventionsSerialisation;
@@ -177,6 +179,12 @@ public class ActionServlet extends HttpServlet {
                     case "demander_intervention":
                         action = new DemanderInterventionAction();
                         serialisation = new DemanderInterventionSerialisation();
+                        System.out.println("Test appel de la fonction " + todo + " OK");
+                        break;
+                        
+                    case "remplir_historique_interventions_client":
+                        action = new RecupererHistoriqueClientAction();
+                        serialisation = new RecupererHistoriqueClientSerialisation();
                         System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
                 }
