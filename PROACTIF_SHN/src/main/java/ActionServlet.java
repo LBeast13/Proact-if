@@ -131,10 +131,11 @@ public class ActionServlet extends HttpServlet {
         }
         // Autres actions
         else {
+           
             String user = (String) session.getAttribute("utilisateur");
             System.out.println("Test utilisateur dans la session " + user);
             // Cas utilisateur non connecté (accès refusé)
-            if (user == null) {
+            if (user == null && !"inscrire_client".equals(todo)) {
                 response.sendError(403, "Forbidden (No User)");
             } // Cas utilisateur connecté
             else {
@@ -175,7 +176,7 @@ public class ActionServlet extends HttpServlet {
 
                     case "inscrire_client":
                         action = new InscrireClientAction();
-                        //serialisation = new InscrireClientSerialisation();
+                        serialisation = new RecupererInfoClientSerialisation();
                         System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
 

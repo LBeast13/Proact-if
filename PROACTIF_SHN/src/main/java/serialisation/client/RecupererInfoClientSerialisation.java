@@ -30,7 +30,6 @@ public class RecupererInfoClientSerialisation extends Serialisation{
         jsonContainer.addProperty("codePostal", (String) request.getAttribute("codePostal"));
         jsonContainer.addProperty("ville", (String) request.getAttribute("ville"));
 
-        //System.out.println(jsonContainer.toString());
         // Formattage et écriture sur la sortie
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = this.getWriterWithJsonHeader(response);
