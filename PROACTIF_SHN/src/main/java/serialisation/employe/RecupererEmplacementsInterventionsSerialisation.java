@@ -26,9 +26,10 @@ public class RecupererEmplacementsInterventionsSerialisation extends Serialisati
         JsonObject jsonContainer = new JsonObject();
 
         JsonArray jsonArrayInterventions = new JsonArray();
-        List<Intervention> interventions = (List<Intervention>) request.getAttribute("interventions");
+        List<Intervention> interventions = (List<Intervention>) request.getAttribute("interventions_du_jour");
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
+
 
         for (Intervention intervention : interventions) {
             JsonObject jsonIntervention = new JsonObject();
@@ -54,7 +55,6 @@ public class RecupererEmplacementsInterventionsSerialisation extends Serialisati
 
         jsonContainer.add("interventions", jsonArrayInterventions);
 
-        //System.out.println(jsonContainer.toString());
         // Formattage et écriture sur la sortie
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = this.getWriterWithJsonHeader(response);

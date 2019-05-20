@@ -73,7 +73,28 @@ function getEmplacementsAjax() {
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
-       console.log(response.coordInterv);
+        
+        // Petite popup Google Maps
+        var infowindow = makeInfoWindow('');
+        
+        interventions = response.interventions;
+
+        interventions.forEach(function (element) {
+            
+            coordParts = element.coordInterv.split(",");
+            var position = {lat: parseFloat(coordParts[0]), lng: parseFloat(coordParts[1])};
+            
+            var marker = new google.maps.Marker({
+                map: googleMapInstance,
+                position: {lat: position.lat , lng: position.lng},
+                title: 'Test',
+                //icon: iconImage
+            });
+            
+            attachInfoWindow( marker, infowindow,
+                '<div><strong><a href="endroit.html?">Endroit #</a></strong><br/>Ceci est l\'endroit charmant numéro <br/>' + 'Incroyable !' + '</div>'
+                );
+        });
         
     }).fail( function (error) { // Appel KO => erreur a gérer
         console.log("Fail recuperer_emplacements_interventions");          
