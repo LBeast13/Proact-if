@@ -14,49 +14,54 @@ function remplirInterventionEnCours() {
         dataType: 'json'
     }).done(function (response) { // Appel OK
         console.log("Remplir intervention en cours");
-        if (response.en_cours === "oui") {
-            console.log("Il y a une interv en cours...");
-            numIntervention = response.num_interv;
 
-            if (response.type_interv === "Intervention Animal") {   // Animal
-                // Affichage et masquage des éléments
-                $('#animalConteneur').removeAttr("hidden");
-                $('#objetConteneur').attr("hidden", true);
-                $('#entrepriseConteneur').attr("hidden", true);
+        if (response.interv_presentes === "oui") {
+            if (response.en_cours === "oui") {
+                console.log("Il y a une interv en cours...");
+                numIntervention = response.num_interv;
 
-                $('#animal').html(response.animal_interv);
+                if (response.type_interv === "Intervention Animal") {   // Animal
+                    // Affichage et masquage des éléments
+                    $('#animalConteneur').removeAttr("hidden");
+                    $('#objetConteneur').attr("hidden", true);
+                    $('#entrepriseConteneur').attr("hidden", true);
 
-                $('#radioAnimal').attr("checked", true);
+                    $('#animal').html(response.animal_interv);
 
-            } else if (response.type_interv === "Intervention Livraison") { // Livraison
-                // Affichage et masquage des éléments
-                $('#animalConteneur').attr("hidden", true);
-                $('#objetConteneur').removeAttr("hidden");
-                $('#entrepriseConteneur').removeAttr("hidden");
+                    $('#radioAnimal').attr("checked", true);
 
-                $('#objet').html(response.objet_interv);
-                $('#entreprise').html(response.entreprise_interv);
+                } else if (response.type_interv === "Intervention Livraison") { // Livraison
+                    // Affichage et masquage des éléments
+                    $('#animalConteneur').attr("hidden", true);
+                    $('#objetConteneur').removeAttr("hidden");
+                    $('#entrepriseConteneur').removeAttr("hidden");
 
-                $('#radioLivraison').attr("checked", true);
+                    $('#objet').html(response.objet_interv);
+                    $('#entreprise').html(response.entreprise_interv);
 
-            } else if (response.type_interv === "Intervention Incident") { // Incident
-                // Affichage et masquage des éléments
-                $('#animalConteneur').attr("hidden", true);
-                $('#objetConteneur').attr("hidden", true);
-                $('#entrepriseConteneur').attr("hidden", true);
+                    $('#radioLivraison').attr("checked", true);
 
-                $('#radioIncident').attr("checked", true);
+                } else if (response.type_interv === "Intervention Incident") { // Incident
+                    // Affichage et masquage des éléments
+                    $('#animalConteneur').attr("hidden", true);
+                    $('#objetConteneur').attr("hidden", true);
+                    $('#entrepriseConteneur').attr("hidden", true);
+
+                    $('#radioIncident').attr("checked", true);
+                }
+
+                // Données indépendentes du type d'intervention
+                $('#codeClientIntervention').html(response.numero_client);
+                $('#dateDemandeIntervention').html(response.date_demande_interv);
+                $('#trajetIntervention').html(response.trajet_interv);
+                $('#adresseIntervention').html(response.adresse_interv);
+                $('#descriptionIntervention').html(response.description_interv);
+            } else if (response.en_cours === "non") { // Aucune intervention en cours
+                console.log("Il n'y a pas d'interv en cours...");
+                $("#fenetre").empty();
+                $("#fenetre").append("Pas d'intervention en cours...");
             }
-
-            // Données indépendentes du type d'intervention
-            $('#codeClientIntervention').html(response.numero_client);
-            $('#dateDemandeIntervention').html(response.date_demande_interv);
-            $('#trajetIntervention').html(response.trajet_interv);
-            $('#adresseIntervention').html(response.adresse_interv);
-            $('#descriptionIntervention').html(response.description_interv);
-        } 
-        else if (response.en_cours === "non") { // Aucune intervention en cours
-            console.log("Il n'y a pas d'interv en cours...");
+        } else {
             $("#fenetre").empty();
             $("#fenetre").append("Pas d'intervention en cours...");
         }

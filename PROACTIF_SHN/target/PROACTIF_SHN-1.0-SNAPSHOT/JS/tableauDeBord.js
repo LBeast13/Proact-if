@@ -51,14 +51,13 @@ function initMap() {
     });
 
     // Simuler un appel AJAX (attente 5s)
-    setTimeout(
+    /*setTimeout(
             generateMarkers,
             5000
-            );
+            );*/
     
     // Appel Ajax
     getEmplacementsAjax();
-    
 }
 
 /**

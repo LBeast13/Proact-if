@@ -20,34 +20,39 @@ public class RecupererInterventionEnCoursEmployeSerialisation extends Serialisat
 
         JsonObject jsonContainer = new JsonObject();
 
-        String enCours = (String) request.getAttribute("en_cours");
+        String intervPresente = (String) request.getAttribute("interv_presentes");
 
-        if (enCours.equals("oui")) {
-            String typeInterv = (String) request.getAttribute("type_interv");
+        if (intervPresente.equals("oui")) {
+            String enCours = (String) request.getAttribute("en_cours");
 
-            switch (typeInterv) {
-                case "Intervention Animal":
-                    jsonContainer.addProperty("animal_interv", (String) request.getAttribute("animal_interv"));
-                    break;
+            if (enCours.equals("oui")) {
+                String typeInterv = (String) request.getAttribute("type_interv");
 
-                case "Intervention Livraison":
-                    jsonContainer.addProperty("objet_interv", (String) request.getAttribute("objet_interv"));
-                    jsonContainer.addProperty("entreprise_interv", (String) request.getAttribute("entreprise_interv"));
-                    break;
+                switch (typeInterv) {
+                    case "Intervention Animal":
+                        jsonContainer.addProperty("animal_interv", (String) request.getAttribute("animal_interv"));
+                        break;
+
+                    case "Intervention Livraison":
+                        jsonContainer.addProperty("objet_interv", (String) request.getAttribute("objet_interv"));
+                        jsonContainer.addProperty("entreprise_interv", (String) request.getAttribute("entreprise_interv"));
+                        break;
+                }
+
+                jsonContainer.addProperty("num_interv", (String) request.getAttribute("num_interv"));
+                jsonContainer.addProperty("num_employe", (String) request.getAttribute("num_employe"));
+                jsonContainer.addProperty("type_interv", typeInterv);
+                jsonContainer.addProperty("numero_client", (String) request.getAttribute("numero_client"));
+                jsonContainer.addProperty("date_demande_interv", (String) request.getAttribute("date_demande_interv"));
+                jsonContainer.addProperty("trajet_interv", (String) request.getAttribute("trajet_interv"));
+                jsonContainer.addProperty("adresse_interv", (String) request.getAttribute("adresse_interv"));
+                jsonContainer.addProperty("description_interv", (String) request.getAttribute("description_interv"));
+
             }
 
-            jsonContainer.addProperty("num_interv", (String) request.getAttribute("num_interv"));
-            jsonContainer.addProperty("num_employe", (String) request.getAttribute("num_employe"));
-            jsonContainer.addProperty("type_interv", typeInterv);
-            jsonContainer.addProperty("numero_client", (String) request.getAttribute("numero_client"));
-            jsonContainer.addProperty("date_demande_interv", (String) request.getAttribute("date_demande_interv"));
-            jsonContainer.addProperty("trajet_interv", (String) request.getAttribute("trajet_interv"));
-            jsonContainer.addProperty("adresse_interv", (String) request.getAttribute("adresse_interv"));
-            jsonContainer.addProperty("description_interv", (String) request.getAttribute("description_interv"));
-            
+            jsonContainer.addProperty("en_cours", (String) request.getAttribute("en_cours"));
         }
-        
-        jsonContainer.addProperty("en_cours", (String) request.getAttribute("en_cours"));
+        jsonContainer.addProperty("interv_presentes", (String) request.getAttribute("interv_presentes"));
 
         //System.out.println(jsonContainer.toString());
         // Formattage et écriture sur la sortie

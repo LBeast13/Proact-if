@@ -79,7 +79,8 @@ public class GeoTest {
 
         DirectionsApiRequest request = DirectionsApi.getDirections(MON_CONTEXTE_GEOAPI, origin.toString(), destination.toString());
         request.mode(mode);
-        request.region("fr");
+        request.region("fr"); 
+        
 
         if (steps.length > 0) {
 
@@ -124,7 +125,7 @@ public class GeoTest {
             System.exit(-1);
         }
 
-        String adresse1 = "7 Avenue Jean Capelle Ouest, Villeurbanne";
+        String adresse1 = "132 Avenue Roger Salengro 69100 Villeurbanne";
         LatLng coords1 = getLatLng(adresse1);
         System.out.println("Lat/Lng de Adresse #1: " + coords1);
 

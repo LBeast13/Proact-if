@@ -493,7 +493,7 @@ public class Main{
         
         Service.initializeSys();
         //recupererHistoriqueEmployeDemo();
-        menu();
+        //menu();
         
         // Libération du JpaUtil
         JpaUtil.destroy();

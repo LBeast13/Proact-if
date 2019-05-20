@@ -3,7 +3,6 @@ package action.employe;
 import action.Action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import metier.modele.Employe;
 import metier.modele.Intervention;
 import metier.modele.Intervention_Animal;
 import metier.modele.Intervention_Livraison;

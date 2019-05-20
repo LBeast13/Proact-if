@@ -19,7 +19,7 @@ import util.GeoTest;
  */
 public class ServiceUtils {
     
-    protected static LatLng recupererCoordGPS(String adresse, Integer codePostal, String ville) {
+    public static LatLng recupererCoordGPS(String adresse, Integer codePostal, String ville) {
         String adresseComplete = adresse + codePostal + ville;
         return GeoTest.getLatLng(adresseComplete);
     }

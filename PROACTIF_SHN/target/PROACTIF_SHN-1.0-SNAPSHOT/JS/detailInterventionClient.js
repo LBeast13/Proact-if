@@ -61,7 +61,7 @@ function remplirDetailIntervention() {
         $('#commentaire').html(response.commentaire_interv);
         
     }).fail( function (error) { // Appel KO => erreur a gérer
-        console.log("Fail remplir_detail_intervention_employe");          
+        console.log("Fail remplir_detail_intervention_client");          
         // Popup avec message d'erreur :
         if(error.status === 403){
             window.location = "connexion-client.html";

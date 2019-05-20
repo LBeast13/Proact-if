@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import metier.modele.Client;
 import metier.service.Service;
+import metier.service.ServiceUtils;
 import util.GeoTest;
 
 /**
@@ -23,18 +24,17 @@ public class InscrireClientAction extends Action{
     public boolean executer(HttpServletRequest request, HttpSession session) {
         
         try {
-            Date dateInscription = new Date();
             String mdp = (String) request.getParameter("mdp");
             String nom = (String) request.getParameter("nom");
             String prenom = (String) request.getParameter("prenom");
             String civilite = (String) request.getParameter("civilite");
-            String date = (String) request.getParameter("date_naissance"); // Convertir en Date
+            String date = (String) request.getParameter("date_naissance"); 
             String numTelephone = (String) request.getParameter("telephone");
             String mail = (String) request.getParameter("email");
             String adresse = (String) request.getParameter("adresse");
-            String codePostal = (String) request.getParameter("code_postal"); // Convertir en Integer
+            String codePostal = (String) request.getParameter("code_postal"); 
             String ville = (String) request.getParameter("ville");
-            LatLng coordGPS = GeoTest.getLatLng(adresse + " " + codePostal + " " + ville);
+            LatLng coordGPS = ServiceUtils.recupererCoordGPS(adresse, Integer.parseInt(codePostal), ville);
             
             // Conversion de la date
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
