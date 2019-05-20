@@ -25,6 +25,9 @@ public class RecupererNomPrenomAction extends Action{
         String mdp = (String) session.getAttribute("mdp");
         
         Personne p = Service.connecterEmploye(login, mdp);
+        if(p == null){
+            p = Service.connecterClient(login, mdp);
+        }
         
         request.setAttribute("nom", p.getNom());
         request.setAttribute("prenom", p.getPrenom());
