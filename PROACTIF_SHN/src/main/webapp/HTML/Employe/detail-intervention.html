@@ -78,63 +78,62 @@
                                 <div class="col my-auto">
                                     
                                     <!-- 1ère ligne (Numéro, client, employé) -->
-                                    <div class='row'>
+                                    <div class='row' style ="margin-bottom: 10px;">
                                         <!-- Numéro de l'intervention -->
-                                        <div class='col'> 
+                                        <div class='col-4'> 
                                             <div class="row">
                                                 <!-- Label Numéro -->
-                                                <div class="col">
+                                                <div class="col-5">
                                                     Numéro
-                                                </div>
-                                                
+                                                </div>                                                
                                                 <!-- Champ Numéro (dynamique) -->
                                                 <div class="col champ-dyna" id="numInterv">
-                                                    Numéro dynamique
+                                                    Numéro 
                                                 </div>
                                             </div>
                                         </div> <!-- Fin Numéro de l'intervention -->
                                         
                                         <!-- Numéro du client -->
-                                        <div class="col">
+                                        <div class="col-4">
                                             <div class="row">
                                                 
                                                 <!-- Label Numéro client -->
-                                                <div class="col">
+                                                <div class="col-5">
                                                     Client
                                                 </div>
                                                 
                                                 <!-- Champ Numéro client (dynamique) -->
                                                 <div class="col champ-dyna" id="numClient">
-                                                    Client dynamique
+                                                    Client 
                                                 </div>
                                             </div>
                                         </div><!-- Fin Numéro du client -->
                                         
                                         <!-- Numéro de l'employé -->
-                                        <div class="col">
+                                        <div class="col-4">
                                             <div class="row">
                                                 
                                                 <!-- Label Numéro employé -->
-                                                <div class="col">
+                                                <div class="col-5">
                                                     Employé
                                                 </div>
                                                 
                                                 <!-- Champ Numéro employé (dynamique) -->
                                                 <div class="col champ-dyna" id="numEmploye">
-                                                    Employé dynamique
+                                                    Employé 
                                                 </div>
                                             </div>
                                         </div><!-- Fin Numéro de l'employé -->
                                     </div> <!-- Fin 1ère ligne (Numéro, client, employé) -->
                                     
                                     <!-- 2ème ligne (Type avec checkbox) -->
-                                    <div class='row'>
-                                        <div class="col">
+                                    <div class='row' style ="margin-bottom: 10px">
+                                        <div class="col-2">
                                             Type
                                         </div>
 
                                         <!-- Radio Buttons Type -->
-                                        <div class="col">
+                                        <div class="col-10">
                                             <!-- Animal -->
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioAnimal" value="option1" disabled checked>
@@ -156,64 +155,48 @@
                                     </div> <!-- Fin 2ème ligne (Type avec checkbox) -->
                                     
                                     <!-- 3ème ligne (Statut, Objet, Entreprise) -->
-                                    <div class='row'>
+                                    <div class='row' style ="margin-bottom: 10px;">
                                         <!-- Statut -->
-                                        <div class='col'> 
+                                        <div class='col-3'> 
                                             <div class="row">
                                                 <!-- Label statut -->
-                                                <div class="col">
+                                                <div class="col-5">
                                                     Statut
-                                                </div>
-                                                
+                                                </div>                                                
                                                 <!-- Champ statut (dynamique) -->
                                                 <div class="col champ-dyna" id="statut">
-                                                    Statut dynamique
+                                                    Statut 
                                                 </div>
                                             </div>
                                         </div> <!-- Fin statut de l'intervention -->
                                         
-                                        <!-- Animal -->
-                                        <div class="col" id="conteneurAnimal">
-                                            <div class="row">                                              
-                                                <!-- Label Objet -->
-                                                <div class="col">
-                                                    Animal
-                                                </div>
-                                                
-                                                <!-- Champ Objet (dynamique) -->
-                                                <div class="col champ-dyna" id="animal">
-                                                    Animal dynamique
-                                                </div>
-                                            </div>
-                                        </div><!-- Fin Objet -->
-                                        
+                                                                              
                                         <!-- Objet -->
-                                        <div class="col" id="conteneurObjet">
+                                        <div class="col-4" id="conteneurObjet">
                                             <div class="row">                                              
                                                 <!-- Label Objet -->
-                                                <div class="col">
+                                                <div class="col-5">
                                                     Objet
                                                 </div>
                                                 
                                                 <!-- Champ Objet (dynamique) -->
                                                 <div class="col champ-dyna" id="objet">
-                                                    Objet dynamique
+                                                    Objet 
                                                 </div>
                                             </div>
                                         </div><!-- Fin Objet -->
                                         
                                         <!-- Entreprise -->
-                                        <div class="col" id="conteneurEntreprise">
+                                        <div class="col-5" id="conteneurEntreprise">
                                             <div class="row">
                                                 
                                                 <!-- Label entreprise -->
-                                                <div class="col">
+                                                <div class="col-5">
                                                     Entreprise
-                                                </div>
-                                                
+                                                </div>                                                
                                                 <!-- Champ Entreprise (dynamique) -->
                                                 <div class="col champ-dyna" id="entreprise">
-                                                    Entreprise dynamique
+                                                    Entreprise 
                                                 </div>
                                             </div>
                                         </div><!-- Fin Entreprise -->
@@ -222,21 +205,20 @@
                                     <!-- 4ème ligne (Date demande,cloture) -->
                                     <div class='row'>
                                         <!-- Demande -->
-                                        <div class="col">
+                                        <div class="col-6">
                                             <!-- Label Demande -->
                                             <div class="row">
-                                                <div class="col">
+                                                <div class="col-10">
                                                     Date de demande
                                                 </div>
-                                            </div>
-                                            
+                                            </div>                                            
                                             <!-- Champ Demande (dynamique) -->
                                             <div class="row">
                                                 <div class="col champ-dyna" id="dateDemande">
-                                                    Date de demande (dynamique)
+                                                    DD/MM/YYY
                                                 </div>
-                                                <div class="col">
-                                                    <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 50px;">
+                                                <div class="col-6">
+                                                    <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 30px;">
                                                 </div>
                                             </div>    
                                         </div> <!-- Fin Demande -->
@@ -253,10 +235,10 @@
                                             <!-- Champ Cloture (dynamique) -->
                                             <div class="row">
                                                 <div class="col champ-dyna" id="dateCloture">
-                                                    Date de clôture (dynamique)
+                                                    DD/MM/YYYY
                                                 </div>
-                                                <div class="col">
-                                                    <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 50px;">
+                                                <div class="col-6">
+                                                    <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 30px;">
                                                 </div>
                                             </div>  
                                         </div> <!-- Fin Cloture -->
