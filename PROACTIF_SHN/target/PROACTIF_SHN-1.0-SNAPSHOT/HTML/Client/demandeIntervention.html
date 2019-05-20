@@ -30,7 +30,11 @@
             <!-- Menu latéral -->
             <div class="border-right" id="sidebar-wrapper">
                 <!-- Bouton de montrer/cacher Menu -->
-                <div class="btn">Menu</div>
+                <div class="row">
+                    <div class="col" style="border-right: 0px">
+                        <img id="menu" src="../../assets/img/logo-menu.png" alt="Menu"  style="width: 30px;">
+                    </div>
+                </div>
 
                 <!-- Prénom, Nom et photo -->
                 <div class="sidebar-heading text-center">
@@ -39,11 +43,19 @@
                 </div>
 
                 <!-- Items de navigation -->
-                <div class="list-group list-group-flush">
+                <div class="list-group list-group-flush" style="margin-bottom: 80px">
                     <a href="info-perso-client.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
                     <a href="demandeIntervention.html" class="text-center list-group-item list-group-item-action">Demande interventions</a>
                     <a href="historique-interventions-client.html" class="text-center list-group-item list-group-item-action">Historique</a>
-                    <a href="connexion-client.html" class="list-group-item list-group-item-action" onclick="deconnexion()">Déconnexion</a>
+                </div>
+                <div class="row justify-content-left">
+                     
+                    <div class="col-2">
+                         <img id="logout" src="../../assets/img/logo-logout.png" alt="Logout"  style="width: 50px;">
+                    </div>                    
+                    <div class="col-6">
+                         <a style = "position: 1" href="../../connexion-client.html" class="list-group-item list-group-item-action" onclick="deconnexion()">Déconnexion</a>
+                     </div>
                 </div>
             </div>  <!-- fin du menu latéral -->
 

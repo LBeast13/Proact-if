@@ -29,22 +29,34 @@
             <!-- Menu latéral -->
             <div class="border-right" id="sidebar-wrapper">
                 <!-- Bouton de montrer/cacher Menu -->
-                <div class="btn">Menu</div>
+                <div class="row">
+                    <div class="col" style="border-right: 0px">
+                        <img id="menu" src="../../assets/img/logo-menu.png" alt="Menu"  style="width: 30px;">
+                    </div>
+                </div>
 
                 <!-- Prénom, Nom et photo -->
                 <div class="sidebar-heading text-center">
-                    Prénom et Nom (Dynamiquement)
+                    <p id="nomMenu">Prénom et Nom (Dynamiquement)</p>
                     <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
                 </div>
 
                 <!-- Items de navigation -->
-                <div class="list-group list-group-flush">
+                <div class="list-group list-group-flush" style="margin-bottom: 40px">
                     <a href="info-perso.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
                     <a href="intervention-en-cours-employe.html" class="text-center list-group-item list-group-item-action">Interventions en cours</a>
                     <a href="historique-interventions.html" class="text-center list-group-item list-group-item-action">Historique</a>
                     <a href="tableau-de-bord.html" class="text-center list-group-item list-group-item-action">Tableau de bord</a>
-                    <a href="../../index.html" class="list-group-item list-group-item-action" onclick="deconnexion()">Déconnexion</a>
                 </div>
+                <div class="row justify-content-left">
+
+                   <div class="col-2">
+                        <img id="logout" src="../../assets/img/logo-logout.png" alt="Logout"  style="width: 50px;">
+                   </div>                    
+                   <div class="col-6">
+                        <a style = "position: 1" href="../../index.html" class="list-group-item list-group-item-action" onclick="deconnexion()">Déconnexion</a>
+                    </div>
+               </div>
             </div>  <!-- fin du menu latéral -->
             
 
@@ -224,7 +236,7 @@
                                                     Date de demande (dynamique)
                                                 </div>
                                                 <div class="col">
-                                                    Logo calendrier
+                                                    <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 50px;">
                                                 </div>
                                             </div>    
                                         </div> <!-- Fin Demande -->
@@ -244,7 +256,7 @@
                                                     Date de clôture (dynamique)
                                                 </div>
                                                 <div class="col">
-                                                    Logo calendrier
+                                                    <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 50px;">
                                                 </div>
                                             </div>  
                                         </div> <!-- Fin Cloture -->
@@ -298,5 +310,6 @@
         
         <script type="text/javascript" src="../../JS/detailInterventionEmploye.js"></script>
         <script type="text/javascript" src="../../JS/deconnexion.js"></script>
+        <script type="text/javascript" src="../../JS/menuLateral.js"></script>
     </body>
 </html>

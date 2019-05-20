@@ -1,5 +1,6 @@
 
 import action.Action;
+import action.RecupererNomPrenomAction;
 import action.client.DemanderInterventionAction;
 import action.client.InscrireClientAction;
 import action.client.ModifierInfoClientAction;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpSession;
 import metier.modele.Employe;
 import metier.modele.Client;
 import metier.service.Service;
+import serialisation.RecupererNomPrenomSerialisation;
 import serialisation.Serialisation;
 import serialisation.client.DemanderInterventionSerialisation;
 import serialisation.client.ModifierInfoClientSerialisation;
@@ -209,6 +211,12 @@ public class ActionServlet extends HttpServlet {
                     case "remplir_historique_interventions_client":
                         action = new RecupererHistoriqueClientAction();
                         serialisation = new RecupererHistoriqueClientSerialisation();
+                        System.out.println("Test appel de la fonction " + todo + " OK");
+                        break;
+                    
+                    case "recuperer_nom_prenom":
+                        action = new RecupererNomPrenomAction();
+                        serialisation = new RecupererNomPrenomSerialisation();
                         System.out.println("Test appel de la fonction " + todo + " OK");
                         break;
                 }

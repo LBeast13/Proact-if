@@ -21,29 +21,46 @@
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
         <link rel="stylesheet" type="text/css" href="../../Style/menuLateralEmploye.css">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        
+
     </head>
     <body>
+        
         <!-- Conteneur global -->
         <div class="d-flex" id="wrapper" >
             
             <!-- Menu latéral -->
             <div class="border-right" id="sidebar-wrapper">
                 <!-- Bouton de montrer/cacher Menu -->
-                <div class="btn">Menu</div>
+                <div class="row">
+                    <div class="col" style="border-right: 0px">
+                        <img id="menu" src="../../assets/img/logo-menu.png" alt="Menu"  style="width: 30px;">
+                    </div>
+                </div>
 
                 <!-- Prénom, Nom et photo -->
                 <div class="sidebar-heading text-center">
-                    Prénom et Nom (Dynamiquement)
+                    <p id="nomMenu">Prénom et Nom (Dynamiquement)</p>
                     <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
                 </div>
 
                 <!-- Items de navigation -->
-                <div class="list-group list-group-flush">
+                <div class="list-group list-group-flush" style="margin-bottom: 40px">
                     <a href="info-perso.html" class="acive text-center list-group-item list-group-item-action ">Informations personnelles</a>
                     <a href="intervention-en-cours-employe.html" class="text-center list-group-item list-group-item-action">Interventions en cours</a>
                     <a href="historique-interventions.html" class="text-center list-group-item list-group-item-action">Historique</a>
-                    <a href="tableau-de-bord.html" class="text-center list-group-item list-group-item-action">Tableau de bord</a>
-                    <a href="../../index.html" class="list-group-item list-group-item-action" onclick="deconnexion()">Déconnexion</a>
+                    <a href="tableau-de-bord.html" class="text-center list-group-item list-group-item-action">Tableau de bord</a>                   
+                </div>
+                
+                <div class="row justify-content-left">
+                     
+                    <div class="col-2">
+                         <img id="logout" src="../../assets/img/logo-logout.png" alt="Logout"  style="width: 50px;">
+                    </div>                    
+                    <div class="col-6">
+                         <a style = "position: 1" href="../../index.html" class="list-group-item list-group-item-action" onclick="deconnexion()">Déconnexion</a>
+                     </div>
                 </div>
             </div>  <!-- fin du menu latéral -->
             
@@ -66,67 +83,71 @@
                                 <div class="col fenetre-centrale">
                                     
                                     <!-- 1ère ligne (Numéro, client, employé) -->
-                                    <div class='row '>
-                                        <!-- Numéro de l'intervention -->
-                                        <div class='col'> 
-                                            <div class="row">
+                                    <div class='row ' style ="border : 20px;">
+                                        <!-- Numéro de l'intervention -->                                      
+                                            
                                                 <!-- Label Numéro -->
-                                                <div class="col">
+                                                <div class="col-2">
                                                     Numéro
                                                 </div>
                                                 
                                                 <!-- Champ Numéro (dynamique) -->
                                                 <div class="col champ-dyna" id="numInterv">
-                                                    Numéro dynamique
+                                                    Numéro 
                                                 </div>
-                                            </div>
-                                        </div> <!-- Fin Numéro de l'intervention -->
+                                         
+                                         <!-- Fin Numéro de l'intervention -->
                                         
                                         <!-- Numéro du client -->
-                                        <div class="col">
-                                            <div class="row">
-                                                
+                                       
+                                            
                                                 <!-- Label Numéro client -->
-                                                <div class="col">
+                                                <div class="col-2">
                                                     Client
                                                 </div>
                                                 
                                                 <!-- Champ Numéro client (dynamique) -->
                                                 <div class="col champ-dyna" id="numClient">
-                                                    Client dynamique
+                                                    Client 
                                                 </div>
-                                            </div>
-                                        </div><!-- Fin Numéro du client -->
+                                          
+                                       <!-- Fin Numéro du client -->
                                         
                                         <!-- Numéro de l'employé -->
-                                        <div class="col">
-                                            <div class="row">
-                                                
-                                                <!-- Label Numéro employé -->
-                                                <div class="col">
-                                                    Employé
-                                                </div>
-                                                
-                                                <!-- Champ Numéro employé (dynamique) -->
-                                                <div class="col champ-dyna" id="numEmploye">
-                                                    Employé dynamique
-                                                </div>
-                                            </div>
-                                        </div><!-- Fin Numéro de l'employé -->
+                                       
+                                                                                          
+                                                    <!-- Label Numéro employé -->
+                                                    <div class="col-2">
+                                                        Employé
+                                                    </div>
+                                                    
+                                                    <!-- Champ Numéro employé (dynamique) -->
+                                                    <div class="col champ-dyna" id="numEmploye">
+                                                        Employé 
+                                                    </div>
+                                            
+                                       <!-- Fin Numéro de l'employé -->
                                     </div> <!-- Fin 1ère ligne (Numéro, client, employé) -->
                                     
-                                    <!-- Statut -->
-                                    <div class="form-group row">
-                                        <label for="inputStatut" class="col col-form-label">Statut</label>
-                                        <div class="col">
-                                            <input type="text" class="form-control" id="inputStatut" placeholder="Succès, Echec...">
-                                        </div>
-                                    </div> <!-- Fin Statut -->
+                                    <div class ="row">
+                                        
+                                    </div>
                                     
+                                    <div style ="border-top: 10px"  class ="row">
+                                        <div class ="col-8">
+                                            <!-- Statut -->
+                                            <div class="form-group row">
+                                                <label for="inputStatut" class="col col-form-label">Statut</label>
+                                                <div class="col">
+                                                    <input type="text" class="form-control" id="inputStatut" placeholder="Succès, Echec...">
+                                                </div>
+                                            </div> <!-- Fin Statut -->
+                                        </div>
+                                    </div>
                                     <!-- Date demande,cloture -->
                                     <div class='row'>
                                         <!-- Demande -->
-                                        <div class="col">
+                                        <div class="col-4">
                                             <!-- Label Demande -->
                                             <div class="row">
                                                 <div class="col">
@@ -139,8 +160,8 @@
                                                 <div class="col champ-dyna" id="dateDemande">
                                                     Date de demande (dynamique)
                                                 </div>
-                                                <div class="col">
-                                                    Logo calendrier
+                                                <div class="col-4">
+                                                   <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 50px;">
                                                 </div>
                                             </div>    
                                         </div> <!-- Fin Demande -->
@@ -160,7 +181,7 @@
                                                     <input type="date" class="form-control" id="inputDateCloture" placeholder="JJ/MM/AAAA">
                                                 </div>
                                                 <div class="col">
-                                                    Logo calendrier
+                                                    <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 50px;">
                                                 </div>
                                             </div>  
                                         </div> <!-- Fin Cloture -->
@@ -219,5 +240,6 @@
         
         <script type="text/javascript" src="../../JS/clotureInterventionEmploye.js"></script>
         <script type="text/javascript" src="../../JS/deconnexion.js"></script>
+        <script type="text/javascript" src="../../JS/menuLateral.js"></script>
     </body>
 </html>
