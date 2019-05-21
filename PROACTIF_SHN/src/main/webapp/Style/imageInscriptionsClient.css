@@ -11,35 +11,12 @@ body {
   overflow-x: hidden;
 }
 
-
-#photo-profil{
-    width:15rem;
-    margin:0;
-}
-
-.list-group-item{
-    margin-bottom: 5px;
-}
-
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
-}
-
-#sidebar-wrapper .list-group {
-  width: 20rem;
-}
-
 #page-content-wrapper {
-  min-width: 100vw;
-  
+  min-width: 100vw;  
   background: url("../assets/img/connexion_client.jpg") no-repeat center center fixed;
 
 }
 
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
-}
 
 @media (min-width: 768px) {
   #sidebar-wrapper {
