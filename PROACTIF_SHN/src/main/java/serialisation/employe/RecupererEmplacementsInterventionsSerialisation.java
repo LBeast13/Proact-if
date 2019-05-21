@@ -41,6 +41,7 @@ public class RecupererEmplacementsInterventionsSerialisation extends Serialisati
             String nomClient = intervention.getClient_associe().getNom();
             String prenomEmploye = intervention.getEmploye_associe().getPrenom();
             String nomEmploye = intervention.getEmploye_associe().getNom();
+            String description = intervention.getDescription();
 
             jsonIntervention.addProperty("numero", intervention.getNumIntervention().toString());
             jsonIntervention.addProperty("type", type);
@@ -49,6 +50,7 @@ public class RecupererEmplacementsInterventionsSerialisation extends Serialisati
             jsonIntervention.addProperty("statut", statut);  // Gérer le statut ATTENTION au NULL
             jsonIntervention.addProperty("employe", prenomEmploye + " " + nomEmploye);
             jsonIntervention.addProperty("coordInterv", coordInterv.toString());
+            jsonIntervention.addProperty("description", description);
 
             jsonArrayInterventions.add(jsonIntervention);
         }

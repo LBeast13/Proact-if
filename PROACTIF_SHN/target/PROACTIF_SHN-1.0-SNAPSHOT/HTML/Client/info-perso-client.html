@@ -37,7 +37,7 @@
                 <!-- Prénom, Nom et photo -->
                 <div class="sidebar-heading text-center">
                     <p id="nomMenu">Prénom et Nom (Dynamiquement)</p>
-                    <img id="photo-profil" src="../../assets/img/photo-employe.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
+                    <img id="photo-profil" src="../../assets/img/photo-client.jpg" alt="Photo de profil" class="img-thumbnail img-fluid">
                 </div>
 
                 <!-- Items de navigation -->
@@ -74,27 +74,21 @@
                             <!-- Fenêtre centrale -->
                             <div class="row fenetre-centrale">
                                 <div class="col my-auto">
-
-                                    <!-- 1ère ligne -->
+                                    <!-- 1ère ligne -->                                    
                                     <div class="row marg-bot">
                                         <!-- Logo silhouette -->
-                                        <div class="col ">                                             
-                                            <img id="avatar" src="../../assets/img/logo-user.png" alt="Avatar"  style="width: 50px;">
+                                        <div class="col-2">                                             
+                                            <img id="avatar" src="../../assets/img/logo-user.png" alt="Avatar"  style="width: 30px;">
                                         </div>
-
                                         <!-- Genre Tab -->
-                                        <div class="col">
+                                        <div class="col-6">
                                             <div class="btn-group btn-group-toggle" data-toggle="buttons" >
                                                 <button type="button" class="border border-secondary btn btn-light active" id="ongletMr" disabled="disabled">Mr</button>
                                                 <button type="button" class="border border-secondary btn btn-light" id="ongletMme" disabled="disabled">Mme</button>
                                                 <button type="button" class="border border-secondary btn btn-light" id="ongletMlle" disabled="disabled">Mlle</button>
 
                                             </div>
-                                        </div>
-
-                                        <div class="col">
-                                            Planning
-                                        </div>
+                                        </div>                                      
                                     </div> <!-- Fin 1ère ligne -->
 
                                     <!-- 2ème ligne (Nom Prénom)-->
@@ -110,9 +104,13 @@
                                             </div>
 
                                             <!-- Champ de Nom -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="nomClient">
-                                                    Nom dynamique
+                                            <div class="row">
+                                                <div class ="col-8">     
+                                                    <div class="row champ-dyna">
+                                                        <div class="col" id="nomClient">
+                                                            Nom dynamique
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div> <!-- Fin Nom -->
                                         </div> 
@@ -126,9 +124,13 @@
                                             </div> 
 
                                             <!-- Champ de Prénom -->
-                                            <div class="row champ-dyna">
-                                                <div class="col" id="prenomClient">
-                                                    Prénom dynamique
+                                            <div class="row">
+                                                <div class ="col-8">     
+                                                    <div class="row champ-dyna">
+                                                        <div class="col" id="prenomClient">
+                                                            Prénom dynamique
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -138,24 +140,21 @@
                                     <!-- 3ème ligne (Date de naissance)-->
                                     <div class="row marg-bot">
                                         <!-- Label date de naissance -->
-                                        <div class="col">
+                                        <div class="col-6">
                                             <b>Date de naissance</b>
                                         </div>
 
                                         <!-- Date de naissance et logo -->
-                                        <div class="col">
-                                            <div class="row">
-                                                <!-- Champ date de naissance -->
-                                                <div class="col champ-dyna" id="dateNaissanceClient">
-                                                    Date dynamique
-                                                </div>
-
-                                                <!-- Logo Calendrier -->
-                                                <div class="col">
-                                                   <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 50px;">
-                                                </div> 
+                                        <div class="col-4">                                           
+                                            <!-- Champ date de naissance -->
+                                            <div class="col champ-dyna" id="dateNaissanceClient">
+                                                DD/MM/YYY
                                             </div>
-                                        </div> <!-- Fin date de naissance et logo -->                                      
+                                        </div>
+                                        <!-- Logo Calendrier -->
+                                        <div class="col-2">
+                                           <img id="calendar" src="../../assets/img/logo-calendar.png" alt="Calendar"  style="width: 30px;">
+                                        </div>                         
                                     </div> <!-- Fin 3ème ligne -->
 
                                     <!-- 4ème ligne (email, téléphone) -->
@@ -213,60 +212,64 @@
                                                     Adresse dynamique
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
 
-                                            <!-- 6ème ligne (ville, code postal)-->
-                                            <div class="row marg-bot">
-                                                <!-- Code postal -->
-                                                <div class="col marg-right">
-                                                    <!-- Label Code postal -->
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <b>Code postal</b>
-                                                        </div>
-                                                    </div>
-
+                                    <!-- 6ème ligne (ville, code postal)-->
+                                    <div class="row marg-bot">
+                                        <!-- Code postal -->
+                                        <div class="col-6">
+                                            <!-- Label Code postal -->
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <b>Code postal</b>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                 <div class ="col-6">     
                                                     <!-- Champ de Code postal -->
                                                     <div class="row champ-dyna">
                                                         <div class="col" id="codePostalClient">
-                                                            Code postal dynamique
+                                                            Code postal
                                                         </div>
                                                         </><!-- Fin Code postal -->
                                                     </div> 
-                                                    <!-- Ville -->
-                                                    <div class="col">
-                                                        <!-- Label Ville -->
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <b>Ville</b>
-                                                            </div>
-                                                        </div> 
-
-                                                        <!-- Champ de Ville -->
-                                                        <div class="row champ-dyna">
-                                                            <div class="col" id="villeAdresseClient">
-                                                                Ville dynamique
-                                                            </div>
-                                                        </div>
-
-                                                    </div> <!-- Fin Ville -->
-                                                </div> <!-- Fin 6ème ligne -->
-
+                                                 </div>
                                             </div>
+                                        </div>
+                                        <!-- Ville -->
+                                        <div class="col-6">
+                                            <!-- Label Ville -->
                                             <div class="row">
-                                                <button onclick="window.location.href = 'modifInfoPerso.html'" type="button" id="bouton-modifier" class="col btn btn-warning">Modifier</button>
-
-                                            </div> <!-- Fin Boutons -->
-                                        </div> <!-- Fin fenêtre centrale -->
-
-                                    </div>
-                                </div>
-                            </div> <!-- Fin du conteneur -->
-                        </div> <!-- Fin du contenu de page -->
-                    </div> <!-- Fin du conteneur global -->
-                </div> 
-
-            </div> 
+                                                <div class="col">
+                                                    <b>Ville</b>
+                                                </div>
+                                            </div> 
+                                            <div class="row">
+                                                 <div class ="col-12">     
+                                                    <!-- Champ de Ville -->
+                                                    <div class="row champ-dyna">
+                                                        <div class="col-12" id="villeAdresseClient">
+                                                            Ville 
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        </div> <!-- Fin Ville -->
+                                    </div> <!-- Fin 6ème ligne -->
+                                           
+                                    <div class="row">
+                                        <button onclick="window.location.href = 'modifInfoPerso.html'" type="button" id="bouton-modifier" class="col btn btn-warning">Modifier</button>
+                                    </div> <!-- Fin Boutons -->
+                                </div> <!-- Fin fenêtre centrale -->
+                            </div>
+                        </div>
+                    </div> <!-- Fin du conteneur -->
+                </div> <!-- Fin du contenu de page -->
+            </div> <!-- Fin du conteneur global -->
         </div> 
+
+            
 
         <script type="text/javascript" src="../../JS/infoPersoClient.js"></script>
         <script type="text/javascript" src="../../JS/deconnexion.js"></script>

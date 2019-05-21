@@ -78,13 +78,13 @@
                                 <div class="col">
 
                                     <!-- 1ère ligne (Type intervention)-->
-                                    <div class="row marg-bot">
-                                        <div class="col">
+                                    <div class="row" style ="margin-bottom: 10px;">
+                                        <div class="col-2">
                                             <b>Type</b>
                                         </div>
 
                                         <!-- Radio Buttons Type -->
-                                        <div class="col">
+                                        <div class="col-8">
                                             <!-- Animal -->
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" onChange="setChamps()" type="radio" name="radioInterv" id="radioAnimal" value="Animal" checked>
@@ -107,19 +107,21 @@
 
                                     <!-- 2ème ligne (Animal)-->
                                     <div class="row ">
-
                                         <!-- Animal -->
-                                        <div class="col" id='animalConteneur'>
+                                        <div class="col-6" id='animalConteneur'>
                                             <!-- Label Animal -->
                                             <div class="row">
                                                 <div class="col" >
                                                     <b>Animal</b>
                                                 </div>
                                             </div>
-
-                                            <!-- Champ Animal dynamique -->
                                             <div class="row">
-                                                <input id="champ-animal" type="text" class="form-control" placeholder="Entrez l'animal">
+                                                 <div class ="col-8">  
+                                                    <!-- Champ Animal dynamique -->
+                                                    <div class="row">
+                                                        <input id="champ-animal" type="text" class="form-control" placeholder="Entrez l'animal">
+                                                    </div>
+                                                 </div>
                                             </div>
                                         </div>
                                     </div>
@@ -127,43 +129,48 @@
                                     <!-- 3ème ligne (Objet, Entreprise) -->
                                     <div class="row">
                                         <!-- Objet -->
-                                        <div class="col" id='objetConteneur'>
+                                        <div class="col-6" id='objetConteneur'>
                                             <!-- Label Objet -->
                                             <div class="row">
                                                 <div class="col" >
                                                     <b>Objet</b>
                                                 </div>
                                             </div>
-
-                                            <!-- Champ Objet dynamique -->
                                             <div class="row">
-                                                <input id="champ-objet" type="text" class="form-control" placeholder="Entrez l'objet">
+                                                 <div class ="col-8">  
+                                                    <!-- Champ Objet dynamique -->
+                                                    <div class="row">
+                                                        <input id="champ-objet" type="text" class="form-control" placeholder="Entrez l'objet">
+                                                    </div>
+                                                 </div>
                                             </div>
                                         </div> <!-- Fin Objet -->
 
                                         <!-- Entreprise -->
-                                        <div class="col" id='entrepriseConteneur'>
+                                        <div class="col-6" id='entrepriseConteneur'>
                                             <!-- Label Entreprise -->
                                             <div class="row">
                                                 <div class="col" >
                                                     <b>Entreprise</b>
                                                 </div>
                                             </div>
-
-                                            <!-- Champ Entreprise dynamique -->
                                             <div class="row">
-                                                <input id="champ-entreprise" type="text" class="form-control" placeholder="Entrez l'entreprise">
+                                                 <div class ="col-8">  
+                                                    <!-- Champ Entreprise dynamique -->
+                                                    <div class="row">
+                                                        <input id="champ-entreprise" type="text" class="form-control" placeholder="Entrez l'entreprise">
+                                                    </div>
+                                                 </div>
                                             </div>
                                         </div>
                                     </div> <!-- Fin ligne Livraison(Objet, Entreprise) -->
 
-
                                     <!-- Description intervention -->
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-12">
                                             <div class="form-group">
                                                 <label for="inputDescription">Description</label>
-                                                <textarea class="form-control" id="inputDescription" rows="3"></textarea>
+                                                <textarea class="form-control" id="inputDescription" rows="3" placeholder="Entrez une description"></textarea>
                                             </div>
                                         </div>
                                     </div> <!-- Fin Description Intervention -->

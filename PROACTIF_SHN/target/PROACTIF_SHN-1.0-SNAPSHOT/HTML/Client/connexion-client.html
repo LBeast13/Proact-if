@@ -17,97 +17,100 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">
-        <!--<link rel="stylesheet" type="text/css" href="./Style/loginClient.css">-->
+        <link rel="stylesheet" type="text/css" href="../../Style/generalTheme.css">        
+        <link rel="stylesheet" type="text/css" href="../../Style/loginClient.css">
     </head>
     <body>
 
         <div  id="conteneur-principal" class="container-fluid">
-
             <!-- Bandeau en-tête -->
-            <div id="en-tete" class="row text-white">
+           <div id="en-tete" class="row text-white">
                 <!-- Logo vélo et maison -->
                 <div class="col">
                     <div class="row h-100">
                         <div class="col my-auto">
-                            Vélo
+                              <img id="calendar" src="../../assets/img/velo-lego.png" alt="Calendar"  style="width: 50px;">
                         </div>
 
                         <div class="col my-auto">
-                            Maison
+                              <img id="house" src="../../assets/img/house-logo.png" alt="House"  style="width: 30px;">
                         </div>
                     </div>
                 </div> <!-- Fin logo vélo maison -->
-
-                <!-- Titre proactif -->
-                <div class="col text-green text-center">
-                    <h1>PROACT'IF</h1>
-                </div>
 
                 <!-- Logos Communication -->
                 <div class="col">
                     <div class="row h-100">
                         <div class="col my-auto">
-                            Facebook
+                              <img id="facebook" src="../../assets/img/facebook-logo.png" alt="Facebook"  style="width: 30px;">
                         </div>
 
                         <div class="col my-auto">
-                            Twitter
+                              <img id="twitter" src="../../assets/img/twitter-logo.png" alt="Twitter"  style="width: 30px;">
                         </div>
 
                         <div class="col my-auto">
-                            Mail
+                              <img id="mail" src="../../assets/img/mail-logo.png" alt="Mail"  style="width: 30px;">
                         </div>
 
                         <div class="col my-auto">
-                            Instagram
+                              <img id="instagram" src="../../assets/img/instagram-logo.png" alt="Instagram"  style="width: 30px;">
                         </div>
                     </div>
-                </div> <!-- Fin logos communication -->
+                </div> <!-- Fin logos communication -->          
             </div> <!-- Fin bandeau d'en-tête -->
 
             <!-- Corps de login -->
-            <div class="row h-75 align-items-end">
-                <div class="col-4 ">
-
-                    <div class="row h-100">
-                        <!-- Textes -->
-                        <div class="col-4">
-                            <div class="row margin-bottom">
-                                <p class="col ">Username</p>
-                            </div>
-                            <div class="row margin-bottom">
-                                <p class="col ">Password</p>  
-                            </div>
-                        </div>
-
-                        <!-- Champs textes et boutton -->
-                        <div class="col-8">
-
-                            <!-- Username -->
-                            <div class="row margin-bottom">
-                                <input id="champ-login" type="email" class="form-control" placeholder="Enter email">
-                            </div>
-
-                            <!-- Password -->
-                            <div class="row margin-bottom">
-                                <input id="champ-password" type="password" class="form-control" placeholder="Password">
-                            </div>
-
-                            <!-- Bouton connexion -->
-                            <div class="row">
-                                <button id="bouton-connexion" type="submit" class="col-10 offset-1 border border-secondary btn btn-light mx-auto">Connexion</button>
-                            </div>
-                        </div> <!-- Fin champs de texte et bouton -->
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <a href="inscription-client.html">Pas encore membre ? Inscription...</a>
-                        </div>
+            <div class="row h-50 align-items-end">
+                <div class ="col-8">
+                    <div class="col text-black text-center">
+                    <h1>PROACT'IF</h1>
                     </div>
                 </div>
-            </div> <!-- Fin corps de Login -->
+                <div class="col-4">
+                      <div class="row fenetre-centrale">
+                           <div class="col my-auto">
+                                <div class="row h-100">
+                                    <!-- Textes -->
+                                    <div class="col-4">
+                                        <div class="row margin-bottom">
+                                            <p class="col ">Username</p>
+                                        </div>
+                                        <div class="row margin-bottom">
+                                            <p class="col ">Password</p>  
+                                        </div>
+                                    </div>
 
+                                    <!-- Champs textes et boutton -->
+                                    <div class="col-8">
+
+                                        <!-- Username -->
+                                        <div class="row margin-bottom">
+                                            <input id="champ-login" type="email" class="form-control" placeholder="Enter email">
+                                        </div>
+
+                                        <!-- Password -->
+                                        <div class="row margin-bottom">
+                                            <input id="champ-password" type="password" class="form-control" placeholder="Password">
+                                        </div>
+
+                                        <!-- Bouton connexion -->
+                                        <div class="row">
+                                            <button id="bouton-connexion" type="submit" class="col-10 offset-1 border border-secondary btn btn-light mx-auto">Connexion</button>
+                                        </div>
+                                    </div> <!-- Fin champs de texte et bouton -->                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                         <a href="inscription-client.html">Pas encore membre ? Inscription...</a>
+                                    </div>
+                                 </div>
+                           </div>
+                    </div>                    
+                </div>
+            </div> <!-- Fin corps de Login -->            
+            
+            
             <!-- Pop-Up d'échec de connexion -->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-dialog-centered">
@@ -150,7 +153,9 @@
                     </div> <!-- Fin modal-content -->
                 </div> <!-- Fin modal-dialog -->
             </div> <!-- Fin modal -->
-        </div> <!-- Fin container general -->
+            
+        </div> <!-- Fin container general -->    
+     
 
         <script type="text/javascript" src="../../JS/connexionClient.js"></script>
     </body>

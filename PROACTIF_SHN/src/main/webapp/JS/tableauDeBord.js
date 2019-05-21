@@ -73,9 +73,21 @@ function getEmplacementsAjax() {
         },
         dataType: 'json'
     }).done(function (response) { // Appel OK
-        
+        console.log("TODO : Customiser fenetre pop up et image");
         // Petite popup Google Maps
         var infowindow = makeInfoWindow('');
+        iconAnimal_echec = {url: '../../assets/img/animal.png', scaledSize: new google.maps.Size(32, 32)};
+        iconLivraison_echec = {url: '../../assets/img/livraison.png', scaledSize: new google.maps.Size(32, 32)};
+        iconIncident_echec = {url: '../../assets/img/incident.png', scaledSize: new google.maps.Size(32, 32)}
+        
+        iconAnimal_succes = {url: '../../assets/img/animalOK.png', scaledSize: new google.maps.Size(32, 32)};
+        iconLivraison_succes = {url: '../../assets/img/livraisonOK.png', scaledSize: new google.maps.Size(32, 32)};
+        iconIncident_succes = {url: '../../assets/img/incidentOK.png', scaledSize: new google.maps.Size(32, 32)}
+        
+        iconAnimal_enCours = {url: '../../assets/img/animalCours.png', scaledSize: new google.maps.Size(32, 32)};
+        iconLivraison_enCours = {url: '../../assets/img/livraisonCours.png', scaledSize: new google.maps.Size(32, 32)};
+        iconIncident_enCours = {url: '../../assets/img/incidentCours.png', scaledSize: new google.maps.Size(32, 32)}
+        
         
         interventions = response.interventions;
 
@@ -83,16 +95,54 @@ function getEmplacementsAjax() {
             
             coordParts = element.coordInterv.split(",");
             var position = {lat: parseFloat(coordParts[0]), lng: parseFloat(coordParts[1])};
+            iconAnimal = null;
+            iconLivraison = null;
+            iconIncident = null;
             
-            var marker = new google.maps.Marker({
-                map: googleMapInstance,
-                position: {lat: position.lat , lng: position.lng},
-                title: 'Test',
-                //icon: iconImage
-            });
+            type = element.type;          
+            numeroInterv = element.numero;
+            description = element.description;
+            statut = element.statut;
+            
+            if(statut === "Succès"){
+                iconAnimal = iconAnimal_succes;
+                iconLivraison = iconLivraison_succes;
+                iconIncident = iconIncident_succes;
+            } else if(statut === "Echec"){
+                iconAnimal = iconAnimal_echec;
+                iconLivraison = iconLivraison_echec;
+                iconIncident = iconIncident_echec;
+            } else{
+                iconAnimal = iconAnimal_enCours;
+                iconLivraison = iconLivraison_enCours;
+                iconIncident = iconIncident_enCours;
+            }
+            
+            if(type === "Animal"){
+                var marker = new google.maps.Marker({
+                    map: googleMapInstance,
+                    position: {lat: position.lat, lng: position.lng},
+                    title: 'Intervention Animale',
+                    icon: iconAnimal
+                });
+            } else if(type === "Livraison"){
+                var marker = new google.maps.Marker({
+                    map: googleMapInstance,
+                    position: {lat: position.lat, lng: position.lng},
+                    title: 'Intervention Livraison',
+                    icon: iconLivraison
+                });
+            } else if(type === "Incident"){
+                var marker = new google.maps.Marker({
+                    map: googleMapInstance,
+                    position: {lat: position.lat, lng: position.lng},
+                    title: 'Intervention Incident',
+                    icon: iconIncident
+                });
+            }
             
             attachInfoWindow( marker, infowindow,
-                '<div><strong><a href="endroit.html?">Endroit #</a></strong><br/>Ceci est l\'endroit charmant numéro <br/>' + 'Incroyable !' + '</div>'
+                '<div><strong><a href="detail-intervention.html?numInterv='+ numeroInterv +'" >Intervention #' + numeroInterv + '</a></strong><br/>Description : ' + description +' <br/></div>'
                 );
         });
         
